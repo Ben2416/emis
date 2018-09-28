@@ -28,7 +28,7 @@
                                 </div>
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="text" class="form-control" name="accountOfficer" required="" id="accountOfficer">
+                                        <input type="text" class="form-control" name="acctOfficer" required="" id="acctOfficer">
                                         <label class="form-label">Account Officer</label>
                                     </div>
                                 </div>

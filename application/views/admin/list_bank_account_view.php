@@ -18,7 +18,7 @@
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <td>Bayelsa State Higher Education Student Loan Board</td>
+                                    <td>Bayelsa State Higher Education Student Loan Board </td>
                                     <td>0010553441</td>
                                     <td>Zenith Bank Plc</td>
                                     <td>N1,000,000,000</td>

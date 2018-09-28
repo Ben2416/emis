@@ -68,9 +68,9 @@
                      aria-orientation="vertical">
                     <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
                        aria-controls="v-pills-home" aria-selected="true"><i class="icon-inbox2"></i></a>
-                    
+
                     <a class="nav-link blink skin_handle"  href="#"><i class="icon-lightbulb_outline"></i></a>
-                    
+
                     <a href="#">
                         <figure class="avatar">
                             <img src="<?=base_url()?>assets_admin/img/dummy/u3.png" alt="">
@@ -153,11 +153,11 @@
                                 <li><a href="list_complete_profiles.html"><i class="icon icon-add"></i>Add Loan
 								</a>
                                 </li>
-                               
+
                             </ul>
                         </li>
-                       
-                       
+
+
                         <li class="treeview">
                             <a href="#">
                                 <i class="icon icon-documents3 s-24"></i> <span>Accounting</span>
@@ -172,6 +172,8 @@
                                         <li><a href="add_bank_account.html"><i class="icon icon-document"></i>Add Bank Account
 										</a>
                                         </li>
+                                        <li><a href="#"><i class="icon icon-document"></i>Add Funds</a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li><a href="#"><i class="icon icon-fingerprint text-green"></i>Expenses<i
@@ -185,11 +187,11 @@
                                         </li>
                                     </ul>
                                 </li>
-                                
-                                
+
+
                             </ul>
                         </li>
-						
+
 						<li class="treeview"><a href="#"><i class="icon icon-documents3 s-24"></i>Reports<i
                                 class=" icon-angle-left  pull-right"></i></a>
                             <ul class="treeview-menu">
@@ -202,13 +204,13 @@
 								<li><a href="financial_report.html"><i class="icon icon-documents3"></i>Financial Report
 									</a>
 								</li>
-								                       
+
                             </ul>
                         </li>
-                       
-                        
-                        
-                        
+
+
+
+
                     </ul>
                 </div>
                 <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
@@ -259,12 +261,12 @@
 <div class="navbar-custom-menu">
     <ul class="nav navbar-nav">
         <!-- Messages-->
-        
+
         <!-- Notifications -->
-       
-       
+
+
         <!-- Right Sidebar Toggle Button -->
-        
+
         <!-- User Account-->
         <li class="dropdown custom-dropdown user user-menu ">
             <a href="#" class="nav-link" data-toggle="dropdown">
