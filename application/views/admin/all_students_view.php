@@ -7,7 +7,7 @@
                         <div class="card r-0 shadow">
                             <div class="table-responsive">
                                 <form>
-                                    <table class="table table-striped table-hover r-0">
+                                    <table class="table table-striped table-hover r-0 data-tables" data-options='{ "paging": false; "searching":false}'>
                                         <thead>
                                         <tr class="no-b">
                                             <th style="width: 30px">
@@ -61,7 +61,7 @@
                                                 <a href="panel-page-profile.html"><i class="icon-pencil"></i></a>
                                             </td>
                                         </tr>
-                                        
+
                                         </tbody>
                                     </table>
                                 </form>
@@ -70,22 +70,9 @@
                     </div>
                 </div>
 
-                <nav class="my-3" aria-label="Page navigation">
-                    <ul class="pagination">
-                        <li class="page-item"><a class="page-link" href="#">Previous</a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">2</a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">3</a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">Next</a>
-                        </li>
-                    </ul>
-                </nav>
+                
             </div>
-            
+
 
 		</div>
 		<!--Add New Message Fab Button-->
