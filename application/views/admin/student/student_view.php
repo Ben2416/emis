@@ -144,7 +144,7 @@
                                                            </ul>
                                                        </div>
                                                        <div class="align-self-center">
-                                                           <h5>details</h5>
+                                                           <h5><a href="#" class="btn btn-xs btn-primary">Approve Application</a></h5>
                                                        </div>
 
                                                    </div>
