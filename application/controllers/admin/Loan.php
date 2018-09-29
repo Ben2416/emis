@@ -14,37 +14,37 @@ class Loans extends CI_Controller
 		$this->load->view('admin/footer_view');
     }
 
-    public function approvedLoan(){
+    public function approvedLoans(){
 		$this->load->view('admin/header_view');
 		$this->load->view('admin/loan/approved_loan_view');
 		$this->load->view('admin/footer_view');
     }
 
-    public function declinedLoan(){
+    public function declinedLoans(){
 		$this->load->view('admin/header_view');
 		$this->load->view('admin/loan/declined_loan_view');
 		$this->load->view('admin/footer_view');
     }
 
-    public function disbursedLoan(){
+    public function disbursedLoans(){
 		$this->load->view('admin/header_view');
 		$this->load->view('admin/loan/disbursed_loan_view');
 		$this->load->view('admin/footer_view');
     }
 
-    public function partialDisbursedLoan(){
+    public function partialDisbursedLoans(){
 		$this->load->view('admin/header_view');
 		$this->load->view('admin/loan/partial_disbursed_loan_view');
 		$this->load->view('admin/footer_view');
     }
 
-    public function pendingLoan(){
+    public function pendingLoans(){
 		$this->load->view('admin/header_view');
 		$this->load->view('admin/loan/pending_loan_view');
 		$this->load->view('admin/footer_view');
     }
 
-    public function withdrawnLoan(){
+    public function withdrawnLoans(){
 		$this->load->view('admin/header_view');
 		$this->load->view('admin/loan/withdrawnLoan_loan_view');
 		$this->load->view('admin/footer_view');
