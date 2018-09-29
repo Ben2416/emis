@@ -46,7 +46,7 @@ class Loans extends CI_Controller
 
     public function withdrawnLoans(){
 		$this->load->view('admin/header_view');
-		$this->load->view('admin/loan/withdrawnLoan_loan_view');
+		$this->load->view('admin/loan/withdrawn_loan_view');
 		$this->load->view('admin/footer_view');
     }
 }
