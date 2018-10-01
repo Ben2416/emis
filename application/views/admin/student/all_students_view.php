@@ -28,6 +28,9 @@
                                         </thead>
 
                                         <tbody>
+										<?php
+										foreach($students as $student):
+										?>
                                         <tr>
                                             <td>
                                                 <div class="custom-control custom-checkbox">
@@ -43,25 +46,27 @@
                                                   </div>
                                                   <div>
                                                       <div>
-                                                          <strong>Ebimobowei Okpongu</strong>
+                                                          <strong><?=$student['firstname'].' '.$student['lastname']?></strong>
                                                       </div>
-                                                      <small> ebi.okpongu@gmail.com</small>
+                                                      <small> <?=$student['email']?></small>
                                                   </div>
                                               </div>
                                             </td>
 
-                                            <td> <div class="d-none d-lg-block">Male</div></td>
-                                            <td> <div class="d-none d-lg-block">BYSHESLB/B1/001</div></td>
+                                            <td> <div class="d-none d-lg-block"><?=$student['sex']?></div></td>
+                                            <td> <div class="d-none d-lg-block">BYSHESLB/B1/<?=$student['user_id']?></div></td>
 
-                                            <td> <div class="d-none d-lg-block">07034428600</div></td>
-                                            <td> <div class="d-none d-lg-block"><span class="r-3 badge badge-success ">Undergratuate</span></div></td>
+                                            <td> <div class="d-none d-lg-block"><?=$student['phone']?></div></td>
+                                            <td> <div class="d-none d-lg-block"><span class="r-3 badge badge-success "><?=$student['loan_type']?></span></div></td>
                                             <td> <div class="d-none d-lg-block"><span class="r-3 badge badge-success ">Completed Loan Form</span></div></td>
                                             <td>
                                                 <a href="panel-page-profile.html"><i class="icon-eye mr-3"></i></a>
                                                 <a href="panel-page-profile.html"><i class="icon-pencil"></i></a>
                                             </td>
                                         </tr>
-
+										<?php
+										endforeach;
+										?>
                                         </tbody>
                                     </table>
                                 </form>

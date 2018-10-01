@@ -54,7 +54,8 @@ class Loan_model extends CI_Model{
 			'lga_file' => $name,
 			'mid_file' => $name,
 			'adl_file' => $name,
-			'csr_file' => $name
+			'csr_file' => $name,
+			'status' => 1
 		);
 		$udata = array();
 		foreach($data as $k=>$v){
@@ -79,7 +80,8 @@ class Loan_model extends CI_Model{
 			'university_level' => $this->input->post('university_level'),
 			'semester_level' => $this->input->post('semester_level'),
 			'loan_type' => $this->input->post('loan_type'),
-			'loan_amount' => $this->input->post('loan_amount')
+			'loan_amount' => $this->input->post('loan_amount'),
+			'batch' => $this->input->post('batch')
 		);
 		return $this->db->insert('loan_applications', $data);
 	}

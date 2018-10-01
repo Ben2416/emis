@@ -49,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'client/login';//fix it
+$route['default_controller'] = 'loan';//fix it
 $route['client'] = 'client/login';
 $route['admin'] = 'admin/login';
 $route['forgot_password']= 'client/login/forgot_password';
