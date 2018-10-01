@@ -20,7 +20,7 @@ class Login_model extends CI_Model{
 		$data = array('loan_type'=>$this->input->post('loancat'));
 		$this->db->where('user_id', $this->session->user_id);
 		if($this->db->update('loan_details', $data)){
-			$data = array('status'=>1);
+			$data = array('status'=>1, 'loan_type'=>$this->input->post('loancat'));
 			$this->db->where('user_id', $this->session->user_id);
 			return $this->db->update('users',$data);	
 		}else return false;
