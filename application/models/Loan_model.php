@@ -116,4 +116,31 @@ class Loan_model extends CI_Model{
 		$query = $this->db->get('loan_applications');
 		return $query->result_array();
 	}
+	
+	function getTotalBorrowers(){
+		$query = $this->db->get('loan_applications');
+		return $query->num_rows();
+	}
+	
+	function getPendingLoans(){
+		$this->db->where('status', 1);
+		$query = $this->db->get('loan_applications');
+		return $query->num_rows();
+	}
+	
+	function getApprovedLoans(){
+		$this->db->where('status', 3);
+		$query = $this->db->get('loan_applications');
+		return $query->num_rows();
+	}
+	function getDisbursedLoans(){
+		$this->db->where('status', 4);
+		$query = $this->db->get('loan_applications');
+		return $query->num_rows();
+	}
+	function getDeclinedLoans(){
+		$this->db->where('status', 2);
+		$query = $this->db->get('loan_applications');
+		return $query->num_rows();
+	}
 }

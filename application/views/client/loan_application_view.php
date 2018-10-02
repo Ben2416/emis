@@ -25,8 +25,8 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="loan_type"> Loan Type </label>
-                                                    <input type="text" class="form-control required" name="loan_type" id="loan_amount" value="<?=$this->session->loan_type?>" disabled>
-                                                    <input type="hidden" class="form-control required" name="loan_type" id="loan_amount" value="<?=$this->session->loan_type?>">
+                                                    <input type="text" class="form-control required" name="loan_typed" id="loan_typed" value="<?=$this->session->loan_type?>" disabled>
+                                                    <input type="hidden" class="form-control required" name="loan_type" id="loan_ype" value="<?=$this->session->loan_type?>">
 
                                                 </div>
                                             </div>

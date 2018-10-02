@@ -11,7 +11,7 @@
                                     <div><span class="badge badge-pill badge-danger">4:30</span></div>
                                 </div>
                                 <div class="text-center">
-                                    <div class="s-48 my-3 font-weight-lighter">1,876</div>
+                                    <div class="s-48 my-3 font-weight-lighter"><?=$total_borrowers?></div>
                                     Total Borrowers
                                 </div>
 
@@ -27,7 +27,7 @@
                                 </div>
                                 <div class="text-center">
 								
-                                    <div class="s-48 my-3 font-weight-lighter">70,000,000</div>
+                                    <div class="s-48 my-3 font-weight-lighter"><?=$available_funds?></div>
                                     Available Fund
                                 </div>
 
@@ -45,7 +45,7 @@
                                     <div><span class="badge badge-pill badge-danger">4:30</span></div>
                                 </div>
                                 <div class="text-center">
-                                    <div class="s-48 my-3 font-weight-lighter">50,000,000</div>
+                                    <div class="s-48 my-3 font-weight-lighter"><?=$loans_released?></div>
                                     Loan Released
                                 </div>
 
@@ -119,7 +119,7 @@
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="mb-3">
                                         <h6>Pending Loans</h6>
-                                        <h6><strong>500 Applications</strong></h6>
+                                        <h6><strong><?=$pending_loans?> Applications</strong></h6>
                                     </div>
                                     <figure class="avatar">
                                         <img src="<?=base_url()?>assets_admin/img/application.png" alt=""></figure>
@@ -133,7 +133,7 @@
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="mb-3">
                                         <h6>Approved Loans</h6>
-                                        <h6><strong>700 Approved</strong></h6>
+                                        <h6><strong><?=$approved_loans?> Approved</strong></h6>
 										
                                     </div>
                                     <figure class="avatar">
@@ -148,7 +148,7 @@
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="mb-3">
                                         <h6>Disbursed Loans</h6>
-                                        <h6><strong>200 Loans</strong></h6>
+                                        <h6><strong><?=$disbursed_loans?> Loans</strong></h6>
                                     </div>
                                     <div class="avatar-group">
                                         <figure class="avatar">
@@ -164,7 +164,7 @@
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="mb-3">
                                         <h6>Loans Declined</h6>
-                                        <h6><strong>89 Loans Declined</strong></h6>
+                                        <h6><strong><?=$loans_declined?> Loans Declined</strong></h6>
                                     </div>
                                     <figure class="avatar">
                                         <img src="<?=base_url()?>assets_admin/img/application.png" alt=""></figure>
