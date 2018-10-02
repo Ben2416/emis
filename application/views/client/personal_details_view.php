@@ -14,6 +14,9 @@
                         <!-- Step 1 -->
                         <h6>Personal Information</h6>
                         <section>
+                            <img src="<?=base_url()?>assets/passports/<?=$this->session->passport?>" width="150" />
+                            <br/>
+                            <br/>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -79,6 +82,9 @@
                                     </div>
                                 </div>
                             </div>
+                            <hr>
+                            <h4 class="card-title">Applicant State of Origin</h4>
+                            <h6 class="card-subtitle">Complete the form below</h6>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -121,10 +127,12 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="town_of_origin"> Town / City : <span class="danger">*</span> </label>
+                                        <label for="town_of_origin"> Constituency : <span class="danger">*</span> </label>
                                         <select class="custom-select form-control required" id="town_of_origin" name="town_of_origin">
-                                            <option value="">Select State</option>
-                                            <option value="Bayelsa" <?= set_select('town_of_origin','Bayelsa'); ?>>Bayelsa</option>
+                                            <option value="">Select Constituency</option>
+                                            <option value="Constituency I" <?= set_select('town_of_origin','Constituency I'); ?>>Constituency I</option>
+                                            <option value="Constituency II" <?= set_select('town_of_origin','Constituency II'); ?>>Constituency II</option>
+                                            <option value="Constituency III" <?= set_select('town_of_origin','Constituency III'); ?>>Constituency III</option>
                                         </select>
                                     </div>
                                 </div>
@@ -595,7 +603,7 @@
 		"--District I--|Akaragbene |Akpobeleiowei |Alagbene |Alisogbene |Amataugbene |Apoi|Arikaripo Aziama |Sabatonogbene |Sayentorugbene |Sikirubogbene |Sirieigbene |Sirisyegbene |Sitou |Sokomgbene |Suragbene |Surukububo |Consingbere |Diogbegbene |Donkerogbene |Douglasgbene |Dubagbene |Ebatimogbene |Ebidargbene |Eduregbene |Egberime 1|Egberime 11|Ekeogbene |Ekinigbene |Erebugbene |Etemere |Fiesigbene |Foniweitoro |Fungbene |Gbaran |Glologbene |Guaregbene |Hewigbene |Hittargbene |Hopin Point |lbikologbene |ldebugbene |lzonagbene |Kalarogbene |Kalawarigbene |Kamboira Soria |Kasoma |Kogbene |Kokologbene |Koluama|Komobiama|Komoforagbene |Kugbogbene |Lasota|Labia |Lofamagbene |Loinbirikibi |Magbogbene |Ngakoro |Ngukuiagbene |North Point |Nyuseyegbene |Obomikorogbene |Odeigbene |Ofmiegbene |Ofogbene |Ogbogbene |Ogbogero |Ogboidigbene |Ogodikoro |Ogolangorugbene |Okoboudob |Okpofuwari|Olobia Olodi |Oloogbene |Oporogbene |Osugbene |Paratubo |Pepegbene |Pepelegbene|Peresisofogbene |Petugbene |Piebolegbene |Pisegbene|Port-Harcourt-gbene |Rituagbene Saugagbene |Segpe|Sonamadingbene |Sonotubogbene |Tacadosgene |Talegbene |Tangagae |Tebitubufor |Teibidaba|Tipama |Tofiagbene |Tologbene|Tologbene|Tuimpeigbene |Ukptatube |Ukubie|Watchmangbene |Yedogbene|--District II--|Abagbene|Abolgbene |Agidigbere |Aguobiri |Aleegbene |Amassoma |Angiama |Angiama-|gbene Ayama |Ayougbene |Azuzuama |Saberegbene |Setterland |Siabugbene |Siagbogbene |Solongbene |Soma|Climonbene|Diebu |Egarebeni |Ekeni |Ekowe |Emete |Eniwari|Erefumakomogbene|Ezetu |Foinbiri |Furopa |Gboloketise |lgbomatoru |lkebiri |lkeingbabiri |lkiambiri|lkoromogbene |lkpirigbene |lsaihgbene |Jermaih-gbene |Kemeligbene |Keregbene |Korokorsei |Korumogbene |Laisukugbene|Lalgbene|Livergbene |Luckygbene |Luduon |Nengigbene |Nicholas-Gbene |Ogilagbene |Ogoubiri |Ohugbabiri |Okigbene |Okpolububo |Olobobene |Olugbogbene |Ondewari |Onyoma |Oporoma |Opuama|Orikowe |Osiama |Otuan |Oweikorogba |Oyeregbene |Ozezebiri |Peremabiri",
 		"Abasere |Agbia |Agbobiri |Agorogbene |Agudama|Agudama-Epie|Akada |Akpide |Akunomi |Amarata |Amasso |Anyamabele |Atissa |Azikoro |Bebelibiri |Betaland |Biogbolo |Biseni |Bumodi|Ede-Pie |Egbebiri |Ekeki |Ekpetiama |Emblama |Epie |Fangbe|Freetown |Gbarain |Gbaramtoru |lbia |lgbogene |lkarama |lkibiri|lkolo |Jackbiri |Kaiama |Kalaba |Karama |Korama |Kpansia |Nyanbiri |Obungha |Ogbolomo |Ogoniforu |Ogu |Ojogbolo |Okolobiri |Okorodia |Okotiama |Okutukutu |Omom |Onura |Opolo |Ovelemini |Polaku |Tein |Tombia |Tuburu |Yenegwe|Yeniozue-Epie |Zarama |Zarama Epie"
 	);
-	
+
 	function lga(lga_element){
 		$('#'+lga_element).empty();
 		createOption(lga_element, '', 'Select LGA');
@@ -603,26 +611,26 @@
 			createOption(lga_element, lga_array[a], lga_array[a]);
 		}
 	}
-	
+
 	lga('lga');
 	$('#lga').change(function(){
 		$('#village_of_origin').empty();
 		createOption('village_of_origin', '', 'Select Village of Origin');
 		var village_sub_array = village_array[document.getElementById('lga').selectedIndex].split("|");
-		
+
 		for(var v=0; v<village_sub_array.length; v++){
 			createOption('village_of_origin', village_sub_array[v], village_sub_array[v]);
 		}
 	});
-	
+
 	function createOption(select_id, id, value) {
 		el = document.createElement('option');
 		el.value = id;
 		el.innerHTML = value;
-		el.id = value;   
+		el.id = value;
 		document.getElementById(select_id).appendChild(el);
 	}
-	
+
 	var state_array = new Array("ABIA","ADAMAWA","AKWA IBOM","ANAMBRA","BAUCHI","BAYELSA","BENUE","BORNO","CROSS RIVER","DELTA","EBONYI","EDO","EKITI","ENUGU","GOMBE","IMO","JIGAWA","KADUNA","KANO","KATSINA","KEBBI","KOGI","KWARA","LAGOS","NASSARAWA","NIGER","OGUN","ONDO","OSUN","OYO","PLATEAU","RIVERS","SOKOTO","TARABA","YOBE","ZAMFARA");
 	function state(state_element){
 		$('#'+state_element).empty();
@@ -631,7 +639,7 @@
 			createOption(state_element, state_array[i], state_array[i]);
 		}
 	}
-	
+
 	state('state_of_origin');
 	state('state_of_residence');
 	state('father_state_of_origin');
