@@ -215,11 +215,11 @@
                                             </div>
                                             <div class="col-md-4 col-xs-6 b-r"> <strong>Programme State Date</strong>
                                                 <br>
-                                                <p class="text-muted"><?=$profile['programme_start_date']?></p>
+                                                <p class="text-muted"><?=$profile['program_start_date']?></p>
                                             </div>
                                             <div class="col-md-4 col-xs-6"> <strong>Programme End Date</strong>
                                                 <br>
-                                                <p class="text-muted">programme_end_state</p>
+                                                <p class="text-muted"><?=$profile['program_end_date']?></p>
                                             </div>
                                             
                                         </div>
@@ -278,13 +278,13 @@
                                             <div class="form-group">
                                                 <label class="col-md-12">Full Name</label>
                                                 <div class="col-md-12">
-                                                    <input type="text" placeholder="Johnathan Doe" class="form-control form-control-line" disabled>
+                                                    <input type="text" placeholder="Johnathan Doe" class="form-control form-control-line" value="<?=$this->session->firstname?> <?=$this->session->lastname?>" disabled>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label for="example-email" class="col-md-12" disabled>Email</label>
                                                 <div class="col-md-12">
-                                                    <input type="email" placeholder="johnathan@admin.com" class="form-control form-control-line" name="example-email" id="example-email">
+                                                    <input type="email" placeholder="johnathan@admin.com" class="form-control form-control-line" name="example-email" id="example-email" value="<?=$this->session->email?>">
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -296,7 +296,7 @@
                                             <div class="form-group">
                                                 <label class="col-md-12">Phone No</label>
                                                 <div class="col-md-12">
-                                                    <input type="text" placeholder="123 456 7890" class="form-control form-control-line" disabled>
+                                                    <input type="text" placeholder="123 456 7890" class="form-control form-control-line" value="<?=$this->session->phone?>" disabled>
                                                 </div>
                                             </div>
                                             

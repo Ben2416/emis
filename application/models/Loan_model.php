@@ -100,7 +100,7 @@ class Loan_model extends CI_Model{
 	
 	function getProfile($uid){
 		$this->db->where('user_id',$uid);
-		$query = $this->db->get('loan_applications');
+		$query = $this->db->get('loan_details');
 		return $query->result_array();
 	}
 	

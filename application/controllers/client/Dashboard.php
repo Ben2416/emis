@@ -5,12 +5,14 @@ class Dashboard extends CI_Controller
     public function __construct(){
         parent::__construct();
 		$this->load->model('Loan_model');
+		$this->load->model('Student_model');
     }
 
     public function index(){
 		$data['page_title'] = 'Dashboard';
 		$this->session->set_flashdata('success_msg', 'Welcome!');
         $data['loans'] = $this->getLoans();
+		$data['approved_loans'] = $this->Student_model->getStudentApprovedLoansTotal($this->session->user_id);
 		$this->load->view('client/header_view', $data);
 		$this->load->view('client/dashboard_view');
     }

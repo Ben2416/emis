@@ -1,3 +1,19 @@
+<?php
+	$this->session->set_userdata('last_page', current_url());
+	//$this->load->library('user_agent');
+	if ( !$this->input->server('HTTP_REFERER') 
+	//if(!$this->agent->referrer()
+		|| empty($this->session->userdata('user_id')))
+	{
+		if(empty($this->session->userdata('user_id'))){
+			$this->session->set_flashdata('error_msg', 'Session Expired. Log in.');
+			redirect(base_url(), 'refresh');
+		}else{
+			$this->session->set_flashdata('error_msg', 'Url Access disabled. Log in.');
+			redirect(base_url(), 'refresh');
+		}
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -120,6 +136,7 @@
         <div class="scroll-sidebar">
             <!-- Sidebar navigation-->
             <nav class="sidebar-nav">
+			<?php if($this->session->status > 2):?>
                 <ul id="sidebarnav">
 
                     <li> <a class="has-arrow waves-effect waves-dark" href="<?=base_url()?>client/dashboard" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a></li>
@@ -131,6 +148,7 @@
                     </li>
 
                 </ul>
+			<?php endif; ?>
             </nav>
             <!-- End Sidebar navigation -->
         </div>

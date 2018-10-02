@@ -11,7 +11,31 @@ class Student_model extends CI_Model{
 	}
 	
 	function getStudentProfile($id){
-		
+		$this->db->join('loan_details', 'loan_details.user_id=users.user_id');
+		$this->db->where('users.user_id', $id);
+		$query = $this->db->get('users');
+		return $query->result_array();
+	}
+	
+	function getStudentLoans($id){
+		$this->db->where('user_id',$id);
+		$query = $this->db->get('loan_applications');
+		return $query->result_array();
+	}
+	
+	function getStudentLoansTotal($id){
+		$this->db->select('sum(loan_amount) as sum_total');
+		$this->db->where('user_id', $id);
+		$query = $this->db->get('loan_applications');
+		return $query->row();
+	}
+	
+	function getStudentApprovedLoansTotal($id){
+		$this->db->select('sum(loan_amount) as sum_total');
+		$this->db->where('user_id', $id);
+		$this->db->where('status', 3);//approved loans = 3
+		$query = $this->db->get('loan_applications');
+		return $query->row();
 	}
 	
 	function getCompleteProfiles(){

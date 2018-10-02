@@ -12,7 +12,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <h2 class="m-b-0"><i class="mdi mdi-briefcase-check text-info"></i></h2>
-                                <h3 class="">N700,000.00</h3>
+                                <h3 class="">N <?=$approved_loans->sum_total?></h3>
                                 <h6 class="card-subtitle">Approved Loan</h6></div>
                             <div class="col-12">
 

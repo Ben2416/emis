@@ -4,11 +4,11 @@
                     <div class="col">
                         <div class="pb-3">
                             <div class="image mr-3  float-left">
-                                <img class="user_avatar no-b no-p" src="assets/img/dummy/u6.png" alt="User Image">
+                                <img class="user_avatar no-b no-p" src="<?=base_url()?>assets/passports/<?=$profile['passport']?>" alt="User Image">
                             </div>
                             <div>
-                                <h6 class="p-t-10">Ebimobowei Okpongu</h6>
-                                Applicant ID: BYSHESLB/APP/567
+                                <h6 class="p-t-10"><?=$profile['firstname']?> <?=$profile['lastname']?></h6>
+                                Applicant ID: BYSHESLB/APP/<?=$profile['user_id']?>
                             </div>
                         </div>
                     </div>
@@ -45,9 +45,9 @@
                            <div class="card ">
 
                                <ul class="list-group list-group-flush">
-                                   <li class="list-group-item"><i class="icon icon-mobile text-primary"></i><strong class="s-12">07034428600</strong> <span class="float-right s-12"></span></li>
-                                   <li class="list-group-item"><i class="icon icon-mail text-success"></i><strong class="s-12">ebi.okpongu@gmail.com</strong> <span class="float-right s-12"></span></li>
-                                   <li class="list-group-item"><i class="icon icon-address-card-o text-warning"></i><strong class="s-12">41 road B Close Block 1 Flat 14 Festac Town</strong> <span class="float-right s-12"></span></li>
+                                   <li class="list-group-item"><i class="icon icon-mobile text-primary"></i><strong class="s-12"><?=$profile['phone']?></strong> <span class="float-right s-12"></span></li>
+                                   <li class="list-group-item"><i class="icon icon-mail text-success"></i><strong class="s-12"><?=$profile['email']?></strong> <span class="float-right s-12"></span></li>
+                                   <li class="list-group-item"><i class="icon icon-address-card-o text-warning"></i><strong class="s-12"><?=$profile['address']?></strong> <span class="float-right s-12"></span></li>
                                    <li class="list-group-item"><strong class="s-12"><a href="#"> Download Profile</a></strong></li>
                                </ul>
                            </div>
@@ -93,7 +93,7 @@
                                                <span class="icon-award text-light-blue s-48"></span>
                                            </div>
                                            <div class="counter-title">Loans Applied</div>
-                                           <h5 class="">2</h5>
+                                           <h5 class=""><?=$loans_applied?></h5>
                                        </div>
                                    </div>
                                </div>
@@ -103,7 +103,7 @@
                                            <div class="float-right"><span class="icon-stop-watch3 s-48"></span>
                                            </div>
                                            <div class="counter-title ">Total Amount</div>
-                                           <h5 class="">N650,000</h5>
+                                           <h5 class="">N <?=$loans_total->sum_total?></h5>
                                        </div>
                                    </div>
                                </div>
@@ -157,30 +157,30 @@
                                                            <div class="row">
                                                                <div class="col-md-4 col-xs-6 b-r"> <strong>Full Name</strong>
                                                                    <br>
-                                                                   <p class="text-muted">Ebimobowei Ebimobowei</p>
+                                                                   <p class="text-muted"><?=$profile['firstname']?> <?=$profile['lastname']?></p>
                                                                </div>
                                                                <div class="col-md-4 col-xs-6 b-r"> <strong>Mobile</strong>
                                                                    <br>
-                                                                   <p class="text-muted">07034428600</p>
+                                                                   <p class="text-muted"><?=$profile['phone']?></p>
                                                                </div>
                                                                <div class="col-md-4 col-xs-6"> <strong>Email</strong>
                                                                    <br>
-                                                                   <p class="text-muted">ebi.okpongu@gmail.com</p>
+                                                                   <p class="text-muted"><?=$profile['email']?></p>
                                                                </div>
                                                           </div>
                                                       <hr>
                                           <div class="row">
                                            <div class="col-md-4 col-xs-6 b-r"> <strong>Date of Birth</strong>
                                                <br>
-                                               <p class="text-muted"></p>
+                                               <p class="text-muted"><?=$profile['dob']?></p>
                                            </div>
                                            <div class="col-md-4 col-xs-6 b-r"> <strong>Residential Address</strong>
                                                <br>
-                                               <p class="text-muted"></p>
+                                               <p class="text-muted"><?=$profile['address']?></p>
                                            </div>
                                            <div class="col-md-4 col-xs-6"> <strong>State of Residence</strong>
                                                <br>
-                                               <p class="text-muted"></p>
+                                               <p class="text-muted"><?=$profile['state_of_residence']?></p>
                                            </div>
 
                                        </div>
@@ -188,15 +188,15 @@
                    <div class="row">
                                            <div class="col-md-4 col-xs-6 b-r"> <strong>State Of Origin</strong>
                                                <br>
-                                               <p class="text-muted"></p>
+                                               <p class="text-muted"><?=$profile['state_of_origin']?></p>
                                            </div>
                                            <div class="col-md-4 col-xs-6 b-r"> <strong>Senatorial District</strong>
                                                <br>
-                                               <p class="text-muted"></p>
+                                               <p class="text-muted"><?=$profile['senatorial_district']?></p>
                                            </div>
                                            <div class="col-md-4 col-xs-6"> <strong>Local Government Area</strong>
                                                <br>
-                                               <p class="text-muted"></p>
+                                               <p class="text-muted"><?=$profile['lga']?></p>
                                            </div>
 
                                        </div>
@@ -205,11 +205,11 @@
                    <div class="row">
                                            <div class="col-md-4 col-xs-6 b-r"> <strong>Town / City</strong>
                                                <br>
-                                               <p class="text-muted"></p>
+                                               <p class="text-muted"><?=$profile['town_of_origin']?></p>
                                            </div>
                                            <div class="col-md-4 col-xs-6"> <strong>Village</strong>
                                                <br>
-                                               <p class="text-muted"></p>
+                                               <p class="text-muted"><?=$profile['village_of_origin']?></p>
                                            </div>
 
                                        </div>
@@ -219,15 +219,15 @@
                    <div class="row">
                                            <div class="col-md-4 col-xs-6 b-r"> <strong>Father Name</strong>
                                                <br>
-                                               <p class="text-muted"></p>
+                                               <p class="text-muted"><?=$profile['father_name']?></p>
                                            </div>
                                            <div class="col-md-4 col-xs-6 b-r"> <strong>Father Mobile Number</strong>
                                                <br>
-                                               <p class="text-muted"></p>
+                                               <p class="text-muted"><?=$profile['father_phone']?></p>
                                            </div>
                                            <div class="col-md-4 col-xs-6"> <strong>State of Origin</strong>
                                                <br>
-                                               <p class="text-muted"></p>
+                                               <p class="text-muted"><?=$profile['father_state_of_origin']?></p>
                                            </div>
 
                                        </div>
@@ -235,15 +235,15 @@
                    <div class="row">
                                            <div class="col-md-4 col-xs-6 b-r"> <strong>Mother's Name</strong>
                                                <br>
-                                               <p class="text-muted"></p>
+                                               <p class="text-muted"><?=$profile['mother_name']?></p>
                                            </div>
                                            <div class="col-md-4 col-xs-6 b-r"> <strong>Mobile</strong>
                                                <br>
-                                               <p class="text-muted"></p>
+                                               <p class="text-muted"><?=$profile['mother_phone']?></p>
                                            </div>
                                            <div class="col-md-4 col-xs-6"> <strong>State of Origin</strong>
                                                <br>
-                                               <p class="text-muted"></p>
+                                               <p class="text-muted"><?=$profile['mother_state_of_origin']?></p>
                                            </div>
 
                                        </div>
@@ -254,15 +254,15 @@
                    <div class="row">
                                            <div class="col-md-4 col-xs-6 b-r"> <strong>Bank Name</strong>
                                                <br>
-                                               <p class="text-muted"></p>
+                                               <p class="text-muted"><?=$profile['bank_name']?></p>
                                            </div>
                                            <div class="col-md-4 col-xs-6 b-r"> <strong>Account Number</strong>
                                                <br>
-                                               <p class="text-muted"></p>
+                                               <p class="text-muted"><?=$profile['account_number']?></p>
                                            </div>
                                            <div class="col-md-4 col-xs-6"> <strong>Bank Verification Number</strong>
                                                <br>
-                                               <p class="text-muted"></p>
+                                               <p class="text-muted"><?=$profile['bvn']?></p>
                                            </div>
 
                                        </div>
@@ -275,15 +275,15 @@
                                        <div class="row">
                                            <div class="col-md-4 col-xs-6 b-r"> <strong>University Name</strong>
                                                <br>
-                                               <p class="text-muted"></p>
+                                               <p class="text-muted"><?=$profile['university_name']?></p>
                                            </div>
                                            <div class="col-md-4 col-xs-6 b-r"> <strong>State</strong>
                                                <br>
-                                               <p class="text-muted"></p>
+                                               <p class="text-muted"><?=$profile['university_state']?></p>
                                            </div>
                                            <div class="col-md-4 col-xs-6"> <strong>Other University</strong>
                                                <br>
-                                               <p class="text-muted"></p>
+                                               <p class="text-muted"><?=$profile['other_university']?></p>
                                            </div>
 
                                        </div>
@@ -292,15 +292,15 @@
                                        <div class="row">
                                            <div class="col-md-4 col-xs-6 b-r"> <strong>Course of Study</strong>
                                                <br>
-                                               <p class="text-muted"></p>
+                                               <p class="text-muted"><?=$profile['course_of_study']?></p>
                                            </div>
                                            <div class="col-md-4 col-xs-6 b-r"> <strong>Anticapted Degree</strong>
                                                <br>
-                                               <p class="text-muted"></p>
+                                               <p class="text-muted"><?=$profile['anticipated_degree']?></p>
                                            </div>
                                            <div class="col-md-4 col-xs-6"> <strong>University Level</strong>
                                                <br>
-                                               <p class="text-muted">/p&gt;
+                                               <p class="text-muted"><?=$profile['university_level']?></p>
                                            </p></div>
 
                                        </div>
@@ -308,15 +308,15 @@
                    <div class="row">
                                            <div class="col-md-4 col-xs-6 b-r"> <strong>Semester </strong>
                                                <br>
-                                               <p class="text-muted"></p>
+                                               <p class="text-muted"><?=$profile['semester_level']?></p>
                                            </div>
                                            <div class="col-md-4 col-xs-6 b-r"> <strong>Student ID</strong>
                                                <br>
-                                               <p class="text-muted"></p>
+                                               <p class="text-muted"><?=$profile['mode_identity']?></p>
                                            </div>
                                            <div class="col-md-4 col-xs-6"> <strong>Matric Number</strong>
                                                <br>
-                                               <p class="text-muted"></p>
+                                               <p class="text-muted"><?=$profile['matric_number']?></p>
                                            </div>
 
                                        </div>
@@ -328,11 +328,11 @@
                                            </div>
                                            <div class="col-md-4 col-xs-6 b-r"> <strong>Programme State Date</strong>
                                                <br>
-                                               <p class="text-muted"></p>
+                                               <p class="text-muted"><?=$profile['program_start_date']?></p>
                                            </div>
                                            <div class="col-md-4 col-xs-6"> <strong>Programme End Date</strong>
                                                <br>
-                                               <p class="text-muted">programme_end_state</p>
+                                               <p class="text-muted"><?=$profile['program_end_date']?></p>
                                            </div>
 
                                        </div>
@@ -340,11 +340,11 @@
                    <div class="row">
                                            <div class="col-md-4 col-xs-6 b-r"> <strong>University Contact Person</strong>
                                                <br>
-                                               <p class="text-muted"></p>
+                                               <p class="text-muted"><?=$profile['uni_contact_person']?></p>
                                            </div>
                                            <div class="col-md-4 col-xs-6 b-r"> <strong>Contact Phone Number</strong>
                                                <br>
-                                               <p class="text-muted"></p>
+                                               <p class="text-muted"><?=$profile['uni_contact_person_phone']?></p>
                                            </div>
 
                                        </div>
@@ -393,19 +393,25 @@
                                                </tr>
                                                </thead>
                                                <tbody>
+											   <?php
+											   foreach($loans as $ln):
+											   ?>
                                                <tr>
-                                                   <td>BYSHESLB/B1/101</td>
-                                                   <td>Ebimobowei Okpongu</td>
-                                                   <td><span class="badge badge-success">Approved</span></td>
-                                                   <td>N450,000.00</td>
+                                                   <td>BYSHESLB/B<?=$ln['batch']?>/<?=$ln['loan_id']?></td>
+                                                   <td><?=$profile['firstname']?> <?=$profile['lastname']?></td>
+                                                   <td><span class="badge badge-success"><?=$ln['status']?></span></td>
+                                                   <td>N <?=$ln['loan_amount']?></td>
                                                </tr>
-                                               <tr>
+											   <?php
+											   endforeach;
+											   ?>
+                                               <!--<tr>
                                                    <td>BYSHESLB/B2/124</td>
                                                    <td>Ebimobowei Okpongu</td>
                                                    <td><span class="badge badge-warning">Awaiting Approval</span>
                                                    </td>
                                                    <td>N300,000.00</td>
-                                               </tr>
+                                               </tr>-->
                                                </tbody>
                                            </table>
                                        </div>

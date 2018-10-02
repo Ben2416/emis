@@ -60,7 +60,7 @@
                                             <td> <div class="d-none d-lg-block"><span class="r-3 badge badge-success "><?=$student['loan_type']?></span></div></td>
                                             <td> <div class="d-none d-lg-block"><span class="r-3 badge badge-success ">Completed Loan Form</span></div></td>
                                             <td>
-                                                <a href="panel-page-profile.html"><i class="icon-eye mr-3"></i></a>
+                                                <a href="<?=base_url()?>admin/Students/studentProfile/<?=$student['user_id']?>"><i class="icon-eye mr-3"></i></a>
                                                 <a href="panel-page-profile.html"><i class="icon-pencil"></i></a>
                                             </td>
                                         </tr>

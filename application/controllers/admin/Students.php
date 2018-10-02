@@ -18,9 +18,15 @@ class Students extends CI_Controller
 		$this->load->view('admin/footer_view');
     }
     
-    public function studentProfile(){
+    public function studentProfile($id){
+		$data['profile'] = $this->Student_model->getStudentProfile($id)[0];
+		$data['loans'] = $this->Student_model->getStudentLoans($id);
+		//print_r($data['loans']);//exit;
+		$data['loans_applied'] = count($data['loans']);
+		$data['loans_total'] = $this->Student_model->getStudentLoansTotal($id);
+		//print_r($data['loans']['loans_total']);
 		$this->load->view('admin/header_view');
-		$this->load->view('admin/student_view');
+		$this->load->view('admin/student/student_view', $data);
 		$this->load->view('admin/footer_view');
     }
 	
