@@ -77,11 +77,11 @@
             </div>
             <div class="row"><br>
                 <div id="pre_take_buttons">
-                    <input type=button value="Take Snapshot" onClick="preview_snapshot()">
+                    <input type=button value="Take Snapshot" onClick="preview_snapshot()" style="background:#6363b7; border:none;">
                 </div>
                 <div id="post_take_buttons" style="display:none">
-                    <input type=button value="&lt; Take Snother" onClick="cancel_preview()">
-                    <input type=button value="Save Photo &gt;" onClick="save_photo()" style="font-weight:bold;" data-dismiss="modal" aria-label="Close">
+                    <input type=button value="&lt; Take Snother" onClick="cancel_preview()" style="background:#6363b7; border:none;">
+                    <input type=button value="Save Photo &gt;" onClick="save_photo()" style="font-weight:bold; background:#6363b7; border:none;" data-dismiss="modal" aria-label="Close">
                 </div>
             </div>
             <!--cam end-->
@@ -122,7 +122,7 @@
         </script>
         <footer class="page-copyright page-copyright-inverse">
             <p>WEBSITE BY o3interactive Technologies</p>
-            <p>© 2017. All RIGHT RESERVED.</p>
+            <p>© 2018. All RIGHT RESERVED.</p>
 
         </footer>
     </div>

@@ -291,7 +291,7 @@
     <!-- ============================================================== -->
 	<!--Menu sidebar -->
     <script src="<?=base_url()?>assets/toastr.js"></script>
-	<?php if ($this->session->flashdata('success_msg') 
+	<?php if ($this->session->flashdata('success_msg')
 		&& $this->session->flashdata('success_msg') != ""): ?>
     <script>
         toastr.success('<?php echo $this->session->flashdata('success_msg');?>', 'Success:');
