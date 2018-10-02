@@ -25,7 +25,8 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="loan_type"> Loan Type </label>
-                                                    <input type="text" class="form-control required" name="loan_type" id="loan_amount" value="" disabled>
+                                                    <input type="text" class="form-control required" name="loan_type" id="loan_amount" value="<?=$this->session->loan_type?>" disabled>
+                                                    <input type="hidden" class="form-control required" name="loan_type" id="loan_amount" value="<?=$this->session->loan_type?>">
 
                                                 </div>
                                             </div>
@@ -62,14 +63,14 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="program_start_date"> Programme Start Date:</label>
-                                                    <input type="date" class="form-control required" id="program_start_date" name="program_start_date" value="<?php echo set_value('program_start_date'); ?>">
+                                                    <label for="programme_start_date"> Programme Start Date:</label>
+                                                    <input type="date" class="form-control required" id="programme_start_date" name="programme_start_date" value="<?php echo set_value('programme_start_date'); ?>">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="program_end_date"> Programme End Date:</label>
-                                                    <input type="date" class="form-control required" id="program_end_date" name="program_end_date" value="<?php echo set_value('program_end_date'); ?>">
+                                                    <label for="programme_end_date"> Programme End Date:</label>
+                                                    <input type="date" class="form-control required" id="programme_end_date" name="programme_end_date" value="<?php echo set_value('programme_end_date'); ?>">
                                                 </div>
                                             </div>
 
@@ -111,7 +112,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="guarantor_salute"> Title</label>
-                                                    <input type="date" class="form-control required" id="program_start_date" name="program_start_date" value="<?php echo set_value('program_start_date'); ?>">
+                                                    <input type="date" class="form-control required" id="guarantor_title" name="guarantor_title" value="<?php echo set_value('guarantor_title'); ?>">
                                                 </div>
                                             </div>
                                         </div>
@@ -120,7 +121,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="guarantor_fname"> First Name: *</label>
-                                                    <input type="date" class="form-control required" id="guarantor_fname" name="guarantor_fname" value="<?php echo set_value('guarantor_fname'); ?>">
+                                                    <input type="text" class="form-control required" id="guarantor_fname" name="guarantor_fname" value="<?php echo set_value('guarantor_fname'); ?>">
                                                 </div>
                                             </div>
 
@@ -145,7 +146,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="guarantor_altPhone"> Alternative Phone Number:</label>
-                                                    <input type="date" class="form-control" id="guarantor_altPhone" name="guarantor_altPhone" value="<?php echo set_value('guarantor_altPhone'); ?>">
+                                                    <input type="date" class="form-control" id="guarantor_altphone" name="guarantor_altphone" value="<?php echo set_value('guarantor_altphone'); ?>">
                                                 </div>
                                             </div>
 
@@ -225,6 +226,7 @@
                                           </div>
                                         </div>
                                     </section>
+									<input type="hidden" name="batch" id="batch" value="1" />
                                 </form>
                             </div>
                         </div>

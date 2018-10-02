@@ -131,23 +131,26 @@
 						<li class="treeview"><a href="#"><i class="icon icon-documents3 s-24"></i>Loans<i
                                 class=" icon-angle-left  pull-right"></i></a>
                             <ul class="treeview-menu">
-                                <li><a href="view_loans.html"><i class="icon icon-circle-o"></i>View All Loans
+                                <li><a href="<?=base_url()?>admin/loans/index"><i class="icon icon-circle-o"></i>View All Loans
 									<span class="badge r-3 badge-primary pull-right">700</span>
 								</a>
                                 </li>
-								<li><a href="Pending_loans.html"><i class="icon icon-documents3"></i>Approved Loans
+								<li><a href="<?=base_url()?>admin/loans/approvedLoans"><i class="icon icon-documents3"></i>Approved Loans
 									<span class="badge r-3 badge-primary pull-right">578</span></a>
 								</li>
-								<li><a href="approved_loans.html"><i class="icon icon-documents3"></i>Pending Loans
+								<li><a href="<?=base_url()?>admin/loans/pendingLoans"><i class="icon icon-documents3"></i>Pending Loans
 									<span class="badge r-3 badge-primary pull-right">178</span></a>
 								</li>
-								<li><a href="Pending_loans.html"><i class="icon icon-documents3"></i>Awaiting Disbursement
+								<li><a href="<?=base_url()?>admin/loans/disbursedLoans"><i class="icon icon-documents3"></i>Disbursement
 									<span class="badge r-3 badge-primary pull-right">278</span></a>
 								</li>
-								<li><a href="declined_loans.html"><i class="icon icon-documents3"></i>Declined Loans
+								<li><a href="<?=base_url()?>admin/loans/partialDisbursedLoans"><i class="icon icon-documents3"></i>Awaiting Disbursement
+									<span class="badge r-3 badge-primary pull-right">278</span></a>
+								</li>
+								<li><a href="<?=base_url()?>admin/loans/declinedLoans"><i class="icon icon-documents3"></i>Declined Loans
 								<span class="badge r-3 badge-primary pull-right">278</span></a>
 								</li>
-								<li><a href="Pending_loans.html"><i class="icon icon-documents3"></i>Withdrawn Loans
+								<li><a href="<?=base_url()?>admin/loans/withdrawnLoans"><i class="icon icon-documents3"></i>Withdrawn Loans
 								<span class="badge r-3 badge-primary pull-right">0</span></a>
 								</li>
                                 <li><a href="list_complete_profiles.html"><i class="icon icon-add"></i>Add Loan
@@ -160,30 +163,26 @@
 
                         <li class="treeview">
                             <a href="#">
-                                <i class="icon icon-documents3 s-24"></i> <span>Accounting</span>
+                                <i class="icon icon-documents3 s-24"></i> <span>Account</span>
                                 <i class=" icon-angle-left  pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
                                 <li><a href="#"><i class="icon icon-documents3"></i>BYSHESLB Account<i
                                         class=" icon-angle-left  pull-right"></i></a>
                                     <ul class="treeview-menu">
-                                        <li><a href="view_bank_account.html"><i class="icon icon-document"></i>View Account</a>
-                                        </li>
-                                        <li><a href="add_bank_account.html"><i class="icon icon-document"></i>Add Bank Account
-										</a>
-                                        </li>
-                                        <li><a href="#"><i class="icon icon-document"></i>Add Funds</a>
-                                        </li>
+                                        <li><a href="<?=base_url()?>admin/accounts/index"><i class="icon icon-document"></i>View Account</a></li>
+                                        <li><a href="<?=base_url()?>admin/accounts/create"><i class="icon icon-document"></i>Create Bank Account</a></li>
+                                        <li><a href="<?=base_url()?>admin/accounts/fund"><i class="icon icon-document"></i>Fund Bank Account</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#"><i class="icon icon-fingerprint text-green"></i>Expenses<i
                                         class=" icon-angle-left  pull-right"></i></a>
                                     <ul class="treeview-menu">
-                                        <li><a href="login.html"><i class="icon icon-document"></i>View Expenses</a>
+                                        <li><a href="<?=base_url()?>admin/expenses"><i class="icon icon-document"></i>View Expenses</a>
                                         </li>
-                                        <li><a href="login-2.html"><i class="icon icon-document"></i>Add Expenses</a>
+                                        <li><a href="<?=base_url()?>admin/expenses/create"><i class="icon icon-document"></i>Add Expenses</a>
                                         </li>
-                                        <li><a href="login-3.html"><i class="icon icon-add"></i>Manage Expenses Type</a>
+                                        <li><a href="<?=base_url()?>admin/expenses/manage"><i class="icon icon-add"></i>Manage Expenses Type</a>
                                         </li>
                                     </ul>
                                 </li>

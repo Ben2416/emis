@@ -75,13 +75,25 @@ class Loan_model extends CI_Model{
 	
 	function addLoan(){
 		$data = array(
-			'program_start_date' => $this->input->post('program_start_date'),
-			'program_end_date' => $this->input->post('program_end_date'),
-			'university_level' => $this->input->post('university_level'),
+			'programme_start_date' => $this->input->post('programme_start_date'),
+			'programme_end_date' => $this->input->post('programme_end_date'),
+			'academic_year' => $this->input->post('academic_year'),
 			'semester_level' => $this->input->post('semester_level'),
 			'loan_type' => $this->input->post('loan_type'),
 			'loan_amount' => $this->input->post('loan_amount'),
-			'batch' => $this->input->post('batch')
+			'batch' => $this->input->post('batch'),
+			
+			'guarantor_title' => $this->input->post('guarantor_title'),
+			'guarantor_fname' => $this->input->post('guarantor_fname'),
+			'guarantor_lname' => $this->input->post('guarantor_lname'),
+			'guarantor_phone' => $this->input->post('guarantor_phone'),
+			'guarantor_altphone' => $this->input->post('guarantor_altphone'),
+			'guarantor_address' => $this->input->post('guarantor_address'),
+			'guarantor_state' => $this->input->post('guarantor_state'),
+			'guarantor_occupation' => $this->input->post('guarantor_occupation'),
+			'guarantor_emp' => $this->input->post('guarantor_emp'),
+			'guarantor_position' => $this->input->post('guarantor_position'),
+			'guarantor_relatn' => $this->input->post('guarantor_relatn')
 		);
 		return $this->db->insert('loan_applications', $data);
 	}
