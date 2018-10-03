@@ -1,3 +1,17 @@
+<?php
+	$this->session->set_userdata('last_page', current_url());
+	if ( !$this->input->server('HTTP_REFERER') 
+		|| empty($this->session->userdata('user_id')))
+	{
+		if(empty($this->session->userdata('user_id'))){
+			$this->session->set_flashdata('error_msg', 'Session Expired. Log in.');
+			redirect(base_url(), 'refresh');
+		}else{
+			$this->session->set_flashdata('error_msg', 'Url Access disabled. Log in.');
+			redirect(base_url(), 'refresh');
+		}
+	}
+?>
 <!DOCTYPE html>
 <html lang="zxx">
 

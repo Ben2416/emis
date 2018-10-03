@@ -1,8 +1,6 @@
 <?php
 	$this->session->set_userdata('last_page', current_url());
-	//$this->load->library('user_agent');
 	if ( !$this->input->server('HTTP_REFERER') 
-	//if(!$this->agent->referrer()
 		|| empty($this->session->userdata('user_id')))
 	{
 		if(empty($this->session->userdata('user_id'))){
