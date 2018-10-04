@@ -108,11 +108,21 @@
                                             </div>
 
                                         </div>
+                                        <hr>
+                                        <h4 class="card-title">Guarantor / Co-signee</h4>
+                                        <h6 class="card-subtitle">I, hereby agree to guarantee and be liable for the payment of the student tuition loan been applied for, by the above applicant. This guarantee will remain in effect until full settlement / payments of the loan or upon termination.</h6>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="guarantor_salute"> Title</label>
-                                                    <input type="date" class="form-control required" id="guarantor_title" name="guarantor_title" value="<?php echo set_value('guarantor_title'); ?>">
+                                                    <select class="form-control" name="guarantor_title">
+                                              				<option value="">&nbsp;</option>
+                                              				<option value="Mr" <?php echo  set_select('guarantor_title', 'Mr'); ?>>Mr</option>
+                                              				<option value="Mrs" <?php echo  set_select('guarantor_title', 'Mrs'); ?>>Mrs</option>
+                                              				<option value="Miss" <?php echo  set_select('guarantor_title', 'Miss'); ?>>Miss</option>
+                                              				<option value="Dr" <?php echo  set_select('guarantor_title', 'Dr'); ?>>Dr</option>
+                                                      <option value="Prof" <?php echo  set_select('guarantor_title', 'Prof'); ?>>Prof</option>
+                                              		</select>
                                                 </div>
                                             </div>
                                         </div>
@@ -128,7 +138,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="guarantor_lname"> Last Name: *</label>
-                                                    <input type="date" class="form-control required" id="guarantor_lname" name="guarantor_lname" value="<?php echo set_value('guarantor_lname'); ?>">
+                                                    <input type="text" class="form-control required" id="guarantor_lname" name="guarantor_lname" value="<?php echo set_value('guarantor_lname'); ?>">
                                                 </div>
                                             </div>
 
@@ -139,14 +149,14 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="guarantor_phone"> Phone Number: *</label>
-                                                    <input type="date" class="form-control required" id="guarantor_phone" name="guarantor_phone" value="<?php echo set_value('guarantor_phone'); ?>">
+                                                    <input type="text" class="form-control required" id="guarantor_phone" name="guarantor_phone" value="<?php echo set_value('guarantor_phone'); ?>">
                                                 </div>
                                             </div>
 
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="guarantor_altPhone"> Alternative Phone Number:</label>
-                                                    <input type="date" class="form-control" id="guarantor_altphone" name="guarantor_altphone" value="<?php echo set_value('guarantor_altphone'); ?>">
+                                                    <input type="text" class="form-control" id="guarantor_altphone" name="guarantor_altphone" value="<?php echo set_value('guarantor_altphone'); ?>">
                                                 </div>
                                             </div>
 
@@ -157,7 +167,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="guarantor_address"> Contact Address: *</label>
-                                                    <input type="date" class="form-control required" id="guarantor_address" name="guarantor_address" value="<?php echo set_value('guarantor_address'); ?>">
+                                                    <input type="text" class="form-control required" id="guarantor_address" name="guarantor_address" value="<?php echo set_value('guarantor_address'); ?>">
                                                 </div>
                                             </div>
 
@@ -177,14 +187,14 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="guarantor_occupation"> Occupation: *</label>
-                                                    <input type="date" class="form-control required" id="guarantor_occupation" name="guarantor_occupation" value="<?php echo set_value('guarantor_occupation'); ?>">
+                                                    <input type="text" class="form-control required" id="guarantor_occupation" name="guarantor_occupation" value="<?php echo set_value('guarantor_occupation'); ?>">
                                                 </div>
                                             </div>
 
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="guarantor_emp"> Employer:*</label>
-                                                    <input type="date" class="form-control" id="guarantor_emp" name="guarantor_emp" value="<?php echo set_value('guarantor_emp'); ?>">
+                                                    <input type="text" class="form-control" id="guarantor_emp" name="guarantor_emp" value="<?php echo set_value('guarantor_emp'); ?>">
                                                 </div>
                                             </div>
 
@@ -195,14 +205,14 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="guarantor_position"> Position Held: *</label>
-                                                    <input type="date" class="form-control " id="guarantor_position" name="guarantor_position" value="<?php echo set_value('guarantor_position'); ?>">
+                                                    <input type="text" class="form-control " id="guarantor_position" name="guarantor_position" value="<?php echo set_value('guarantor_position'); ?>">
                                                 </div>
                                             </div>
 
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="guarantor_relatn"> Relationship with applicant:*</label>
-                                                    <input type="date" class="form-control required" id="guarantor_relatn" name="guarantor_relatn" value="<?php echo set_value('guarantor_relatn'); ?>">
+                                                    <input type="text" class="form-control required" id="guarantor_relatn" name="guarantor_relatn" value="<?php echo set_value('guarantor_relatn'); ?>">
                                                 </div>
                                             </div>
 
