@@ -95,7 +95,13 @@ class Loan_model extends CI_Model{
 			'guarantor_position' => $this->input->post('guarantor_position'),
 			'guarantor_relatn' => $this->input->post('guarantor_relatn')
 		);
-		return $this->db->insert('loan_applications', $data);
+		//return $this->db->insert('loan_applications', $data);
+		$this->db->insert('loan_applications', $data);
+		if($this->db->affected_rows()>0){
+			$data = array('status'=>3);
+			$this->db->where('user_id', $this->session->user_id);
+			return $this->db->update('users',$data);
+		}else return 0;
 	}
 	
 	function getProfile($uid){
