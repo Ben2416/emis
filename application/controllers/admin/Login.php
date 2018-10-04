@@ -19,7 +19,7 @@ class Login extends CI_Controller
             $this->load->view('admin/login_view');
         }else{
             if($this->input->post('login_btn')){
-				$usr_result = $this->Login_model->login($email,$password);
+				$usr_result = $this->Login_model->login_admin($email,$password);
                 $usr_details = $this->Login_model->getUserDetails($email);
                 if($usr_result > 0){
 					$this->session->set_userdata($usr_details);
@@ -32,9 +32,9 @@ class Login extends CI_Controller
                 redirect(base_url().'admin/login');
             }
 		}
-		
+
     }
-	
+
     function logout(){
         $this->session->sess_destroy();
         $this->session->set_flashdata('info_msg', 'You have been logged out.');

@@ -11,21 +11,27 @@ class Login_model extends CI_Model{
         return $query->num_rows();
     }
 
+    function login_admin($user, $pass){
+        $data = array('email'=>$user, 'password'=>sha1($pass));
+        $query = $this->db->get_where('admin_users',$data);
+        return $query->num_rows();
+    }
+
     function getUserDetails($username){
         $query = $this->db->get_where('users', array('email'=>$username));
         return $query->row_array();
     }
-	
+
 	function set_loan_category(){
 		$data = array('loan_type'=>$this->input->post('loancat'));
 		$this->db->where('user_id', $this->session->user_id);
 		if($this->db->update('loan_details', $data)){
 			$data = array('status'=>1, 'loan_type'=>$this->input->post('loancat'));
 			$this->db->where('user_id', $this->session->user_id);
-			return $this->db->update('users',$data);	
+			return $this->db->update('users',$data);
 		}else return false;
 	}
-	
+
 	function change_password(){
 		$data = array(
 			'clearpass'=>$this->input->post('newpass'),
