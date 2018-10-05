@@ -20,16 +20,16 @@ class Login extends CI_Controller
         }else{
             if($this->input->post('login_btn')){
 				$usr_result = $this->Login_model->login_admin($email,$password);
-                $usr_details = $this->Login_model->getUserDetails($email);
+                $usr_details = $this->Login_model->getAdminDetails($email);
                 if($usr_result > 0){
 					$this->session->set_userdata($usr_details);
-					redirect(base_url()."admin/dashboard");
+					redirect(base_url()."admin/dashboard", 'refresh');
                 }else{
                     $this->session->set_flashdata('error_msg','Invalid email and/or password!');
-                    redirect(base_url().'admin/login');
+                    redirect(base_url().'admin/login', 'refresh');
                 }
 			}else{
-                redirect(base_url().'admin/login');
+                redirect(base_url().'admin/login', 'refresh');
             }
 		}
 

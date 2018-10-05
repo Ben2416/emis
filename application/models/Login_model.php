@@ -21,6 +21,11 @@ class Login_model extends CI_Model{
         $query = $this->db->get_where('users', array('email'=>$username));
         return $query->row_array();
     }
+	
+	function getAdminDetails($username){
+        $query = $this->db->get_where('admin_users', array('email'=>$username));
+        return $query->row_array();
+    }
 
 	function set_loan_category(){
 		$data = array('loan_type'=>$this->input->post('loancat'));
