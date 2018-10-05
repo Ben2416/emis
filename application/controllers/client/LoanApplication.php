@@ -37,6 +37,7 @@ class LoanApplication extends CI_Controller
 			$this->load->view('client/loan_application_view');
 		}else{
 			if($this->Loan_model->addLoan() > 0){
+				$this->session->set_userdata('status', 4);
 				$this->session->set_flashdata('rsuccess_msg', 'Your loan application is successful.');
 				redirect(base_url().'client/dashboard');
 			}else{

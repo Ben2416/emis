@@ -5,7 +5,7 @@ class Loan_model extends CI_Model{
         parent::__construct();
     }
 	
-	function addPersonalDetails($name){
+	function addPersonalDetails($dob_name,$lga_name,$mid_name,$mid_name,$adl_name,$csr_name){
 		$data = array(
 			'user_id' => $this->session->user_id,
 			'first_name' => $this->input->post('first_name'),
@@ -51,10 +51,12 @@ class Loan_model extends CI_Model{
 			'std_housing' => $this->input->post('std_housing'),
 			'std_address' => $this->input->post('std_address'),
 			
-			'lga_file' => $name,
-			'mid_file' => $name,
-			'adl_file' => $name,
-			'csr_file' => $name,
+			'dob_file' => $dob_name,
+			'lga_file' => $lga_name,
+			'mid_file' => $mid_name,
+			'ref_file' => $mid_name,
+			'adl_file' => $adl_name,
+			'csr_file' => $csr_name,
 			'status' => 1
 		);
 		$udata = array();
@@ -149,4 +151,6 @@ class Loan_model extends CI_Model{
 		$query = $this->db->get('loan_applications');
 		return $query->num_rows();
 	}
+	
+	
 }

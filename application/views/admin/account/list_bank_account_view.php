@@ -17,17 +17,20 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+								<?php
+								foreach($accounts as $acc):
+								?>
                                 <tr>
-                                    <td>Bayelsa State Higher Education Student Loan Board </td>
-                                    <td>0010553441</td>
-                                    <td>Zenith Bank Plc</td>
-                                    <td>N1,000,000,000</td>
+                                    <td><?=$acc['account_name']?></td>
+                                    <td><?=$acc['account_number']?></td>
+                                    <td><?=$acc['bank_name']?></td>
+                                    <td>get balance</td>
                                     <td>
                                       <a href="#"><i class="icon-eye mr-3"></i></a>
                                       <a href="#"><i class="icon-pencil"></i></a>
                                     </td>
                                 </tr>
-
+								<?php endforeach; ?>
                                 </tbody>
 
                             </table>

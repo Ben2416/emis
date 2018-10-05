@@ -90,6 +90,7 @@ class PersonalDetails extends CI_Controller
 				$this->load->view('client/personal_details_view');
 			}else{
 				$dob_data = $this->upload->data();//hold lga upload data
+				$dob_name = $name.$dob_data['file_ext'];
 				
 				//LGA identification upload
 				$lga_config['upload_path'] = './assets/uploads/lga/';
@@ -107,6 +108,7 @@ class PersonalDetails extends CI_Controller
 					$this->load->view('client/personal_details_view');
 				}else{
 					$lga_data = $this->upload->data();//hold lga upload data
+					$lga_name = $name.$lga_data['file_ext'];
 					
 					//MODE OF IDENTIFICATION upload
 					$mid_config['upload_path'] = './assets/uploads/mode_of_identification/';
@@ -124,6 +126,7 @@ class PersonalDetails extends CI_Controller
 						$this->load->view('client/personal_details_view');
 					}else{
 						$mid_data = $this->upload->data();//hold mid upload data
+						$mid_name = $name.$mid_data['file_ext'];
 						
 						//signed Reference Letter upload
 						$ref_config['upload_path'] = './assets/uploads/reference_letter/';
@@ -141,6 +144,7 @@ class PersonalDetails extends CI_Controller
 							$this->load->view('client/personal_details_view');
 						}else{
 							$ref_data = $this->upload->data();
+							$ref_name = $name.$ref_data['file_ext'];
 						
 							//Admission Letter upload
 							$adl_config['upload_path'] = './assets/uploads/admission_letter/';
@@ -158,6 +162,7 @@ class PersonalDetails extends CI_Controller
 								$this->load->view('client/personal_details_view');
 							}else{
 								$adl_data = $this->upload->data();//hold adl upload data
+								$adl_name = $name.$adl_data['file_ext'];
 								
 								//Current Session Result upload
 								$csr_config['upload_path'] = './assets/uploads/current_session_result/';
@@ -175,8 +180,9 @@ class PersonalDetails extends CI_Controller
 									$this->load->view('client/personal_details_view');
 								}else{
 									$csr_data = $this->upload->data();//hold csr upload data
+									$csr_name = $name.$csr_data['file_ext'];
 									
-									if($this->Loan_model->addPersonalDetails($name)){// > 0){
+									if($this->Loan_model->addPersonalDetails($dob_name,$lga_name,$mid_name,$mid_name,$adl_name,$csr_name)){// > 0){
 										$this->session->set_flashdata('rsuccess_msg', 'Your loan application is successfully.');
 										redirect(base_url().'client/LoanApplication');
 									}else{

@@ -5,7 +5,7 @@
 	{
 		if(empty($this->session->userdata('user_id'))){
 			$this->session->set_flashdata('error_msg', 'Session Expired. Log in.');
-			redirect(base_url(), 'refresh');
+			redirect(base_url().'admin/Dashboard', 'refresh');
 		}else{
 			$this->session->set_flashdata('error_msg', 'Url Access disabled. Log in.');
 			redirect(base_url(), 'refresh');
@@ -24,6 +24,9 @@
     <title>Paper</title>
     <!-- CSS -->
     <link rel="stylesheet" href="<?=base_url()?>assets_admin/css/app.css">
+	<!-- Toastr style -->
+  <link rel="stylesheet" href="<?=base_url();?>assets_admin/css/toastr.css">
+  
 
 </head>
 <body class="light sidebar-mini sidebar-collapse">

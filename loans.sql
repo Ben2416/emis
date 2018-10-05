@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 02, 2018 at 08:00 AM
+-- Generation Time: Oct 05, 2018 at 01:44 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.6.37
 
@@ -19,6 +19,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `loans`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `accounts`
+--
+
+CREATE TABLE IF NOT EXISTS `accounts` (
+  `acid` int(11) NOT NULL AUTO_INCREMENT,
+  `account_name` varchar(255) NOT NULL,
+  `account_number` varchar(255) NOT NULL,
+  `bank_name` varchar(255) NOT NULL,
+  `account_officer` varchar(255) NOT NULL,
+  `account_phone_number` varchar(255) NOT NULL,
+  `account_notes` varchar(255) NOT NULL,
+  `added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `addedby` int(11) NOT NULL,
+  `status` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`acid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 
@@ -40,6 +60,24 @@ CREATE TABLE IF NOT EXISTS `admin_users` (
   `status` int(11) NOT NULL DEFAULT '-1',
   `datetime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `funds`
+--
+
+CREATE TABLE IF NOT EXISTS `funds` (
+  `fid` int(11) NOT NULL AUTO_INCREMENT,
+  `account` int(11) NOT NULL,
+  `amount` varchar(255) NOT NULL,
+  `fund_source` varchar(255) NOT NULL,
+  `fund_approval` varchar(255) NOT NULL,
+  `addedby` int(11) NOT NULL,
+  `added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `status` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`fid`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
@@ -71,8 +109,9 @@ CREATE TABLE IF NOT EXISTS `loan_applications` (
   `semester_level` varchar(255) NOT NULL,
   `programme_start_date` varchar(255) NOT NULL,
   `programme_end_date` varchar(255) NOT NULL,
-  PRIMARY KEY (`loan_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+  PRIMARY KEY (`loan_id`),
+  UNIQUE KEY `user_id` (`user_id`,`batch`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 -- --------------------------------------------------------
 
@@ -103,8 +142,10 @@ CREATE TABLE IF NOT EXISTS `loan_details` (
   `loan_type` varchar(255) NOT NULL,
   `loan_amount` varchar(255) NOT NULL,
   `added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `dob_file` varchar(255) NOT NULL,
   `lga_file` varchar(255) NOT NULL,
   `mid_file` varchar(255) NOT NULL,
+  `ref_file` varchar(255) NOT NULL,
   `adl_file` varchar(255) NOT NULL,
   `csr_file` varchar(255) NOT NULL,
   `status` int(11) NOT NULL DEFAULT '0',
@@ -132,7 +173,7 @@ CREATE TABLE IF NOT EXISTS `loan_details` (
   `std_address` varchar(255) NOT NULL,
   PRIMARY KEY (`loan_id`),
   UNIQUE KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 -- --------------------------------------------------------
 
