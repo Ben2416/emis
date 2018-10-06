@@ -41,7 +41,8 @@ class PersonalDetails extends CI_Controller
         
         $this->form_validation->set_rules('university_name','University Name','trim|required');
         $this->form_validation->set_rules('university_state','University State','trim|required');
-        $this->form_validation->set_rules('other_university','Other University','trim|required');
+        if($this->input->post('university_name') == "Other")
+			$this->form_validation->set_rules('other_university','Other University','trim|required');
         $this->form_validation->set_rules('university_city','University City','trim|required');
         $this->form_validation->set_rules('course_of_study','Course','trim|required');
         $this->form_validation->set_rules('anticipated_degree','Degree','trim|required');
