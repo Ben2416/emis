@@ -63,13 +63,13 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="programme_start_date"> Programme Start Date:</label>
+                                                    <label for="programme_start_date"> Start Date for Academic Year:</label>
                                                     <input type="date" class="form-control required" id="programme_start_date" name="programme_start_date" value="<?php echo set_value('programme_start_date'); ?>">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="programme_end_date"> Programme End Date:</label>
+                                                    <label for="programme_end_date"> End Date for Academic Year:</label>
                                                     <input type="date" class="form-control required" id="programme_end_date" name="programme_end_date" value="<?php echo set_value('programme_end_date'); ?>">
                                                 </div>
                                             </div>
@@ -86,43 +86,26 @@
                                         </div>
                                     </section>
                                     <!-- Step 4 -->
-                                    <h6>Declaration</h6>
+                                    <h6>Guarantor</h6>
                                     <section>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label for="behName1">I <b><?=$this->session->firstname.' '.$this->session->lastname?></b> hereby apply for this loan with
-                                                      Bayelsa State Higher Education Student Loan Board. I understand that information give herein and the documents supplied are the basis
-                                                      for accessing this loan. I therefore warrant that such information is correct.</label>
 
-                                                </div>
-                                                <div class="form-group">
 
-                                                    <label class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="agree" name="agree" value="agree"  <?php echo set_checkbox('agree', 'agree'); ?>>
-                                                <span class="custom-control-indicator"></span>
-                                                <span class="custom-control-description">I agree</span>
-                                            </label>
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-                                        <hr>
                                         <h4 class="card-title">Guarantor / Co-signee</h4>
                                         <h6 class="card-subtitle">I, hereby agree to guarantee and be liable for the payment of the student tuition loan been applied for, by the above applicant. This guarantee will remain in effect until full settlement / payments of the loan or upon termination.</h6>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="guarantor_salute"> Title</label>
-                                                    <select class="form-control" name="guarantor_title">
+                                                    <input type="text" class="form-control required" id="guarantor_title" name="guarantor_title" value="<?php echo set_value('guarantor_title'); ?>">
+
+                                                  <!--  <select class="form-control" name="guarantor_title">
                                               				<option value="">&nbsp;</option>
                                               				<option value="Mr" <?php echo  set_select('guarantor_title', 'Mr'); ?>>Mr</option>
                                               				<option value="Mrs" <?php echo  set_select('guarantor_title', 'Mrs'); ?>>Mrs</option>
                                               				<option value="Miss" <?php echo  set_select('guarantor_title', 'Miss'); ?>>Miss</option>
                                               				<option value="Dr" <?php echo  set_select('guarantor_title', 'Dr'); ?>>Dr</option>
                                                       <option value="Prof" <?php echo  set_select('guarantor_title', 'Prof'); ?>>Prof</option>
-                                              		</select>
+                                              		</select> -->
                                                 </div>
                                             </div>
                                         </div>
@@ -325,6 +308,26 @@
         toastr.error('<?php echo $this->session->flashdata('error_msg');?>', 'Error:');
     </script>
 <?php endif; ?>
+<script>
+function createOption(select_id, id, value) {
+  el = document.createElement('option');
+  el.value = id;
+  el.innerHTML = value;
+  el.id = value;
+  document.getElementById(select_id).appendChild(el);
+}
+
+var state_array = new Array("ABIA","ADAMAWA","AKWA IBOM","ANAMBRA","BAUCHI","BAYELSA","BENUE","BORNO","CROSS RIVER","DELTA","EBONYI","EDO","EKITI","ENUGU","GOMBE","IMO","JIGAWA","KADUNA","KANO","KATSINA","KEBBI","KOGI","KWARA","LAGOS","NASSARAWA","NIGER","OGUN","ONDO","OSUN","OYO","PLATEAU","RIVERS","SOKOTO","TARABA","YOBE","ZAMFARA");
+function state(state_element){
+  $('#'+state_element).empty();
+  createOption(state_element, '', 'Select State');
+  for(var i=0; i<state_array.length; i++){
+    createOption(state_element, state_array[i], state_array[i]);
+  }
+}
+state('guarantor_state');
+
+</script>
 </body>
 
 </html>

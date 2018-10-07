@@ -1,6 +1,6 @@
 <?php
 	$this->session->set_userdata('last_page', current_url());
-	if ( !$this->input->server('HTTP_REFERER') 
+	if ( !$this->input->server('HTTP_REFERER')
 		|| empty($this->session->userdata('user_id')))
 	{
 		if(empty($this->session->userdata('user_id'))){
@@ -32,7 +32,7 @@
     <link href="<?=base_url()?>assets/plugins/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
 	<!-- toastr CSS -->
 	<link href="<?=base_url()?>assets/toastr.css" rel="stylesheet" type="text/css">
-    
+
     <!-- Custom CSS -->
     <link href="<?=base_url()?>assets/css/style.css" rel="stylesheet">
     <!-- You can change the theme colors from here -->
@@ -68,7 +68,7 @@
             <div class="navbar-header">
                 <a class="navbar-brand" href="index.html">
                     <!-- Logo icon --><b>
-                        
+
                         <img src="<?=base_url()?>assets/images/logo.png" alt="homepage" class="light-logo" />
                     </b>
 					</a>
@@ -134,7 +134,7 @@
         <div class="scroll-sidebar">
             <!-- Sidebar navigation-->
             <nav class="sidebar-nav">
-			<?php if($this->session->status > 2):?>
+			<?php if($this->session->status > 7):?>
                 <ul id="sidebarnav">
 
                     <li> <a class="has-arrow waves-effect waves-dark" href="<?=base_url()?>client/dashboard" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a></li>
@@ -179,4 +179,3 @@
         <!-- ============================================================== -->
         <!-- End Bread crumb and right sidebar toggle -->
         <!-- ============================================================== -->
-        

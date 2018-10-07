@@ -324,7 +324,7 @@
                             <div class="row">
                                 <div id="ouni" class="col-md-6 hide">
                                     <div class="form-group">
-                                        <label for="otherUniversity">Other University: (Please specify if your university is not listed above)</label>
+                                        <label for="otherUniversity">Other University: (Please specify if not listed above)</label>
                                         <input type="text" class="form-control" id="other_university" name="other_university" value="<?php echo set_value('other_university'); ?>"> </div>
                                 </div>
                                 <div class="col-md-6">
@@ -342,7 +342,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="anticipatedDegree">Anticipated Degree</label>
-                                        <select class="custom-select form-control required" id="anticipated_degree" name="anticipated_degree" > 
+                                        <select class="custom-select form-control required" id="anticipated_degree" name="anticipated_degree" >
 											<option value=''>Select Anticipated Degree</option>
 										</select>
 									</div>
@@ -362,7 +362,8 @@
                                             <option value="Year 5" <?= set_select('university_level','Year 5'); ?>>Year 5</option>
                                             <option value="Year 6" <?= set_select('university_level','Year 6'); ?>>Year 6</option>
                                             <option value="Year 7" <?= set_select('university_level','Year 7'); ?>>Year 7</option>
-                                        </select></div>
+                                        </select>
+                                      </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -402,6 +403,19 @@
                                 </div>
                                 <div class="col-md-6">
 
+                                  <div class="form-group">
+                                      <label for="course_duration">Course Duration</label>
+                                      <select class="custom-select form-control required" id="course_duration" name="course_duration">
+                                          <option value="">Select Course Duration</option>
+                                          <option value="1 Year" <?= set_select('course_duration','1 Year'); ?>>1 Year</option>
+                                          <option value="2 Years" <?= set_select('course_duration','2 Years'); ?>>2 Years</option>
+                                          <option value="3 Years" <?= set_select('course_duration','3 Years'); ?>>3 Years</option>
+                                          <option value="4 Years" <?= set_select('course_duration','4 Years'); ?>>4 Years</option>
+                                          <option value="5 Years" <?= set_select('course_duration','5 Years'); ?>>5 Years</option>
+                                          <option value="6 Years" <?= set_select('course_duration','6 Years'); ?>>6 Years</option>
+                                          <option value="7 Years" <?= set_select('course_duration','7 Years'); ?>>7 Years</option>
+                                      </select></div>
+
                                 </div>
 
                             </div>
@@ -413,7 +427,7 @@
                                         <select class="custom-select form-control required" id="current_result" name="current_result">
                                             <option value="">Select Current Result</option>
                                             <option value="Semester Result" <?= set_select('current_result','Semester Result'); ?>>Semester Result</option>
-                                            <option value="Foundation Result" <?= set_select('current_result','Foundation Result'); ?>>Foundation Result</option>
+                                            <option value="Foundation/Pre-Degree Result" <?= set_select('current_result','Foundation/Pre-Degree Result'); ?>>Foundation/Pre-Degree Result</option>
                                             <option value="O-Level Result" <?= set_select('current_result','O-Level Result'); ?>>O-Level Result</option>
                                         </select>
                                     </div>
@@ -488,7 +502,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="behName1">I <b><?=$this->session->firstname.' '.$this->session->lastname?></b> hereby apply for this loan with Bayelsa State Higher Education Student Loan Board. I understand that information give herein and the documents supplied are on the basis for accessing this loan. I therefore affirm that the information submitted is correct and if upon verification on the authenticity of the details/documents contained in this application is false either in part or in full, then my loan request will be withdrawn or declined.</label>
+                                        <label for="behName1">I <b><?=$this->session->firstname.' '.$this->session->lastname?></b> hereby apply for this loan with Bayelsa State Higher Education Student Loan Board. I understand that the information given herein and the documents supplied are on the basis for accessing this loan. I therefore affirm that the information submitted is correct and if upon verification on the authenticity of the details/documents contained in this application is false either in part or in full, then my loan request will be withdrawn or declined.</label>
 
                                     </div>
                                     <div class="form-group">
@@ -647,7 +661,7 @@
 	state('father_state_of_origin');
 	state('mother_state_of_origin');
 	state('university_state');
-	
+
 	var bank_array = new Array("Access Bank Plc","Diamond Bank Plc","Fidelity Bank Plc","First City Monument Bank Plc","First Bank of Nigeria Limited","Guaranty Trust Bank Plc","Polaris Bank Limited","Union Bank of Nigeria Plc","United Bank for Africa Plc","Zenith Bank Plc","Citi Bank Nigeria Limited","Ecobank Nigeria Plc","Heritage Banking Company Limited","Keystone Bank Limited","Stanbic IBTC Bank Plc","Standard Chartered","Sterling Bank Plc","Unity Bank Plc","Wema Bank Plc","SunTrust Bank Nigeria Limited","Providus Bank Limited","Jaiz Bank Plc","Coronation Merchant Bank","FBNQuest Merchant Bank[3]","FSDH Merchant Bank","Rand Merchant Bank","Nova Merchant Bank");
 	function banks(){
 		$('#bank_name').empty();
@@ -657,7 +671,7 @@
 		}
 	}
 	banks();
-	
+
 	var degree_array = new Array("BA","BAcc","BAdm","BArch","BDent","B.Ed.","BEng","BMath","BMedSc","BPharm","BSc","BTech","LLA","LLB","BMed");
 	function degrees(){
 		$('#anticipated_degree').empty();
@@ -667,7 +681,7 @@
 		}
 	}
 	degrees();
-	
+
 	var university_array = new Array("*List of All Universities*","Abia State University, Uturu","Abubakar Tafawa Balewa University, Bauchi","Achievers University, Owo","Adamawa State University, Mubi","Adekunle Ajasin University, Akungba Akoko ","Adeleke University, Ede","Admiralty University of Nigeria, Sapele","Afe Babalola University, Ado-Ekiti","African University of Science and Technology, Abuja","Ahmadu Bello University, Zaria","Ajayi Crowther University, Oyo Town","Akwa Ibom State University, Uyo","Alex Ekwueme Federal University, Ndufu-Alike","Al-Hikmah University, Ilorin","Al-Qalam University, Katsina","Ambrose Alli University, Ekpoma","American University of Nigeria,	Yola","Anchor University, Lagos	","Arthur Jarvis University, Calabar","Atiba University, Oyo Town","Augustine University, Ilara","Babcock University, Ilishan-Remo","Bauchi State University, Gadau","Bayero University, Kano","Baze University, Abuja","Bells University of Technology, Ota","Benson Idahosa University, Benin City","Benue State University, Makurdi","Bingham University, Auta Balifi","Borno State University, Maiduguri","Bowen University, Iwo","Caleb University, Imota","Caritas University, Enugu","Chrisland University, Abeokuta","Christopher University, Mowe","Chukwuemeka Odumegwu Ojukwu University, Uli","Clifford University, Ihie","Coal City University, Enugu","Covenant University, Ota","Crawford University, Igbesa","Crescent University, Abeokuta","Cross River University of Technology, Calabar","Crown Hill University, Ilorin","Delta State University, Abraka","Dominican University, Ibadan","Eastern Palm University, Ogboko","Ebonyi State University, Abakaliki","Edo University	Iyamho","Edwin Clark University, Kiagbodo","Ekiti State University, Ado Ekiti","Eko University of Medical and Health Sciences, Ijanikin","Elizade University, Ilara-Mokin","Enugu State University of Science and Technology, Enugu","Evangel University, Akaeze-Enugu","Federal University of Agriculture, Abeokuta","Federal University of Petroleum Resources, Effurun","Federal University of Technology, Akure","Federal University of Technology, Minna","Federal University of Technology, Owerri","Federal University, Birnin Kebbi","Federal University, Dutse","Federal University, Dutsin-Ma","Federal University, Gashua","Federal University, Gusau","Federal University, Kashere","Federal University, Lafia","Federal University, Lokoja","Federal University, Otuoke","Federal University, Oye-Ekiti","Federal University, Wukari","Fountain University, Oshogbo","Godfrey Okoye University, Ugwuomu-Nike","Gombe State University, Gombe","Gombe State University of Science and Technology, Kumo","Gregory University, Uturu","Hallmark University, Ijebu-Itele","Hezekiah University, Umudi","Ibrahim Badamasi Babangida University, Lapai","Igbinedion University Okada","Ignatius Ajuru University of Education,	Port Harcourt","Imo State University, Owerri","Joseph Ayo Babalola University, Ikeji-Arakeji","Kaduna State University	Kaduna","Kano University of Science and Technology, Wudil","Kebbi State University of Science and Technology, Aliero","Kings University, Odeomu","Kogi State University, Anyigba","Kola Daisi University, Ibadan","Kwara State University, Ilorin","Kwararafa University, Wukari","Ladoke Akintola University of Technology, Ogbomoso","Lagos State University, Ojo","Landmark University, Omu-Aran","Lead City University, Ibadan","Legacy University, Okija","Madonna University, Okija","Mcpherson University, Seriki-Sotayo","Michael and Cecilia Ibru University, Agbara-Otor","Michael Okpara University of Agriculture, Umuahia","Modibbo Adama University of Technology, Yola","Moshood Abiola University of Science and Technology, Abeokuta","Mountain Top University, Makogi Oba","Nasarawa State University, Keffi","Niger Delta University, Wilberforce Island","Nigerian Maritime University, Okerenkoko","Nile University of Nigeria, Abuja","Nnamdi Azikiwe University, Awka","Novena University, Ogume","Obafemi Awolowo University, Ile-Ife","Obong University, Obong Ntak","Oduduwa University, Ile Ife","Olabisi Onabanjo University, Ago Iwoye","Ondo State University of Science and Technology,mOkitipupa","Osun State University, Oshogbo","PAMO University of Medical Sciences, Port-Harcourt","Pan-Atlantic University, Lagos","Paul University, Awka","Plateau State University, Bokkos","Precious Cornerstone University, Ibadan","Redeemer's University, Mowe","Renaissance University, Enugu","Rhema University, Aba","Ritman University, Ikot Ekpene","Rivers State University of Science and Technology, Port Harcourt","Salem University, Lokoja","Samuel Adegboyega University, Ogwa","Skyline University, Kano","Sokoto State University,Sokoto","Southwestern University, Okun Owa","Spiritan University, Nneochi","Sule Lamido University, Kafin Hausa","Summit University, Offa","Tai Solarin University of Education, Ijebu-Ode","Tansian University, Umunya","Taraba State University, Jalingo","The Technical University, Ibadan","Umaru Musa Yar'Adua University, Katsina","University of Abuja, Abuja","University of Africa, Toru-Orua","University of Agriculture, Makurdi","University of Benin, Benin City","University of Calabar, Calabar","University of Ibadan, Ibadan","University of Ilorin, Ilorin","University of Jos, Jos","University of Lagos, Lagos","University of Maiduguri, Maiduguri","University of Medical Sciences, Ondo City","University of Mkar, Mkar","University of Nigeria, Nsukka","University of Port Harcourt, Port Harcourt","University of Uyo, Uyo","Usmanu Danfodio University, Sokoto","Veritas University, Abuja","Wellspring University, Benin City","Wesley University of Science and Technology, Ondo City","Western Delta University, Oghara","Yobe State University, Damaturu","Yusuf Maitama Sule University Kano, Kano","Zamfara State University, Talata Mafara"
 ,"","*Nigerian polytechnics*","Abia State polytechnic","Adamawa State polytechnic, Yola","Akanu Ibiam Federal polytechnic, Unwana","Allover central polytechnic, Sango-Ota Ogun State","Akwa Ibom State polytechnic","Auchi polytechnic, Auchi","Dorben polytechnic (formerly Abuja School of Accountancy and Computer Studies)","Delta state polytechnic, Ozoro","Federal polytechnic, Ado – Ekiti","Federal polytechnic Offa","Federal polytechnic Bida","Federal polytechnic, Bauchi","Federal polytechnic, Idah","Federal polytechnic, Ilaro","Federal polytechnic, Damaturu","Federal polytechnic, Nassarawa","Federal polytechnic, Mubi","Federal polytechnic, Nekede","Federal polytechnic, Oko","Federal polytechnic, Ede","Federal polytechnic, Birnin-Kebbi","Federal coll. of Animal health & production Tech., Ibadan","Gateway polytechnic Saapade","Hussaini Adamu Federal polytechnic, kazaure","Institute of Management Technology, Enugu","Kaduna polytechnic","Kano State polytechnic, Kano","Kwara State polytechnic","Lagos City polytechnic","Lagos City Computer College","Lagos State polytechnic","Niger State polytechnic, Zungeru","Nigerian Coll. of Aviation Tech., Zaira","Maritime Academy of Nigeria, Oron","Moshood Abiola polytechnic, Abeokuta","Nuhu Bamalli polytechnic, Zaria, Kaduna State","Osun State College of Technology, Esa-Oke","Osun State polytechnic, Iree","Ramat polytechnic, Maiduguri","River State polytechnic, Bori","Rufus Giwa polytechnic, Owo","Shaka polytechnic","The polytechnic, Ibadan","Yaba College of Tech"
 ,"","*Colleges of Education*","Adeniran Ogunsanya College of Education","Adeyemi College of Education, Ondo","College of Education, Agbor","College of Education, Afaha-Nsit","College of Education, Akwanga","College of Education, Ekiadolor","College of Education, Ikere Ekiti","College of Education, Katsina Ala","College of Education, Zuba","College of Education, Oro, Kwara State","College of Education, Azare","College of Education, Warri","College of Education, Agbor","College of Education, Akwanga","College of Education, Gindiri","College of Education, Katsina-Ala","FCT College of Education, Zuba","Federal College of Education, Zaira","Federal College of Education, Okene","Federal College of Education, Akoka","Federal College of Education, Omoku","Federal College of Education (Special), Oyo","Federal College of Education, Zaria","Federal College of Education (Technical) Gombe","Federal College of Education, Obudu","Federal College of Education, pankshin","Federal College of Education, (Technical) Bich","Federal College of Education (Technical) Gusau","Federal College of Education, Yola","Kano State College of Education, Kano","Kwara State College of Education","National Teachers Institute, kaduna","Nwafor Orizu College of Education","Osun State College of Education, Ilesa","Osun State College of Education, Ila-Orangun","Oyo State College Of Education, Oyo","Rivers State College of Education", "Other");
@@ -679,7 +693,7 @@
 		}
 	}
 	universities();
-	
+
 	$('#university_name').change(function(){
 		if($('#university_name').val() == "Other"){
 			$('#ouni').removeClass('hide');
@@ -689,7 +703,7 @@
 			$('#ouni').hide();
 		}
 	});
-	
+
 </script>
 </body>
 

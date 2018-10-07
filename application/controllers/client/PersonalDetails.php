@@ -36,8 +36,8 @@ class PersonalDetails extends CI_Controller
 		$this->form_validation->set_rules('mother_state_of_origin','Mother Origin','trim|required');
 
 		$this->form_validation->set_rules('bank_name','Bank Name','trim|required');
-		$this->form_validation->set_rules('account_number','Account Number','trim|required');
-        $this->form_validation->set_rules('bvn','Bank Verification','trim|required');
+		$this->form_validation->set_rules('account_number','Account Number','trim|required|min_length[10]|max_length[10]');
+        $this->form_validation->set_rules('bvn','Bank Verification','trim|required|min_length[11]|max_length[11]');
 
         $this->form_validation->set_rules('university_name','University Name','trim|required');
         $this->form_validation->set_rules('university_state','University State','trim|required');
