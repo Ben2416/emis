@@ -62,11 +62,12 @@
                                            <div class="image mr-3  float-left">
                                                <img class="user_avatar" src="assets/img/dummy/u3.png" alt="User Image">
                                            </div>
-                                           <h6 class="p-t-10">Benedict Onabe</h6>
-                                           <span><i class="icon-mobile-phone"></i>+23470324566</span>
+                                           <h6 class="p-t-10"><?=$loans[0]['guarantor_title']?> <?=$loans[0]['guarantor_fname']?> <?=$loans[0]['guarantor_lname']?></h6>
+                                           <span><i class="icon-mobile-phone"></i><?=$loans[0]['guarantor_phone']?></span>
+                                           <span><i class="icon-mobile-phone"></i><?=$loans[0]['guarantor_altphone']?></span>
                                        </a>
                                    </li>
-                                   <li class="list-group-item">
+                                   <!--<li class="list-group-item">
                                        <a href="#">
                                            <div class="image mr-3  float-left">
                                                <img class="user_avatar" src="assets/img/dummy/u3.png" alt="User Image">
@@ -74,7 +75,7 @@
                                            <h6 class="p-t-10">Emmanuel Udom</h6>
                                            <span><i class="icon-mobile-phone"></i>+23470324566</span>
                                        </a>
-                                   </li>
+                                   </li>-->
                                </ul>
 
 
