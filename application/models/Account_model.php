@@ -59,4 +59,24 @@ class Account_model extends CI_Model{
 		return $query->row();
 	}
 	
+	function addExpense($name){
+		$data = array(
+			'expense_type' => $this->input->post('expense_type'),
+			'expense_recurring' => $this->input->post('recurring'),
+			'expense_invoice' => $name,
+			'expense_note' => $this->input->post('expense_note'),
+			'addedby' => $this->session->user_id
+		);
+		$this->db->insert('expenses', $data);
+		if($this->db->affected_rows()>0)
+			return true;
+		else 
+			return false;
+	}
+	
+	function getExpenses(){
+		$query = $this->db->get('expenses');
+		return $query->result_array();
+	}
+	
 }

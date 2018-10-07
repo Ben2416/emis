@@ -17,17 +17,22 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+								<?php
+								foreach($expenses as $expense):
+								?>
                                 <tr>
-                                    <td>Office Stationaries</td>
-                                    <td>29/09/2018</td>
-                                    <td>Yes</td>
-                                    <td><a href="#">Download Invoice</a></td>
+                                    <td><?=$expense['expense_type']?></td>
+                                    <td><?=$expense['added']?></td>
+                                    <td><?=$expense['expense_recurring']?></td>
+                                    <td><a href="<?=base_url()?>assets_admin/invoices/<?=$expense['expense_invoice']?>">Download Invoice</a></td>
                                     <td>
-                                      <a href="#"><i class="icon-eye mr-3"></i></a>
+                                      <a href="#<?=$expense['eid']?>"><i class="icon-eye mr-3"></i></a>
                                       <a href="#"><i class="icon-pencil"></i></a>
                                     </td>
                                 </tr>
-
+								<?php
+								endforeach;
+								?>
                                 </tbody>
 
                             </table>

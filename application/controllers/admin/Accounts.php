@@ -79,7 +79,7 @@ class Accounts extends CI_Controller{
 					$fund_approval_data = $this->upload->data();
 					$name = $name.$fund_approval_data['file_ext'];
 					if($this->Account_model->fundAccount($name)){
-						$this->session->set_flashdata('rsuccess_msg', 'Account has been successfully funded.');
+						$this->session->set_flashdata('success_msg', 'Account has been successfully funded.');
 						redirect(base_url().'admin/Accounts');
 					}else{
 						$this->session->set_flashdata('error_msg', 'Account was not funded.');
