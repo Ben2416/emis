@@ -4,8 +4,8 @@ class Loan_model extends CI_Model{
     function __construct(){
         parent::__construct();
     }
-	
-	function addPersonalDetails($dob_name,$lga_name,$mid_name,$mid_name,$adl_name,$csr_name){
+
+	function addPersonalDetails($dob_name,$lga_name,$mid_name,$ref_name,$adl_name,$csr_name){
 		$data = array(
 			'user_id' => $this->session->user_id,
 			'first_name' => $this->input->post('first_name'),
@@ -21,18 +21,18 @@ class Loan_model extends CI_Model{
 			'town_of_origin' => $this->input->post('town_of_origin'),
 			'village_of_origin' => $this->input->post('village_of_origin'),
 			'mode_identity' => $this->input->post('mode_identity'),
-			
+
 			'father_name' => $this->input->post('father_name'),
 			'mother_name' => $this->input->post('mother_name'),
 			'father_phone' => $this->input->post('father_phone'),
 			'mother_phone' => $this->input->post('mother_phone'),
 			'father_state_of_origin' => $this->input->post('father_state_of_origin'),
 			'mother_state_of_origin' => $this->input->post('mother_state_of_origin'),
-			
+
 			'bank_name' => $this->input->post('bank_name'),
 			'account_number' => $this->input->post('account_number'),
 			'bvn' => $this->input->post('bvn'),
-			
+
 			'university_name' => $this->input->post('university_name'),
 			'university_state' => $this->input->post('university_state'),
 			'other_university' => $this->input->post('other_university'),
@@ -50,11 +50,11 @@ class Loan_model extends CI_Model{
 			'uni_contact_person_phone' => $this->input->post('uni_contact_person_phone'),
 			'std_housing' => $this->input->post('std_housing'),
 			'std_address' => $this->input->post('std_address'),
-			
+
 			'dob_file' => $dob_name,
 			'lga_file' => $lga_name,
 			'mid_file' => $mid_name,
-			'ref_file' => $mid_name,
+			'ref_file' => $ref_name,
 			'adl_file' => $adl_name,
 			'csr_file' => $csr_name,
 			'status' => 1
@@ -74,7 +74,7 @@ class Loan_model extends CI_Model{
 		}
 		//return $this->db->insert('loan_details', $data);
 	}
-	
+
 	function addLoan(){
 		$data = array(
 			'programme_start_date' => $this->input->post('programme_start_date'),
@@ -84,7 +84,7 @@ class Loan_model extends CI_Model{
 			'loan_type' => $this->input->post('loan_type'),
 			'loan_amount' => $this->input->post('loan_amount'),
 			'batch' => $this->input->post('batch'),
-			
+
 			'guarantor_title' => $this->input->post('guarantor_title'),
 			'guarantor_fname' => $this->input->post('guarantor_fname'),
 			'guarantor_lname' => $this->input->post('guarantor_lname'),
@@ -105,37 +105,37 @@ class Loan_model extends CI_Model{
 			return $this->db->update('users',$data);
 		}else return 0;
 	}
-	
+
 	function getProfile($uid){
 		$this->db->where('user_id',$uid);
 		$query = $this->db->get('loan_details');
 		return $query->result_array();
 	}
-	
-	
+
+
     function getPersonalDetails(){
-		$this->db->limit(1);	
+		$this->db->limit(1);
         $query = $this->db->get_where('users', array('user_id'=>$this->session->user_id));
         return $query->row_array();
     }
-	
+
 	function getLoans($uid){
 		$this->db->where('user_id',$uid);
 		$query = $this->db->get('loan_applications');
 		return $query->result_array();
 	}
-	
+
 	function getTotalBorrowers(){
 		$query = $this->db->get('loan_applications');
 		return $query->num_rows();
 	}
-	
+
 	function getPendingLoans(){
 		$this->db->where('status', 1);
 		$query = $this->db->get('loan_applications');
 		return $query->num_rows();
 	}
-	
+
 	function getApprovedLoans(){
 		$this->db->where('status', 3);
 		$query = $this->db->get('loan_applications');
@@ -151,6 +151,6 @@ class Loan_model extends CI_Model{
 		$query = $this->db->get('loan_applications');
 		return $query->num_rows();
 	}
-	
-	
+
+
 }

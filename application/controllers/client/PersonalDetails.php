@@ -9,10 +9,10 @@ class PersonalDetails extends CI_Controller
     }
 
     public function index(){//print_r($this->session->userdata());exit;
-	
+
 		$data['page_title'] = 'Personal Details';
 		$data['details'] = $this->Loan_model->getPersonalDetails();
-		
+
 		$this->form_validation->set_error_delimiters('<div class="error">','</div>');
         $this->form_validation->set_rules('first_name','First Name','trim|required');
         $this->form_validation->set_rules('last_name','Last Name','trim|required');
@@ -27,18 +27,18 @@ class PersonalDetails extends CI_Controller
         $this->form_validation->set_rules('town_of_origin','Town / City','trim|required');
         $this->form_validation->set_rules('village_of_origin','Village','trim|required');
         $this->form_validation->set_rules('mode_identity','Mode of Identity','trim|required');
-		
+
 		$this->form_validation->set_rules('father_name','Father Name','trim|required');
 		$this->form_validation->set_rules('mother_name','Mother Name','trim|required');
 		$this->form_validation->set_rules('father_phone','Father Phone','trim|required');
 		$this->form_validation->set_rules('mother_phone','Mother Phone','trim|required');
 		$this->form_validation->set_rules('father_state_of_origin','Father Origin','trim|required');
 		$this->form_validation->set_rules('mother_state_of_origin','Mother Origin','trim|required');
-		
+
 		$this->form_validation->set_rules('bank_name','Bank Name','trim|required');
 		$this->form_validation->set_rules('account_number','Account Number','trim|required');
         $this->form_validation->set_rules('bvn','Bank Verification','trim|required');
-        
+
         $this->form_validation->set_rules('university_name','University Name','trim|required');
         $this->form_validation->set_rules('university_state','University State','trim|required');
         if($this->input->post('university_name') == "Other")
@@ -60,7 +60,7 @@ class PersonalDetails extends CI_Controller
         //$this->form_validation->set_rules('loan_id','Loan ID','trim|required');
         ///$this->form_validation->set_rules('loan_type','Loan Type','trim|required');
         ///$this->form_validation->set_rules('loan_amount','Amount','trim|required');
-        
+
 		if($this->form_validation->run() == FALSE){
 			$this->load->view('client/header_view', $data);
 			$this->load->view('client/personal_details_view');
@@ -72,9 +72,9 @@ class PersonalDetails extends CI_Controller
 			$ref_data = array();
 			$adl_data = array();
 			$csr_data = array();
-			
+
 			$name = $this->input->post('first_name').$this->input->post('first_name').time();
-			
+
 			//Birth Certificate upload
 			$dob_config['upload_path'] = './assets/uploads/birth_certificate/';
 			$dob_config['allowed_types'] = 'jpg|png';
@@ -92,7 +92,7 @@ class PersonalDetails extends CI_Controller
 			}else{
 				$dob_data = $this->upload->data();//hold lga upload data
 				$dob_name = $name.$dob_data['file_ext'];
-				
+
 				//LGA identification upload
 				$lga_config['upload_path'] = './assets/uploads/lga/';
 				$lga_config['allowed_types'] = 'jpg|png';
@@ -110,7 +110,7 @@ class PersonalDetails extends CI_Controller
 				}else{
 					$lga_data = $this->upload->data();//hold lga upload data
 					$lga_name = $name.$lga_data['file_ext'];
-					
+
 					//MODE OF IDENTIFICATION upload
 					$mid_config['upload_path'] = './assets/uploads/mode_of_identification/';
 					$mid_config['allowed_types'] = 'jpg|png';
@@ -128,7 +128,7 @@ class PersonalDetails extends CI_Controller
 					}else{
 						$mid_data = $this->upload->data();//hold mid upload data
 						$mid_name = $name.$mid_data['file_ext'];
-						
+
 						//signed Reference Letter upload
 						$ref_config['upload_path'] = './assets/uploads/reference_letter/';
 						$ref_config['allowed_types'] = 'jpg|png';
@@ -146,7 +146,7 @@ class PersonalDetails extends CI_Controller
 						}else{
 							$ref_data = $this->upload->data();
 							$ref_name = $name.$ref_data['file_ext'];
-						
+
 							//Admission Letter upload
 							$adl_config['upload_path'] = './assets/uploads/admission_letter/';
 							$adl_config['allowed_types'] = 'jpg|png';
@@ -164,7 +164,7 @@ class PersonalDetails extends CI_Controller
 							}else{
 								$adl_data = $this->upload->data();//hold adl upload data
 								$adl_name = $name.$adl_data['file_ext'];
-								
+
 								//Current Session Result upload
 								$csr_config['upload_path'] = './assets/uploads/current_session_result/';
 								$csr_config['allowed_types'] = 'jpg|png';
@@ -182,8 +182,8 @@ class PersonalDetails extends CI_Controller
 								}else{
 									$csr_data = $this->upload->data();//hold csr upload data
 									$csr_name = $name.$csr_data['file_ext'];
-									
-									if($this->Loan_model->addPersonalDetails($dob_name,$lga_name,$mid_name,$mid_name,$adl_name,$csr_name)){// > 0){
+
+									if($this->Loan_model->addPersonalDetails($dob_name,$lga_name,$mid_name,$ref_name,$adl_name,$csr_name)){// > 0){
 										$this->session->set_flashdata('rsuccess_msg', 'Your loan application is successfully.');
 										redirect(base_url().'client/LoanApplication');
 									}else{
@@ -198,5 +198,5 @@ class PersonalDetails extends CI_Controller
 			}
 		}
     }
-	
+
 }

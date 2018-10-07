@@ -52,19 +52,7 @@
                 </div>
                 <!-- Column -->
                 <!-- Column -->
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-12">
-                                <h2 class="m-b-0"><i class="mdi mdi-buffer text-warning"></i></h2>
-                                <h3 class="">Sept 20, 2018</h3>
-                                <h6 class="card-subtitle">Next Due Date</h6></div>
-                            <div class="col-12">
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
             <!-- Row -->
             <div class="row">
@@ -121,7 +109,7 @@
                                                             <a href="#" data-toggle="tooltip" data-original-title="Close"> <i class="fa fa-close text-danger"></i> </a>
                                                         </td>
                                                     </tr>
-													
+
 													<?php endforeach;?>
 
                                                     </tbody>
@@ -228,25 +216,25 @@
 <!-- ============================================================== -->
 <!--Menu sidebar -->
 <script src="<?=base_url()?>assets/toastr.js"></script>
-<?php if ($this->session->flashdata('success_msg') 
+<?php if ($this->session->flashdata('success_msg')
 		&& $this->session->flashdata('success_msg') != ""): ?>
     <script>
         toastr.success('<?php echo $this->session->flashdata('success_msg');?>', 'Success:');
     </script>
 <?php endif; ?>
-<?php if ($this->session->flashdata('info_msg') 
+<?php if ($this->session->flashdata('info_msg')
 		&& $this->session->flashdata('info_msg') != ""): ?>
     <script>
         toastr.info('<?php echo $this->session->flashdata('info_msg');?>', 'Info:');
     </script>
 <?php endif; ?>
-<?php if ($this->session->flashdata('warning_msg') 
+<?php if ($this->session->flashdata('warning_msg')
 		&& $this->session->flashdata('warning_msg') != ""): ?>
     <script>
         toastr.warning('<?php echo $this->session->flashdata('warning_msg');?>', 'Warning:');
     </script>
 <?php endif; ?>
-<?php if ($this->session->flashdata('error_msg') 
+<?php if ($this->session->flashdata('error_msg')
 		&& $this->session->flashdata('error_msg') != ""): ?>
     <script>
         toastr.error('<?php echo $this->session->flashdata('error_msg');?>', 'Error:');
