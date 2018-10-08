@@ -27,6 +27,7 @@ class Login extends CI_Controller {
                 $usr_details = $this->Login_model->getUserDetails($username);
                 if($usr_result > 0){
 					$this->session->set_userdata($usr_details);
+					$this->session->set_userdata('current_batch', $this->Loan_model->getCurrentBatch()->bid);
 					if($this->session->status == -1)
 					   redirect(base_url()."client/login/changePassword");
 					elseif($this->session->status == 0)
@@ -36,7 +37,7 @@ class Login extends CI_Controller {
 					elseif($this->session->status == 2)
 						redirect(base_url()."client/LoanApplication");
 					else
-						redirect(base_url()."client/dashboard");
+						redirect(base_url()."client/Dashboard");
                 }else{
                     $this->session->set_flashdata('error_msg','Invalid username and/or password!');
                     redirect(base_url().'client/login');

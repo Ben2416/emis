@@ -105,6 +105,13 @@ class Loan_model extends CI_Model{
 			return $this->db->update('users',$data);
 		}else return 0;
 	}
+	
+	function getCurrentBatch(){
+		$this->db->limit(1);
+		$this->db->order_by('bid', 'DESC');
+		$query = $this->db->get('batches');
+		return $query->row();
+	}
 
 	function getProfile($uid){
 		$this->db->where('user_id',$uid);

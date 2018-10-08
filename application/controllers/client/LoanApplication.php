@@ -11,6 +11,7 @@ class LoanApplication extends CI_Controller
     public function index(){
 	
 		$data['page_title'] = 'Loan Application';
+		$data['current_batch'] = $this->Loan_model->getCurrentBatch()->bid;
 		
 		$this->form_validation->set_error_delimiters('<div class="error">','</div>');
 		$this->form_validation->set_rules('programme_start_date','Start Date','trim|required');
@@ -38,7 +39,7 @@ class LoanApplication extends CI_Controller
 		}else{
 			if($this->Loan_model->addLoan() > 0){
 				$this->session->set_userdata('status', 4);
-				$this->session->set_flashdata('rsuccess_msg', 'Your loan application is successful.');
+				$this->session->set_flashdata('success_msg', 'Your loan application is successful.');
 				redirect(base_url().'client/dashboard');
 			}else{
 				$this->session->set_flashdata('error_msg', "Your loan application wasn't successful.");

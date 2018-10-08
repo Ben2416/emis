@@ -219,7 +219,7 @@
                                           </div>
                                         </div>
                                     </section>
-									<input type="hidden" name="batch" id="batch" value="1" />
+									<input type="hidden" name="batch" id="batch" value="<?=$current_batch?>" />
                                 </form>
                             </div>
                         </div>
