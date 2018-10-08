@@ -11,7 +11,7 @@ class Accounts extends CI_Controller{
 		$data['page_title'] = 'Add New Bank Account';
 		$data['accounts'] = $this->Account_model->getAccounts();
 		$this->load->view('admin/header_view');
-		$this->load->view('admin/Accounts/list_bank_account_view', $data);
+		$this->load->view('admin/account/list_bank_account_view', $data);
 		$this->load->view('admin/footer_view');
 	}
 	
@@ -27,7 +27,7 @@ class Accounts extends CI_Controller{
         
 		if($this->form_validation->run() == FALSE){
 			$this->load->view('admin/header_view');
-			$this->load->view('admin/Accounts/create_bank_account_view');
+			$this->load->view('admin/account/create_bank_account_view');
 			$this->load->view('admin/footer_view');
 		}else{
 			if($this->input->post('create_bank_account_btn')){
@@ -53,7 +53,7 @@ class Accounts extends CI_Controller{
         
 		if($this->form_validation->run() == FALSE){
 			$this->load->view('admin/header_view');
-			$this->load->view('admin/Accounts/fund_bank_account_view', $data);
+			$this->load->view('admin/account/fund_bank_account_view', $data);
 			$this->load->view('admin/footer_view');
 		}else{
 			if($this->input->post('fund_account_btn')){
@@ -73,7 +73,7 @@ class Accounts extends CI_Controller{
 					}
 					$this->session->set_flashdata('error_msg', $erm);
 					$this->load->view('admin/header_view');
-					$this->load->view('admin/Accounts/fund_bank_account_view', $data);
+					$this->load->view('admin/account/fund_bank_account_view', $data);
 					$this->load->view('admin/footer_view');
 				}else{
 					$fund_approval_data = $this->upload->data();
