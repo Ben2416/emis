@@ -1,6 +1,6 @@
 <?php
 	$this->session->set_userdata('last_page', current_url());
-	if ( !$this->input->server('HTTP_REFERER') 
+	if ( !$this->input->server('HTTP_REFERER')
 		|| empty($this->session->userdata('user_id')))
 	{
 		if(empty($this->session->userdata('user_id'))){
@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="<?=base_url()?>assets_admin/css/app.css">
 	<!-- Toastr style -->
   <link rel="stylesheet" href="<?=base_url();?>assets_admin/css/toastr.css">
-  
+
 
 </head>
 <body class="light sidebar-mini sidebar-collapse">
@@ -113,66 +113,50 @@
                             <i class="icon icon-sailing-boat-water s-24"></i> <span>Dashboard</span>
                             </a>
                         </li>
-                        <li class="treeview"><a href="#">
-                            <i class="icon icon icon-package s-24"></i>
-                            <span>Branches</span>
-                            <span class="badge r-3 badge-primary pull-right">4</span>
-                        </a>
-                            <ul class="treeview-menu">
-                                <li><a href="branches.html"><i class="icon icon-circle-o"></i>All
-                                    Branches</a>
-                                </li>
-                                <li><a href="addBranch.html"><i class="icon icon-add"></i>Add
-                                    New Branch </a>
-                                </li>
-                            </ul>
-                        </li>
+
                         <li class="treeview"><a href="#"><i class="icon icon-account_box s-24"></i>Students<i
                                 class=" icon-angle-left  pull-right"></i></a>
                             <ul class="treeview-menu">
                                 <li><a href="<?=base_url()?>admin/students"><i class="icon icon-circle-o"></i>All Students
-									<span class="badge r-3 badge-primary pull-right">4</span>
+
 								</a>
                                 </li>
 								<li><a href="<?=base_url()?>admin/students/completeProfiles"><i class="icon icon-user"></i>complete Profiles
-								<span class="badge r-3 badge-primary pull-right">178</span></a>
+								</a>
 								</li>
-                                <li><a href="<?=base_url()?>admin/students/incompleteProfiles""><i class="icon icon-user"></i>Incomplete Profiles
-								<span class="badge r-3 badge-primary pull-right">78</span>
+                                <li><a href="<?=base_url()?>admin/students/incompleteProfiles"><i class="icon icon-user"></i>Incomplete Profiles
+
 								</a>
                                 </li>
-                                <li><a href="add_student_profile.html"><i class="icon icon-add"></i>Add Student Profile </a>
-                                </li>
+
                             </ul>
                         </li>
 						<li class="treeview"><a href="#"><i class="icon icon-documents3 s-24"></i>Loans<i
                                 class=" icon-angle-left  pull-right"></i></a>
                             <ul class="treeview-menu">
                                 <li><a href="<?=base_url()?>admin/loans/index"><i class="icon icon-circle-o"></i>View All Loans
-									<span class="badge r-3 badge-primary pull-right">700</span>
+
 								</a>
                                 </li>
 								<li><a href="<?=base_url()?>admin/loans/approvedLoans"><i class="icon icon-documents3"></i>Approved Loans
-									<span class="badge r-3 badge-primary pull-right">578</span></a>
+								</a>
 								</li>
 								<li><a href="<?=base_url()?>admin/loans/pendingLoans"><i class="icon icon-documents3"></i>Pending Loans
-									<span class="badge r-3 badge-primary pull-right">178</span></a>
+									</a>
 								</li>
 								<li><a href="<?=base_url()?>admin/loans/disbursedLoans"><i class="icon icon-documents3"></i>Disbursement
-									<span class="badge r-3 badge-primary pull-right">278</span></a>
+									</a>
 								</li>
 								<li><a href="<?=base_url()?>admin/loans/partialDisbursedLoans"><i class="icon icon-documents3"></i>Awaiting Disbursement
-									<span class="badge r-3 badge-primary pull-right">278</span></a>
+									</a>
 								</li>
 								<li><a href="<?=base_url()?>admin/loans/declinedLoans"><i class="icon icon-documents3"></i>Declined Loans
-								<span class="badge r-3 badge-primary pull-right">278</span></a>
+								</a>
 								</li>
 								<li><a href="<?=base_url()?>admin/loans/withdrawnLoans"><i class="icon icon-documents3"></i>Withdrawn Loans
-								<span class="badge r-3 badge-primary pull-right">0</span></a>
-								</li>
-                                <li><a href="list_complete_profiles.html"><i class="icon icon-add"></i>Add Loan
 								</a>
-                                </li>
+								</li>
+                                
 
                             </ul>
                         </li>
