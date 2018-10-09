@@ -27,7 +27,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <h2 class="m-b-0"><i class="mdi mdi-alert-circle text-success"></i></h2>
-                                <h3 class="">N200,000.00</h3>
+                                <h3 class="">N0.00</h3>
                                 <h6 class="card-subtitle">Amount Paid</h6></div>
                             <div class="col-12">
 
@@ -42,7 +42,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <h2 class="m-b-0"><i class="mdi mdi-wallet text-purple"></i></h2>
-                                <h3 class="">N500,000.00</h3>
+                                <h3 class="">N0.00</h3>
                                 <h6 class="card-subtitle">Outstanding</h6></div>
                             <div class="col-12">
 
@@ -103,7 +103,7 @@
                                                         <td>
                                                            <?=$loan['loan_amount']?>
                                                         </td>
-                                                        <td><span class="label label-warning">Processing</span></td>
+                                                        <td><span class="label label-warning"><?=$loan['status']?></span></td>
                                                         <td class="text-nowrap">
                                                             <a href="#" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
                                                             <a href="#" data-toggle="tooltip" data-original-title="Close"> <i class="fa fa-close text-danger"></i> </a>

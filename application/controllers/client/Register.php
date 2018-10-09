@@ -43,7 +43,7 @@ class Register extends CI_Controller {
                 $this->Login_model->register($evop,$pass);
                 //$es = new EmailSms($this->input->post('firstname'),$this->input->post('lastname'),$this->input->post('email'),$pass,$this->input->post('phone'));
                 //$es->emailsms();
-                $this->session->set_flashdata('rsuccess_msg', 'Your account has been created successfully. Kindly login with<br/>Email:'.$this->input->post("email").' <br/>Temporary Password:'.$pass);
+                $this->session->set_flashdata('rsuccess_msg', 'Your account has been created successfully. \nKindly login with\nEmail:'.$this->input->post("email").' \nTemporary Password:'.$pass);
                 redirect(base_url().'client/login');
             }
         }

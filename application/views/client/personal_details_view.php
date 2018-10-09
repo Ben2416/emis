@@ -656,7 +656,7 @@
 			createOption(state_element, state_array[i], state_array[i]);
 		}
 	}
-	state('state_of_origin');
+	//state('state_of_origin');
 	state('state_of_residence');
 	state('father_state_of_origin');
 	state('mother_state_of_origin');

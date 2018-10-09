@@ -114,10 +114,10 @@
                             </a>
                         </li>
 
-                        <li class="treeview"><a href="#"><i class="icon icon-account_box s-24"></i>Students<i
+                        <li class="treeview"><a href="#"><i class="icon icon-account_box s-24"></i>Applicants<i
                                 class=" icon-angle-left  pull-right"></i></a>
                             <ul class="treeview-menu">
-                                <li><a href="<?=base_url()?>admin/students"><i class="icon icon-circle-o"></i>All Students
+                                <li><a href="<?=base_url()?>admin/students"><i class="icon icon-circle-o"></i>All Applicants
 
 								</a>
                                 </li>
