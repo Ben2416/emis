@@ -21,7 +21,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="<?=base_url()?>assets_admin/img/basic/favicon.ico" type="image/x-icon">
-    <title>Paper</title>
+    <title>Bayelsa State Higher Education Student Loan Board</title>
     <!-- CSS -->
     <link rel="stylesheet" href="<?=base_url()?>assets_admin/css/app.css">
 	<!-- Toastr style -->
@@ -114,51 +114,51 @@
                             </a>
                         </li>
 
-                        <li class="treeview"><a href="#"><i class="icon icon-account_box s-24"></i>Applicants<i
-                                class=" icon-angle-left  pull-right"></i></a>
+                        <li class="treeview"><a href="#"><i class="icon icon-account_box s-24"></i>Applicants<i class=" icon-angle-left  pull-right"></i></a>
                             <ul class="treeview-menu">
-                                <li><a href="<?=base_url()?>admin/students"><i class="icon icon-circle-o"></i>All Applicants
-
-								</a>
-                                </li>
-								<li><a href="<?=base_url()?>admin/students/completeProfiles"><i class="icon icon-user"></i>complete Profiles
-								</a>
-								</li>
-                                <li><a href="<?=base_url()?>admin/students/incompleteProfiles"><i class="icon icon-user"></i>Incomplete Profiles
-
-								</a>
-                                </li>
-
-                            </ul>
+                                <li><a href="<?=base_url()?>admin/students"><i class="icon icon-circle-o"></i>All Applicants</a></li>
+																<li><a href="<?=base_url()?>admin/students/completeProfiles"><i class="icon icon-user"></i>complete Profiles</a></li>
+                                <li><a href="<?=base_url()?>admin/students/incompleteProfiles"><i class="icon icon-user"></i>Incomplete Profiles</a></li>
+															</ul>
                         </li>
-						<li class="treeview"><a href="#"><i class="icon icon-documents3 s-24"></i>Loans<i
-                                class=" icon-angle-left  pull-right"></i></a>
+												<li class="treeview"><a href="#"><i class="icon icon-account_box s-24"></i>Undergraduate List<i class=" icon-angle-left  pull-right"></i></a>
                             <ul class="treeview-menu">
-                                <li><a href="<?=base_url()?>admin/loans/index"><i class="icon icon-circle-o"></i>View All Loans
-
-								</a>
-                                </li>
-								<li><a href="<?=base_url()?>admin/loans/approvedLoans"><i class="icon icon-documents3"></i>Approved Loans
-								</a>
-								</li>
-								<li><a href="<?=base_url()?>admin/loans/pendingLoans"><i class="icon icon-documents3"></i>Pending Loans
-									</a>
-								</li>
-								<li><a href="<?=base_url()?>admin/loans/disbursedLoans"><i class="icon icon-documents3"></i>Disbursement
-									</a>
-								</li>
-								<li><a href="<?=base_url()?>admin/loans/partialDisbursedLoans"><i class="icon icon-documents3"></i>Awaiting Disbursement
-									</a>
-								</li>
-								<li><a href="<?=base_url()?>admin/loans/declinedLoans"><i class="icon icon-documents3"></i>Declined Loans
-								</a>
-								</li>
-								<li><a href="<?=base_url()?>admin/loans/withdrawnLoans"><i class="icon icon-documents3"></i>Withdrawn Loans
-								</a>
-								</li>
-                                
-
-                            </ul>
+                                <li><a href="#"><i class="icon icon-user"></i>All Applicants</a></li>
+																<li><a href="#"><i class="icon icon-user"></i>complete Profiles</a></li>
+                                <li><a href="#"><i class="icon icon-user"></i>Incomplete Profiles</a></li>
+															</ul>
+                        </li>
+												<li class="treeview"><a href="#"><i class="icon icon-account_box s-24"></i>Postgraduate List<i class=" icon-angle-left  pull-right"></i></a>
+                            <ul class="treeview-menu">
+                                <li><a href="#"><i class="icon icon-user"></i>All Applicants</a></li>
+																<li><a href="#"><i class="icon icon-user"></i>complete Profiles</a></li>
+                                <li><a href="#"><i class="icon icon-user"></i>Incomplete Profiles</a></li>
+															</ul>
+                        </li>
+												<li class="treeview"><a href="#"><i class="icon icon-account_box s-24"></i>Law List<i class=" icon-angle-left  pull-right"></i></a>
+                            <ul class="treeview-menu">
+                                <li><a href="#"><i class="icon icon-user"></i>All Applicants</a></li>
+																<li><a href="#"><i class="icon icon-user"></i>complete Profiles</a></li>
+                                <li><a href="#"><i class="icon icon-user"></i>Incomplete Profiles</a></li>
+															</ul>
+                        </li>
+												<li class="treeview"><a href="#"><i class="icon icon-account_box s-24"></i>Health List<i class=" icon-angle-left  pull-right"></i></a>
+                            <ul class="treeview-menu">
+                                <li><a href="#"><i class="icon icon-user"></i>All Applicants</a></li>
+																<li><a href="#"><i class="icon icon-user"></i>complete Profiles</a></li>
+                                <li><a href="#"><i class="icon icon-user"></i>Incomplete Profiles</a></li>
+															</ul>
+                        </li>
+												<li class="treeview"><a href="#"><i class="icon icon-documents3 s-24"></i>Loans<i class=" icon-angle-left  pull-right"></i></a>
+                            <ul class="treeview-menu">
+                                <li><a href="<?=base_url()?>admin/loans/index"><i class="icon icon-circle-o"></i>View All Loans</a></li>
+																<li><a href="<?=base_url()?>admin/loans/approvedLoans"><i class="icon icon-documents3"></i>Approved Loans</a></li>
+																<li><a href="<?=base_url()?>admin/loans/pendingLoans"><i class="icon icon-documents3"></i>Pending Loans</a></li>
+																<li><a href="<?=base_url()?>admin/loans/disbursedLoans"><i class="icon icon-documents3"></i>Disbursement</a></li>
+																<li><a href="<?=base_url()?>admin/loans/partialDisbursedLoans"><i class="icon icon-documents3"></i>Awaiting Disbursement</a></li>
+																<li><a href="<?=base_url()?>admin/loans/declinedLoans"><i class="icon icon-documents3"></i>Declined Loans</a></li>
+																<li><a href="<?=base_url()?>admin/loans/withdrawnLoans"><i class="icon icon-documents3"></i>Withdrawn Loans</a></li>
+                              </ul>
                         </li>
 
 
@@ -176,42 +176,24 @@
                                         <li><a href="<?=base_url()?>admin/accounts/fund"><i class="icon icon-document"></i>Fund Bank Account</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#"><i class="icon icon-fingerprint text-green"></i>Expenses<i
-                                        class=" icon-angle-left  pull-right"></i></a>
+                                <li><a href="#"><i class="icon icon-fingerprint text-green"></i>Expenses<i class=" icon-angle-left  pull-right"></i></a>
                                     <ul class="treeview-menu">
-                                        <li><a href="<?=base_url()?>admin/expenses"><i class="icon icon-document"></i>View Expenses</a>
-                                        </li>
-                                        <li><a href="<?=base_url()?>admin/expenses/create"><i class="icon icon-document"></i>Add Expenses</a>
-                                        </li>
-                                        <li><a href="<?=base_url()?>admin/expenses/manage"><i class="icon icon-add"></i>Manage Expenses Type</a>
-                                        </li>
+                                        <li><a href="<?=base_url()?>admin/expenses"><i class="icon icon-document"></i>View Expenses</a></li>
+                                        <li><a href="<?=base_url()?>admin/expenses/create"><i class="icon icon-document"></i>Add Expenses</a></li>
+                                        <li><a href="<?=base_url()?>admin/expenses/manage"><i class="icon icon-add"></i>Manage Expenses Type</a></li>
                                     </ul>
                                 </li>
-
-
-                            </ul>
+														 </ul>
                         </li>
 
-						<li class="treeview"><a href="#"><i class="icon icon-documents3 s-24"></i>Reports<i
-                                class=" icon-angle-left  pull-right"></i></a>
+												<li class="treeview"><a href="#"><i class="icon icon-documents3 s-24"></i>Reports<i class=" icon-angle-left  pull-right"></i></a>
                             <ul class="treeview-menu">
-                                <li><a href="student_report.html"><i class="icon icon-circle-o"></i>Student Reports
-									</a>
-                                </li>
-								<li><a href="loan_report.html"><i class="icon icon-documents3"></i>Loans Report
-									</a>
-								</li>
-								<li><a href="financial_report.html"><i class="icon icon-documents3"></i>Financial Report
-									</a>
-								</li>
-
-                            </ul>
+                                <li><a href="#"><i class="icon icon-circle-o"></i>Student Reports</a></li>
+																<li><a href="#"><i class="icon icon-documents3"></i>Loans Report</a></li>
+																<li><a href="#"><i class="icon icon-documents3"></i>Financial Report</a></li>
+															</ul>
                         </li>
-
-
-
-
-                    </ul>
+										 </ul>
                 </div>
                 <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                     <div class="relative brand-wrapper sticky b-b p-3">

@@ -1,11 +1,40 @@
 
     <div class="container-fluid animatedParent animateOnce">
+      <div class="row" style="padding-top:10px">
+                               <div class="col-lg-4">
+                                   <div class="card r-3">
+                                       <div class="p-4">
+
+                                           <div class="counter-title">Total No. of Loans</div>
+                                           <h5 class="">1</h5>
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="col-lg-4">
+                                   <div class="card r-3">
+                                       <div class="p-4">
+
+                                           <div class="counter-title ">Total No. of Approved Loans</div>
+                                           <h5 class="">1</h5>
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="col-lg-4">
+                                   <div class="white card">
+                                       <div class="p-4">
+
+                                           <div class="counter-title">Total No. Disbursed Loans</div>
+                                           <h5 class="">1</h5>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
         <div class="tab-content my-3" id="v-pills-tabContent">
             <div class="tab-pane animated fadeInUpShort show active" id="v-pills-all" role="tabpanel" aria-labelledby="v-pills-all-tab">
                 <div class="row my-3">
                     <div class="col-md-12">
                         <div class="card r-0 shadow">
-                            <div class="table-responsive">
+                            <div class="table-responsive" style="padding-top:10px;">
                                 <form>
                                     <table class="table table-striped table-hover r-0 data-tables" data-options='{ "paging": false; "searching":false}'>
                                         <thead>
@@ -76,5 +105,5 @@
 
 		</div>
 		<!--Add New Message Fab Button-->
-		
+
 	</div>

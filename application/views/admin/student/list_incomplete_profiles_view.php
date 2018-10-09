@@ -5,7 +5,7 @@
                 <div class="row my-3">
                     <div class="col-md-12">
                         <div class="card r-0 shadow">
-                            <div class="table-responsive">
+                            <div class="table-responsive" style="padding-top:10px;">
                                 <form>
                                     <table class="table table-striped table-hover r-0 data-tables" data-options='{ "paging": false; "searching":false}'>
                                         <thead>
@@ -75,7 +75,7 @@
                     </div>
                 </div>
 
-                
+
             </div>
 
 
