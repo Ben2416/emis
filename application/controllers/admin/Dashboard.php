@@ -15,7 +15,7 @@ class Dashboard extends CI_Controller
 		$data['available_funds'] = $this->Account_model->getTotalFunds()->sum_total - $data['loans_released'];//'N70,000,000';//$this->Loan_model->getAmountPaid();
 		//$data['returning_users'] = $this->Loan_model->getReturningUsers();
 		
-		//pending 1, declined 2, approved 3, disbursed 4
+		//pending 1, declined 2, approved/accepted 3, disbursed 4
 		
 		$data['pending_loans'] = $this->Loan_model->getPendingLoans();
 		$data['approved_loans'] = $this->Loan_model->getApprovedLoans();

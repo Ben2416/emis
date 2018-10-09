@@ -6,7 +6,7 @@
                                        <div class="p-4">
 
                                            <div class="counter-title">Completed Applications</div>
-                                           <h5 class="">1</h5>
+                                           <h5 class=""><?=$complete_applications?></h5>
                                        </div>
                                    </div>
                                </div>
@@ -15,7 +15,7 @@
                                        <div class="p-4">
 
                                            <div class="counter-title ">Incomplete Applications</div>
-                                           <h5 class="">1</h5>
+                                           <h5 class=""><?=$incomplete_applications?></h5>
                                        </div>
                                    </div>
                                </div>
@@ -24,7 +24,7 @@
                                        <div class="p-4">
 
                                            <div class="counter-title">Accepted Applications</div>
-                                           <h5 class="">1</h5>
+                                           <h5 class=""><?=$accepted_applications?></h5>
                                        </div>
                                    </div>
                                </div>
@@ -87,7 +87,7 @@
 
                                             <td> <div class="d-none d-lg-block"><?=$student['phone']?></div></td>
                                             <td> <div class="d-none d-lg-block"><span class="r-3 badge badge-success "><?=$student['loan_type']?></span></div></td>
-                                            <td> <div class="d-none d-lg-block"><span class="r-3 badge badge-success ">Completed Loan Form</span></div></td>
+                                            <td> <div class="d-none d-lg-block"><span class="r-3 badge badge-success "><?=$student['status']?></span></div></td>
                                             <td>
                                                 <a href="<?=base_url()?>admin/Students/studentProfile/<?=$student['user_id']?>"><i class="icon-eye mr-3"></i></a>
                                                 <a href="panel-page-profile.html"><i class="icon-pencil"></i></a>

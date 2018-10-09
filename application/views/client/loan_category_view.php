@@ -13,8 +13,8 @@
 				<option value="">&nbsp;</option>
 				<option value="Undergraduate" <?php echo  set_select('loancat', 'Undergraduate'); ?>>Undergraduate Loan</option>
 				<option value="Postgraduate" <?php echo  set_select('loancat', 'Postgraduate'); ?>>Postgraduate Loan</option>
-				<option value="Health Studies" <?php echo  set_select('loancat', 'Health Studies'); ?>>Health Studies Loan</option>
-				<option value="Law Student" <?php echo  set_select('loancat', 'Law Student'); ?>>Law Student Loan</option>
+				<option value="Health" <?php echo  set_select('loancat', 'Health'); ?>>Health Studies Loan</option>
+				<option value="Law" <?php echo  set_select('loancat', 'Law'); ?>>Law Student Loan</option>
 			</select>
 			<label class="floating-label" for="inputSex" style="margin-left: 15px;">Loan Category</label>
 			<span class="text-danger"><?php echo form_error('loancat'); ?></span>

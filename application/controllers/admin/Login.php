@@ -23,6 +23,7 @@ class Login extends CI_Controller
                 $usr_details = $this->Login_model->getAdminDetails($email);
                 if($usr_result > 0){
 					$this->session->set_userdata($usr_details);
+					$this->session->set_userdata('current_batch', $this->Loan_model->getCurrentBatch()->bid);
 					redirect(base_url()."admin/dashboard", 'refresh');
                 }else{
                     $this->session->set_flashdata('error_msg','Invalid email and/or password!');
