@@ -83,7 +83,7 @@
                                             </td>
 
                                             <td> <div class="d-none d-lg-block"><?=$student['sex']?></div></td>
-                                            <td> <div class="d-none d-lg-block">BYSHESLB/B1/<?=$student['user_id']?></div></td>
+                                            <td> <div class="d-none d-lg-block">BYSHESLB/B<?=$student['batch']?>/<?=$student['user_id']?></div></td>
 
                                             <td> <div class="d-none d-lg-block"><?=$student['phone']?></div></td>
                                             <td> <div class="d-none d-lg-block"><span class="r-3 badge badge-success "><?=$student['loan_type']?></span></div></td>
