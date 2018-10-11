@@ -38,22 +38,22 @@
                                 <form>
                                     <table class="table table-striped table-hover r-0 data-tables" data-options='{ "paging": false; "searching":false}'>
                                         <thead>
-                                        <tr class="no-b">
-                                            <th style="width: 30px">
-                                                <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" id="checkedAll" class="custom-control-input"><label
-                                                        class="custom-control-label" for="checkedAll"></label>
-                                                </div>
-                                            </th>
-                                            <th>APPLICANT NAME</th>
+											<tr class="no-b">
+												<th style="width: 30px">
+													<div class="custom-control custom-checkbox">
+														<input type="checkbox" id="checkedAll" class="custom-control-input"><label
+															class="custom-control-label" for="checkedAll"></label>
+													</div>
+												</th>
+												<th>APPLICANT NAME</th>
 
-                                            <th> <div class="d-none d-lg-block">GENDER</div></th>
-                                            <th> <div class="d-none d-lg-block">LOAN ID</div></th>
-                                            <th> <div class="d-none d-lg-block">PHONE</div></th>
-                                            <th> <div class="d-none d-lg-block">LOAN TYPE</div></th>
-                                            <th> <div class="d-none d-lg-block">STATUS</div></th>
-                                            <th></th>
-                                        </tr>
+												<th> <div class="d-none d-lg-block">GENDER</div></th>
+												<!--<th> <div class="d-none d-lg-block">LOAN ID</div></th>-->
+												<th> <div class="d-none d-lg-block">PHONE</div></th>
+												<th> <div class="d-none d-lg-block">LOAN TYPE</div></th>
+												<th> <div class="d-none d-lg-block">STATUS</div></th>
+												<th></th>
+											</tr>
                                         </thead>
 
                                         <tbody>
@@ -83,7 +83,7 @@
                                             </td>
 
                                             <td> <div class="d-none d-lg-block"><?=$student['sex']?></div></td>
-                                            <td> <div class="d-none d-lg-block">BYSHESLB/B<?=$student['batch']?>/<?=$student['user_id']?></div></td>
+                                            <!--<td> <div class="d-none d-lg-block">BYSHESLB/B<?/*=$student['batch']*/?>/<?=$student['user_id']?></div></td>-->
 
                                             <td> <div class="d-none d-lg-block"><?=$student['phone']?></div></td>
                                             <td> <div class="d-none d-lg-block"><span class="r-3 badge badge-success "><?=$student['loan_type']?></span></div></td>

@@ -1,11 +1,10 @@
-
     <div class="container-fluid animatedParent animateOnce">
-        <div class="tab-content my-3" id="v-pills-tabContent">
+		<div class="tab-content my-3" id="v-pills-tabContent">
             <div class="tab-pane animated fadeInUpShort show active" id="v-pills-all" role="tabpanel" aria-labelledby="v-pills-all-tab">
                 <div class="row my-3">
                     <div class="col-md-12">
                         <div class="card r-0 shadow">
-                            <div class="table-responsive">
+                            <div class="table-responsive" style="padding-top:10px;">
                                 <form>
                                     <table class="table table-striped table-hover r-0 data-tables" data-options='{ "paging": false; "searching":false}'>
                                         <thead>
@@ -28,6 +27,7 @@
                                         </thead>
 
                                         <tbody>
+										<?php foreach ($loans as $loan): ?>
                                         <tr>
                                             <td>
                                                 <div class="custom-control custom-checkbox">
@@ -43,25 +43,25 @@
                                                   </div>
                                                   <div>
                                                       <div>
-                                                          <strong>Ebimobowei Okpongu</strong>
+                                                          <strong><?=$loan['firstname'].' '.$loan['lastname']?></strong>
                                                       </div>
-                                                      <small> ebi.okpongu@gmail.com</small>
+                                                      <small> <?=$loan['email']?></small>
                                                   </div>
                                               </div>
                                             </td>
 
-                                            <td> <div class="d-none d-lg-block">BYSHESLB/B1/101</div></td>
-                                            <td> <div class="d-none d-lg-block"><span class="r-3 badge badge-success ">Undergratuate</span></div></td>
+                                            <td> <div class="d-none d-lg-block">BYSHESLB/B<?=$loan['batch']?>/<?=$loan['loan_id']?></div></td>
+                                            <td> <div class="d-none d-lg-block"><span class="r-3 badge badge-success "><?=$loan['loan_type']?></span></div></td>
 
-                                            <td> <div class="d-none d-lg-block">350,000.00</div></td>
-                                            <td> <div class="d-none d-lg-block">150,000.00</div></td>
-                                            <td> <div class="d-none d-lg-block"><span class="r-3 badge badge-success ">Partial Disburse</span></div></td>
+                                            <td> <div class="d-none d-lg-block"><?=$loan['loan_amount']?></div></td>
+                                            <td> <div class="d-none d-lg-block">0.00</div></td>
+                                            <td> <div class="d-none d-lg-block"><span class="r-3 badge badge-success "><?=$loan['status']?></span></div></td>
                                             <td>
-                                                <a href="panel-page-profile.html"><i class="icon-eye mr-3"></i></a>
+                                                <a href="<?=base_url()?>admin/Students/studentProfile/<?=$loan['user_id']?>"><i class="icon-eye mr-3"></i></a>
                                                 <a href="panel-page-profile.html"><i class="icon-pencil"></i></a>
                                             </td>
                                         </tr>
-
+										<?php endforeach; ?>
                                         </tbody>
                                     </table>
                                 </form>

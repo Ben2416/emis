@@ -136,27 +136,57 @@ class Loan_model extends CI_Model{
 		$query = $this->db->get('loan_applications');
 		return $query->num_rows();
 	}
-
-	function getPendingLoans(){
-		$this->db->where('status', 1);
+	
+	function getAllLoans(){
+		$this->db->join('users', 'loan_applications.user_id=users.user_id');
+		$this->db->where('batch', $this->session->current_batch);
 		$query = $this->db->get('loan_applications');
-		return $query->num_rows();
+		return $query->result_array();
 	}
 
 	function getApprovedLoans(){
-		$this->db->where('status', 3);
+		$this->db->join('users', 'loan_applications.user_id=users.user_id');
+		$this->db->where('loan_applications.status', 3);
+		$this->db->where('batch', $this->session->current_batch);
 		$query = $this->db->get('loan_applications');
-		return $query->num_rows();
+		return $query->result_array();
 	}
-	function getDisbursedLoans(){
-		$this->db->where('status', 4);
+	
+	function getPendingLoans(){
+		$this->db->join('users', 'loan_applications.user_id=users.user_id');
+		$this->db->where('loan_applications.status', 1);
+		$this->db->where('batch', $this->session->current_batch);
 		$query = $this->db->get('loan_applications');
-		return $query->num_rows();
+		return $query->result_array();
+	}
+
+	function getDisbursedLoans(){
+		$this->db->join('users', 'loan_applications.user_id=users.user_id');
+		$this->db->where('loan_applications.status', 4);
+		$this->db->where('batch', $this->session->current_batch);
+		$query = $this->db->get('loan_applications');
+		return $query->result_array();
+	}
+	function getPartialDisbursedLoans(){
+		$this->db->join('users', 'loan_applications.user_id=users.user_id');
+		$this->db->where('loan_applications.status', 5);
+		$this->db->where('batch', $this->session->current_batch);
+		$query = $this->db->get('loan_applications');
+		return $query->result_array();
 	}
 	function getDeclinedLoans(){
-		$this->db->where('status', 2);
+		$this->db->join('users', 'loan_applications.user_id=users.user_id');
+		$this->db->where('loan_applications.status', 2);
+		$this->db->where('batch', $this->session->current_batch);
 		$query = $this->db->get('loan_applications');
-		return $query->num_rows();
+		return $query->result_array();
+	}
+	function getWithdrawnLoans(){
+		$this->db->join('users', 'loan_applications.user_id=users.user_id');
+		$this->db->where('loan_applications.status', 6);
+		$this->db->where('batch', $this->session->current_batch);
+		$query = $this->db->get('loan_applications');
+		return $query->result_array();
 	}
 
 

@@ -19,7 +19,7 @@
                                             <th>APPLICANT NAME</th>
 
                                             <th> <div class="d-none d-lg-block">GENDER</div></th>
-                                            <th> <div class="d-none d-lg-block">LOAN ID</div></th>
+                                            <!--<th> <div class="d-none d-lg-block">LOAN ID</div></th>-->
                                             <th> <div class="d-none d-lg-block">PHONE</div></th>
                                             <th> <div class="d-none d-lg-block">LOAN TYPE</div></th>
                                             <th> <div class="d-none d-lg-block">STATUS</div></th>
@@ -54,7 +54,7 @@
                                             </td>
 
                                             <td> <div class="d-none d-lg-block"><?=$student['sex']?></div></td>
-                                            <td> <div class="d-none d-lg-block">BYSHESLB/B<?=$student['batch']?>/<?=$student['user_id']?></div></td>
+                                            <td> <div class="d-none d-lg-block">BYSHESLB/B<?/*=$student['batch'].'/'.$student['user_id']*/?></div></td>
 
                                             <td> <div class="d-none d-lg-block"><?=$student['phone']?></div></td>
                                             <td> <div class="d-none d-lg-block"><span class="r-3 badge badge-success "><?=$student['loan_type']?></span></div></td>

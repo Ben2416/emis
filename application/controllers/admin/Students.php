@@ -75,4 +75,20 @@ class Students extends CI_Controller
 		$this->load->view('admin/student/list_incomplete_profiles_view', $data);
 		$this->load->view('admin/footer_view');
     }
+	
+	public function acceptApplication($id){
+		if($this->Student_model->acceptApplication($id))
+			$this->session->set_flashdata('success_msg', 'Application accepted.');
+		else 
+			$this->session->set_flashdata('error_msg', 'Application not accepted.');
+		redirect(base_url().'admin/Students', 'refresh');
+	}
+	
+	public function rejectApplication($id){
+		if($this->Student_model->rejectApplication($id))
+			$this->session->set_flashdata('success_msg', 'Application rejected.');
+		else 
+			$this->session->set_flashdata('error_msg', 'Application not rejected.');
+		redirect(base_url().'admin/Students', 'refresh');
+	}
 }

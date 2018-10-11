@@ -145,7 +145,8 @@
                                                            </ul>
                                                        </div>
                                                        <div class="align-self-center">
-                                                           <h5><a href="#" class="btn btn-xs btn-primary">Approve Application</a></h5>
+                                                           <h5><a href="<?=base_url()?>admin/Students/acceptApplication/<?=$profile['user_id']?>" class="btn btn-xs btn-primary">Accept Application</a>
+                                                           <a href="<?=base_url()?>admin/Students/rejectApplication/<?=$profile['user_id']?>" class="btn btn-xs btn-warning">Reject Application</a></h5>
                                                        </div>
 
                                                    </div>
