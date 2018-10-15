@@ -17,10 +17,10 @@ class Dashboard extends CI_Controller
 		
 		//pending 1, declined 2, approved/accepted 3, disbursed 4
 		
-		$data['pending_loans'] = $this->Loan_model->getPendingLoans();
-		$data['approved_loans'] = $this->Loan_model->getApprovedLoans();
-		$data['disbursed_loans'] = $this->Loan_model->getDisbursedLoans();
-		$data['loans_declined'] = $this->Loan_model->getDeclinedLoans();
+		$data['pending_loans'] = count($this->Loan_model->getPendingLoans());
+		$data['approved_loans'] = count($this->Loan_model->getApprovedLoans());
+		$data['disbursed_loans'] = count($this->Loan_model->getDisbursedLoans());
+		$data['loans_declined'] = count($this->Loan_model->getDeclinedLoans());
 		//print_r($data['totalBorrowers']);exit;
 		$this->load->view('admin/header_view');
 		$this->load->view('admin/dashboard_view', $data);
