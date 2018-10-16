@@ -80,6 +80,7 @@ class Loan_model extends CI_Model{
 
 	function addLoan(){
 		$data = array(
+			'user_id' => $this->session->user_id,
 			'programme_start_date' => $this->input->post('programme_start_date'),
 			'programme_end_date' => $this->input->post('programme_end_date'),
 			'academic_year' => $this->input->post('academic_year'),
@@ -100,6 +101,21 @@ class Loan_model extends CI_Model{
 			'guarantor_position' => $this->input->post('guarantor_position'),
 			'guarantor_relatn' => $this->input->post('guarantor_relatn')
 		);
+		
+		$udata = array();
+		foreach($data as $k=>$v){
+			$udata[] = $k.'='."'".$v."'"; 
+		}
+		$sql = $this->db->insert_string('loan_applications',$data)." ON DUPLICATE KEY UPDATE ".implode(', ',$udata) ;
+		$insert = $this->db->query($sql);
+		if($this->db->affected_rows()>0){
+			$data = array('status'=>3);
+			$this->db->where('user_id', $this->session->user_id);
+			return $this->db->update('users',$data);
+		}else{
+			return 0;
+		}
+		
 		//return $this->db->insert('loan_applications', $data);
 		$this->db->insert('loan_applications', $data);
 		if($this->db->affected_rows()>0){
@@ -130,7 +146,10 @@ class Loan_model extends CI_Model{
     }
 
 	function getLoans($uid){
+		$this->db->order_by('loan_id', 'desc');
+		$this->db->order_by('batch', 'desc');
 		$this->db->where('user_id',$uid);
+		$this->db->where('batch', $this->session->current_batch);
 		$query = $this->db->get('loan_applications');
 		return $query->result_array();
 	}
