@@ -12,7 +12,10 @@ class PersonalDetails extends CI_Controller
 
 		$data['page_title'] = 'Personal Details';
 		$data['details'] = $this->Loan_model->getPersonalDetails();
-
+		
+		$data['details']['loan_type'] = 'Law';
+		//print_r($data);exit;
+		
 		$this->form_validation->set_error_delimiters('<div class="error">','</div>');
         $this->form_validation->set_rules('first_name','First Name','trim|required');
         $this->form_validation->set_rules('last_name','Last Name','trim|required');
@@ -72,8 +75,9 @@ class PersonalDetails extends CI_Controller
 			$ref_data = array();
 			$adl_data = array();
 			$csr_data = array();
+			//$pda_data = array();
 
-			$name = $this->input->post('first_name').$this->input->post('first_name').time();
+			$name = $this->input->post('first_name').$this->input->post('last_name').time();
 
 			//Birth Certificate upload
 			$dob_config['upload_path'] = './assets/uploads/birth_certificate/';
@@ -182,8 +186,45 @@ class PersonalDetails extends CI_Controller
 								}else{
 									$csr_data = $this->upload->data();//hold csr upload data
 									$csr_name = $name.$csr_data['file_ext'];
+									
+									//FOR PREVIOUS DEGREE ACQUIRED
+									$pda_name = '';
+									if($data['details']['loan_type'] == 'Law' || $data['details']['loan_type'] == 'Health'){
+										$pda_names = array();
+										$pda_config['upload_path'] = './assets/uploads/previous_degree_acquired/';
+										$pda_config['allowed_types'] = 'jpg|png';
+										$pda_config['max_size'] = '512';
+										$pc=0;
+										foreach($_FILES['pda_file']['name'] as $key=>$value){
+											$pda_data = array();
+											$_FILES['pda_file[]']['name']= $_FILES['pda_file']['name'][$key];
+											$_FILES['pda_file[]']['type']= $_FILES['pda_file']['type'][$key];
+											$_FILES['pda_file[]']['tmp_name']= $_FILES['pda_file']['tmp_name'][$key];
+											$_FILES['pda_file[]']['error']= $_FILES['pda_file']['error'][$key];
+											$_FILES['pda_file[]']['size']= $_FILES['pda_file']['size'][$key];
+											
+											$pda_config['file_name'] = $name;
+											$this->upload->initialize($pda_config);
+											if(!$this->upload->do_upload('pda_file[]')){
+												$errors = array('error' => $this->upload->display_errors());
+												$erm = "<b>Current Session Result:</b><br>";
+												foreach($errors as $er){
+													$erm.=$er.'<br>';
+												}
+												$this->session->set_flashdata('error_msg',$erm);
+												$this->load->view('client/personal_details_view');
+												break;
+											}else{
+												$pda_data = $this->upload->data();
+												$pda_names[] = $name.$pc.$pda_data['file_ext'];
+											}
+											$pc++;
+										}
+										
+										$pda_name = implode(',', $pda_names);
+									}
 
-									if($this->Loan_model->addPersonalDetails($dob_name,$lga_name,$mid_name,$ref_name,$adl_name,$csr_name)){// > 0){
+									if($this->Loan_model->addPersonalDetails($dob_name,$lga_name,$mid_name,$ref_name,$adl_name,$csr_name,$pda_name)){// > 0){
 										$this->session->set_flashdata('rsuccess_msg', 'Your loan application is successfully.');
 										redirect(base_url().'client/LoanApplication');
 									}else{

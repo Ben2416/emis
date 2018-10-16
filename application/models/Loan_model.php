@@ -5,7 +5,7 @@ class Loan_model extends CI_Model{
         parent::__construct();
     }
 
-	function addPersonalDetails($dob_name,$lga_name,$mid_name,$ref_name,$adl_name,$csr_name){
+	function addPersonalDetails($dob_name,$lga_name,$mid_name,$ref_name,$adl_name,$csr_name,$pda_name){
 		$data = array(
 			'user_id' => $this->session->user_id,
 			'first_name' => $this->input->post('first_name'),
@@ -50,13 +50,16 @@ class Loan_model extends CI_Model{
 			'uni_contact_person_phone' => $this->input->post('uni_contact_person_phone'),
 			'std_housing' => $this->input->post('std_housing'),
 			'std_address' => $this->input->post('std_address'),
-
+			
+			'previous_degree_acquired' => implode(',', $this->input->post('previous_degree_acquired')),
+			
 			'dob_file' => $dob_name,
 			'lga_file' => $lga_name,
 			'mid_file' => $mid_name,
 			'ref_file' => $ref_name,
 			'adl_file' => $adl_name,
 			'csr_file' => $csr_name,
+			'pda_file' => $pda_name,
 			'status' => 1
 		);
 		$udata = array();
