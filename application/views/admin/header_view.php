@@ -125,12 +125,14 @@
                             <ul class="treeview-menu">
                                 <li><a href="<?=base_url()?>admin/students/getAllProfilesType/Undergraduate"><i class="icon icon-user"></i>All Applicants</a></li>
 																<li><a href="<?=base_url()?>admin/students/completeProfilesType/Undergraduate"><i class="icon icon-user"></i>complete Profiles</a></li>
-                                <li><a href="<?=base_url()?>admin/students/incompleteProfilesType/Undergraduate"><i class="icon icon-user"></i>Incomplete Profiles</a></li>
+                                <li><a href="<?=base_url()?>#"><i class="icon icon-user"></i>Accepted Applicants</a></li>
+																<li><a href="<?=base_url()?>admin/students/incompleteProfilesType/Undergraduate"><i class="icon icon-user"></i>Incomplete Profiles</a></li>
 															</ul>
                         </li>
 												<li class="treeview"><a href="#"><i class="icon icon-account_box s-24"></i>Postgraduate List<i class=" icon-angle-left  pull-right"></i></a>
                             <ul class="treeview-menu">
                                 <li><a href="<?=base_url()?>admin/students/getAllProfilesType/Postgraduate"><i class="icon icon-user"></i>All Applicants</a></li>
+																<li><a href="<?=base_url()?>#"><i class="icon icon-user"></i>Accepted Applicants</a></li>
 																<li><a href="<?=base_url()?>admin/students/completeProfilesType/Postgraduate"><i class="icon icon-user"></i>complete Profiles</a></li>
                                 <li><a href="<?=base_url()?>admin/students/incompleteProfilesType/Postgraduates"><i class="icon icon-user"></i>Incomplete Profiles</a></li>
 															</ul>
@@ -139,6 +141,7 @@
                             <ul class="treeview-menu">
                                 <li><a href="<?=base_url()?>admin/students/getAllProfilesType/Law"><i class="icon icon-user"></i>All Applicants</a></li>
 																<li><a href="<?=base_url()?>admin/students/completeProfilesType/Law"><i class="icon icon-user"></i>complete Profiles</a></li>
+																<li><a href="<?=base_url()?>#"><i class="icon icon-user"></i>Accepted Applicants</a></li>
                                 <li><a href="<?=base_url()?>admin/students/incompleteProfilesType/Law"><i class="icon icon-user"></i>Incomplete Profiles</a></li>
 															</ul>
                         </li>
@@ -146,14 +149,15 @@
                             <ul class="treeview-menu">
                                 <li><a href="<?=base_url()?>admin/students/getAllProfilesType/Health"><i class="icon icon-user"></i>All Applicants</a></li>
 																<li><a href="<?=base_url()?>admin/students/completeProfilesType/Health"><i class="icon icon-user"></i>complete Profiles</a></li>
+																<li><a href="<?=base_url()?>#"><i class="icon icon-user"></i>Accepted Applicants</a></li>
                                 <li><a href="<?=base_url()?>admin/students/incompleteProfilesType/Health"><i class="icon icon-user"></i>Incomplete Profiles</a></li>
 															</ul>
                         </li>
 												<li class="treeview"><a href="#"><i class="icon icon-documents3 s-24"></i>Loans<i class=" icon-angle-left  pull-right"></i></a>
                             <ul class="treeview-menu">
                                 <li><a href="<?=base_url()?>admin/loans/index"><i class="icon icon-circle-o"></i>View All Loans</a></li>
-																<li><a href="<?=base_url()?>admin/loans/approvedLoans"><i class="icon icon-documents3"></i>Approved Loans</a></li>
 																<li><a href="<?=base_url()?>admin/loans/pendingLoans"><i class="icon icon-documents3"></i>Pending Loans</a></li>
+																<li><a href="<?=base_url()?>admin/loans/approvedLoans"><i class="icon icon-documents3"></i>Approved Loans</a></li>
 																<li><a href="<?=base_url()?>admin/loans/disbursedLoans"><i class="icon icon-documents3"></i>Disbursement</a></li>
 																<li><a href="<?=base_url()?>admin/loans/partialDisbursedLoans"><i class="icon icon-documents3"></i>Awaiting Disbursement</a></li>
 																<li><a href="<?=base_url()?>admin/loans/declinedLoans"><i class="icon icon-documents3"></i>Declined Loans</a></li>

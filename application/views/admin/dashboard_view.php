@@ -12,7 +12,7 @@
                                 </div>
                                 <div class="text-center">
                                     <div class="s-48 my-3 font-weight-lighter"><?=$total_borrowers?></div>
-                                    Total Borrowers
+                                    Total Number of Applicants
                                 </div>
 
                             </div>
@@ -22,21 +22,37 @@
                         <div class="card no-b mb-3">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div><i class="icon-timer s-18"></i></div>
-                                    <div><span class="badge badge-pill badge-primary">4:30</span></div>
+                                    <div><i class="icon-user-times s-18"></i></div>
+                                    <div><span class="text-danger">50</span></div>
                                 </div>
                                 <div class="text-center">
-								
-                                    <div class="s-48 my-3 font-weight-lighter"><?=$available_funds?></div>
-                                    Available Fund
+                                    <div class="s-48 my-3 font-weight-lighter">95</div>
+                                    Accepted Applicants
                                 </div>
 
                             </div>
                         </div>
                     </div>
 
+
+
                 </div>
                 <div class="row">
+                  <div class="col-md-6 col-sm-6">
+                      <div class="card no-b mb-3">
+                          <div class="card-body">
+                              <div class="d-flex justify-content-between align-items-center">
+                                  <div><i class="icon-timer s-18"></i></div>
+                              </div>
+                              <div class="text-center">
+
+                                  <div class="s-48 my-3 font-weight-lighter"><?=$available_funds?></div>
+                                  Available Fund
+                              </div>
+
+                          </div>
+                      </div>
+                  </div>
                     <div class="col-md-6 col-sm-6">
                         <div class="card no-b mb-3">
                             <div class="card-body">
@@ -52,21 +68,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-sm-6">
-                        <div class="card no-b mb-3">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div><i class="icon-user-times s-18"></i></div>
-                                    <div><span class="text-danger">50</span></div>
-                                </div>
-                                <div class="text-center">
-                                    <div class="s-48 my-3 font-weight-lighter">95</div>
-                                    Returning Users
-                                </div>
 
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="col-md-6">
@@ -81,7 +83,7 @@
                                                         [75, 25,25],
 
                                                     ]"
-                                        data-labels="[['Disk'],['Database'],['Disk2'],['Database2']]"
+                                        data-labels="[['Available Funds],['Released Loans'],['Expenses']]"
                                         data-dataset-options="[
                                                     {
                                                         label: 'Disk',
@@ -106,7 +108,7 @@
             </div>
         </div>
         <div class="card no-b my-3">
-          
+
             <div class="card-body">
                 <div class="row my-3 no-gutters">
                     <div class="col-md-3">
@@ -134,7 +136,7 @@
                                     <div class="mb-3">
                                         <h6>Approved Loans</h6>
                                         <h6><strong><?=$approved_loans?> Approved</strong></h6>
-										
+
                                     </div>
                                     <figure class="avatar">
                                         <img src="<?=base_url()?>assets_admin/img/currency.png" alt=""></figure>
@@ -152,7 +154,7 @@
                                     </div>
                                     <div class="avatar-group">
                                         <figure class="avatar">
-                                            <img src="<?=base_url()?>assets_admin/img/application.png" alt=""></figure>                                       
+                                            <img src="<?=base_url()?>assets_admin/img/application.png" alt=""></figure>
                                     </div>
                                 </div>
                                 <div class="progress progress-xs mb-3">
@@ -180,6 +182,6 @@
             </div>
         </div>
 
-       
+
 
     </div>
