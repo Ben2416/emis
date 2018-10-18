@@ -58,6 +58,16 @@
 
                                         <tbody>
 										<?php
+										
+										function getStatus($sn){
+											switch($sn){
+												case 0: return 'Registered';
+												case 1: return 'Incomplete';
+												case 2: return 'Complete';
+												case 3: return 'Loan Added';
+												default: return 'Disabled';
+											}
+										}
 										foreach($students as $student):
 										?>
                                         <tr>
@@ -87,7 +97,7 @@
 
                                             <td> <div class="d-none d-lg-block"><?=$student['phone']?></div></td>
                                             <td> <div class="d-none d-lg-block"><span class="r-3 badge badge-success "><?=$student['loan_type']?></span></div></td>
-                                            <td> <div class="d-none d-lg-block"><span class="r-3 badge badge-success "><?=$student['status']?></span></div></td>
+                                            <td> <div class="d-none d-lg-block"><span class="r-3 badge badge-success "><?=getStatus($student['status'])?></span></div></td>
                                             <td>
                                                 <a href="<?=base_url()?>admin/Students/studentProfile/<?=$student['user_id']?>"><i class="icon-eye mr-3"></i></a>
                                                 <a href="panel-page-profile.html"><i class="icon-pencil"></i></a>

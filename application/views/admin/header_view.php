@@ -125,14 +125,14 @@
                             <ul class="treeview-menu">
                                 <li><a href="<?=base_url()?>admin/students/getAllProfilesType/Undergraduate"><i class="icon icon-user"></i>All Applicants</a></li>
 																<li><a href="<?=base_url()?>admin/students/completeProfilesType/Undergraduate"><i class="icon icon-user"></i>complete Profiles</a></li>
-                                <li><a href="<?=base_url()?>#"><i class="icon icon-user"></i>Accepted Applicants</a></li>
+                                <li><a href="<?=base_url()?>admin/students/acceptedProfilesType/Undergraduate"><i class="icon icon-user"></i>Accepted Applicants</a></li>
 																<li><a href="<?=base_url()?>admin/students/incompleteProfilesType/Undergraduate"><i class="icon icon-user"></i>Incomplete Profiles</a></li>
 															</ul>
                         </li>
 												<li class="treeview"><a href="#"><i class="icon icon-account_box s-24"></i>Postgraduate List<i class=" icon-angle-left  pull-right"></i></a>
                             <ul class="treeview-menu">
                                 <li><a href="<?=base_url()?>admin/students/getAllProfilesType/Postgraduate"><i class="icon icon-user"></i>All Applicants</a></li>
-																<li><a href="<?=base_url()?>#"><i class="icon icon-user"></i>Accepted Applicants</a></li>
+																<li><a href="<?=base_url()?>admin/students/acceptedProfilesType/Postgraduate"><i class="icon icon-user"></i>Accepted Applicants</a></li>
 																<li><a href="<?=base_url()?>admin/students/completeProfilesType/Postgraduate"><i class="icon icon-user"></i>complete Profiles</a></li>
                                 <li><a href="<?=base_url()?>admin/students/incompleteProfilesType/Postgraduates"><i class="icon icon-user"></i>Incomplete Profiles</a></li>
 															</ul>
@@ -141,7 +141,7 @@
                             <ul class="treeview-menu">
                                 <li><a href="<?=base_url()?>admin/students/getAllProfilesType/Law"><i class="icon icon-user"></i>All Applicants</a></li>
 																<li><a href="<?=base_url()?>admin/students/completeProfilesType/Law"><i class="icon icon-user"></i>complete Profiles</a></li>
-																<li><a href="<?=base_url()?>#"><i class="icon icon-user"></i>Accepted Applicants</a></li>
+																<li><a href="<?=base_url()?>admin/students/acceptedProfilesType/Law"><i class="icon icon-user"></i>Accepted Applicants</a></li>
                                 <li><a href="<?=base_url()?>admin/students/incompleteProfilesType/Law"><i class="icon icon-user"></i>Incomplete Profiles</a></li>
 															</ul>
                         </li>
@@ -149,7 +149,7 @@
                             <ul class="treeview-menu">
                                 <li><a href="<?=base_url()?>admin/students/getAllProfilesType/Health"><i class="icon icon-user"></i>All Applicants</a></li>
 																<li><a href="<?=base_url()?>admin/students/completeProfilesType/Health"><i class="icon icon-user"></i>complete Profiles</a></li>
-																<li><a href="<?=base_url()?>#"><i class="icon icon-user"></i>Accepted Applicants</a></li>
+																<li><a href="<?=base_url()?>admin/students/acceptedProfilesType/Health"><i class="icon icon-user"></i>Accepted Applicants</a></li>
                                 <li><a href="<?=base_url()?>admin/students/incompleteProfilesType/Health"><i class="icon icon-user"></i>Incomplete Profiles</a></li>
 															</ul>
                         </li>

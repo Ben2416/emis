@@ -68,6 +68,14 @@ class Students extends CI_Controller
 		$this->load->view('admin/footer_view');
     }
 	
+	public function acceptedProfilesType($loan_type){
+		$all_students = $this->Student_model->getAcceptedProfilesType($loan_type);
+		$data['students'] = $all_students;
+		$this->load->view('admin/header_view');
+		$this->load->view('admin/student/list_complete_profiles_view', $data);
+		$this->load->view('admin/footer_view');
+    }
+	
     public function incompleteProfilesType($loan_type){
 		$all_students = $this->Student_model->getIncompleteProfilesType($loan_type);
 		$data['students'] = $all_students;
@@ -91,4 +99,7 @@ class Students extends CI_Controller
 			$this->session->set_flashdata('error_msg', 'Application not rejected.');
 		redirect(base_url().'admin/Students', 'refresh');
 	}
+	
+	
+	
 }

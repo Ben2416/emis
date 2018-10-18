@@ -18,10 +18,10 @@ class Student_model extends CI_Model{
 	}
 	
 	function acceptApplication($id){
-		$data = array('status'=>3);
+		$data = array('status'=>1);
 		$this->db->where('user_id', $id);
 		//$this->db->where('batch', $this->session->current_batch);
-		$this->db->update('loan_details', $data);
+		$this->db->update('loan_applications', $data);
 		if($this->db->affected_rows()>0)
 			return true;
 		else 
@@ -32,7 +32,7 @@ class Student_model extends CI_Model{
 		$data = array('status'=>2);
 		$this->db->where('user_id', $id);
 		//$this->db->where('batch', $this->session->current_batch);
-		$this->db->update('loan_details', $data);
+		$this->db->update('loan_applications', $data);
 		if($this->db->affected_rows()>0)
 			return true;
 		else 
@@ -87,7 +87,7 @@ class Student_model extends CI_Model{
 		$this->db->join('users', 'users.user_id=loan_details.user_id');
 		//$this->db->where('loan_details.status',1);
 		$where = array(
-			'loan_details.status' => 1,
+			'loan_details.status' => 2,
 			'loan_details.loan_type' => $loan_type//,
 			//'batch' => $this->session->current_batch
 		);
@@ -99,7 +99,7 @@ class Student_model extends CI_Model{
 		$this->db->join('users', 'users.user_id=loan_details.user_id');
 		//$this->db->where('loan_details.status',0);
 		$where = array(
-			'loan_details.status' => 0,
+			'loan_details.status' => '<2',
 			'loan_details.loan_type' => $loan_type//,
 			//'batch' => $this->session->current_batch
 		);
@@ -155,12 +155,14 @@ class Student_model extends CI_Model{
 		$query = $this->db->get('loan_details');
 		return $query->num_rows();
 	}
+	
 	function getAcceptedApplicationsType($loan_type){
 		$where = array(
-			'status' => 3,
-			'loan_type' => $loan_type//,
+			'loan_applications.status' => 1,
+			'loan_details.loan_type' => $loan_type//,
 			//'batch' => $this->session->current_batch
 		);
+		$this->db->join('loan_applications', 'loan_details.user_id=loan_applications.user_id');
 		$this->db->where($where);
 		$query = $this->db->get('loan_details');
 		return $query->num_rows();
