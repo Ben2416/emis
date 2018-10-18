@@ -14,9 +14,9 @@ class Dashboard extends CI_Controller
 		$data['loans_released'] = $this->Account_model->getLoansReleased()->sum_total;//'N21,000,000';//$this->Loan_model->getLoansReleased();
 		$data['available_funds'] = $this->Account_model->getTotalFunds()->sum_total - $data['loans_released'];//'N70,000,000';//$this->Loan_model->getAmountPaid();
 		//$data['returning_users'] = $this->Loan_model->getReturningUsers();
-		
-		//pending 1, declined 2, approved/accepted 3, disbursed 4
-		
+
+	   //submitted 0, Accepted 1, Rejected 2, Approved 3, Declined 4, partial 5, disbursed 6, withdrawn 7
+
 		$data['pending_loans'] = count($this->Loan_model->getPendingLoans());
 		$data['approved_loans'] = count($this->Loan_model->getApprovedLoans());
 		$data['disbursed_loans'] = count($this->Loan_model->getDisbursedLoans());

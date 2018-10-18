@@ -3,31 +3,47 @@
         <div class="row row-eq-height my-3 mt-3">
             <div class="col-md-6">
                 <div class="row">
-                     <div class="col-md-6 col-sm-6">
-                        <div class="card no-b mb-3">
+                     <div class="col-md-4 col-sm-6">
+                        <div class="card no-b mb-3" style=" background: cadetblue; color: white; ">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div><i class="icon-user-circle-o s-18"></i></div>
-                                    <div><span class="badge badge-pill badge-danger">4:30</span></div>
+                                  <!--  <div><i class="icon-user-circle-o s-18"></i></div>
+                                    <div><span class="badge badge-pill badge-danger">4:30</span></div> --->
                                 </div>
                                 <div class="text-center">
                                     <div class="s-48 my-3 font-weight-lighter"><?=$total_borrowers?></div>
-                                    Total Number of Applicants
+                                    Applicants
                                 </div>
 
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-sm-6">
-                        <div class="card no-b mb-3">
+                    <div class="col-md-4 col-sm-6">
+                        <div class="card no-b mb-3" style=" background: lightgreen; color: white; ">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div><i class="icon-user-times s-18"></i></div>
-                                    <div><span class="text-danger">50</span></div>
+                                <!--    <div><i class="icon-user-times s-18"></i></div>
+                                    <div><span class="text-danger">50</span></div> -->
                                 </div>
                                 <div class="text-center">
                                     <div class="s-48 my-3 font-weight-lighter">95</div>
                                     Accepted Applicants
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                        <div class="card no-b mb-3" style=" background: indianred; color: white; ">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                <!--    <div><i class="icon-user-times s-18"></i></div>
+                                    <div><span class="text-danger">50</span></div> -->
+                                </div>
+                                <div class="text-center">
+                                    <div class="s-48 my-3 font-weight-lighter">95</div>
+                                    Rejected Applicants
                                 </div>
 
                             </div>
@@ -41,9 +57,9 @@
                   <div class="col-md-6 col-sm-6">
                       <div class="card no-b mb-3">
                           <div class="card-body">
-                              <div class="d-flex justify-content-between align-items-center">
+                            <!--<div class="d-flex justify-content-between align-items-center">
                                   <div><i class="icon-timer s-18"></i></div>
-                              </div>
+                              </div> -->
                               <div class="text-center">
 
                                   <div class="s-48 my-3 font-weight-lighter"><?=$available_funds?></div>
@@ -56,10 +72,10 @@
                     <div class="col-md-6 col-sm-6">
                         <div class="card no-b mb-3">
                             <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div><i class="icon-user-circle-o s-18"></i></div>
+                                <!--<div class="d-flex justify-content-between align-items-center">
+                                   <div><i class="icon-user-circle-o s-18"></i></div>
                                     <div><span class="badge badge-pill badge-danger">4:30</span></div>
-                                </div>
+                                </div> -->
                                 <div class="text-center">
                                     <div class="s-48 my-3 font-weight-lighter"><?=$loans_released?></div>
                                     Loan Released
@@ -76,31 +92,31 @@
                     <div class="card-body">
                         <div class="card-body">
                             <div class="height-300">
-                                <canvas
-                                        data-chart="chartJs"
-                                        data-chart-type="doughnut"
-                                        data-dataset="[
-                                                        [75, 25,25],
+                              <canvas
+                                      data-chart="chartJs"
+                                      data-chart-type="doughnut"
+                                      data-dataset="[
+                                                      [75, 25,25],
 
-                                                    ]"
-                                        data-labels="[['Available Funds],['Released Loans'],['Expenses']]"
-                                        data-dataset-options="[
-                                                    {
-                                                        label: 'Disk',
-                                                        backgroundColor: [
-                                                            '#03a9f4',
-                                                            '#8f5caf',
-                                                            '#3f51b5'
-                                                        ],
+                                                  ]"
+                                      data-labels="[['Available Funds'],['Disbured Funds'],['Expenses']]"
+                                      data-dataset-options="[
+                                                  {
+                                                      label: 'Disk',
+                                                      backgroundColor: [
+                                                          '#03a9f4',
+                                                          '#8f5caf',
+                                                          '#3f51b5'
+                                                      ],
 
-                                                    },
+                                                  },
 
 
-                                                    ]"
-                                        data-options="{legend: {display: !0,position: 'bottom',labels: {fontColor: '#7F8FA4',usePointStyle: !0}},
-                                }"
-                                >
-                                </canvas>
+                                                  ]"
+                                      data-options="{legend: {display: !0,position: 'bottom',labels: {fontColor: '#7F8FA4',usePointStyle: !0}},
+                              }"
+                              >
+                              </canvas>
                             </div>
                         </div>
                     </div>
