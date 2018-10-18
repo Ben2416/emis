@@ -1,30 +1,41 @@
 
     <div class="container-fluid animatedParent animateOnce">
       <div class="row" style="padding-top:10px">
-                               <div class="col-lg-4">
-                                   <div class="card r-3">
+                              <div class="col-lg-3" >
+                                  <div class="card r-3" style=" background: cadetblue; color: white; ">
+                                      <div class="p-4">
+
+                                          <div class="counter-title ">Incomplete Applications</div>
+                                          <h5 class="" style="color:white"><?=$incomplete_applications?></h5>
+                                      </div>
+                                  </div>
+                              </div>
+                               <div class="col-lg-3" >
+                                   <div class="card r-3" style=" background: #444080; color: white; ">
                                        <div class="p-4">
 
                                            <div class="counter-title">Completed Applications</div>
-                                           <h5 class=""><?=$complete_applications?></h5>
+                                           <h5 class="" style="color:white"><?=$complete_applications?></h5>
                                        </div>
                                    </div>
                                </div>
-                               <div class="col-lg-4">
-                                   <div class="card r-3">
-                                       <div class="p-4">
 
-                                           <div class="counter-title ">Incomplete Applications</div>
-                                           <h5 class=""><?=$incomplete_applications?></h5>
-                                       </div>
-                                   </div>
-                               </div>
-                               <div class="col-lg-4">
-                                   <div class="white card">
+                               <div class="col-lg-3" >
+                                   <div class="card r-3" style=" background: #60a05f; color: white; ">
                                        <div class="p-4">
 
                                            <div class="counter-title">Accepted Applications</div>
-                                           <h5 class=""><?=$accepted_applications?></h5>
+                                           <h5 class="" style="color:white"><?=$accepted_applications?></h5>
+                                       </div>
+                                   </div>
+                               </div>
+
+                               <div class="col-lg-3" >
+                                   <div class="card r-3" style=" background: #bf3851; color:white; ">
+                                       <div class="p-4">
+
+                                           <div class="counter-title">Rejected Applications</div>
+                                           <h5 class="" style="color:white"><?=$accepted_applications?></h5>
                                        </div>
                                    </div>
                                </div>
