@@ -6,7 +6,7 @@ class Student_model extends CI_Model{
 	
 	function getAllApplicants(){
 		$query = $this->db->get('users');
-		return $query->row();
+		return $query->num_rows();
 	}
 	
 	function getAcceptedApplicants(){

@@ -11,7 +11,7 @@ class Dashboard extends CI_Controller
     }
 
     public function index(){
-		$data['total_borrowers'] = $this->Loan_model->getTotalBorrowers();
+		$data['total_borrowers'] = $this->Student_model->getAllApplicants();
 		$data['accepted_applicants'] = $this->Student_model->getAcceptedApplicants();
 		$data['rejected_applicants'] = $this->Student_model->getRejectedApplicants();
 		
