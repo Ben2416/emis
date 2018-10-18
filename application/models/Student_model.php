@@ -4,6 +4,30 @@ class Student_model extends CI_Model{
 		parent::__construct();
 	}
 	
+	function getAllApplicants(){
+		$query = $this->db->get('users');
+		return $query->row();
+	}
+	
+	function getAcceptedApplicants(){
+		$where = array(
+			'loan_applications.status' => 1
+		);
+		$this->db->join('loan_applications', 'users.user_id=loan_applications.user_id');
+		$this->db->where($where);
+		$query = $this->db->get('users');
+		return $query->num_rows();
+	}
+	function getRejectedApplicants(){
+		$where = array(
+			'loan_applications.status' => 2
+		);
+		$this->db->join('loan_applications', 'users.user_id=loan_applications.user_id');
+		$this->db->where($where);
+		$query = $this->db->get('users');
+		return $query->num_rows();
+	}
+	
 	function getStudents(){
 		$this->db->join('users', 'users.user_id=loan_details.user_id');
 		$query = $this->db->get('loan_details');
@@ -110,11 +134,19 @@ class Student_model extends CI_Model{
 	
 	function getCompleteApplications(){
 		$where = array(
-			'status' => 1//,
+			'status' => 3//,
 			//'batch' => $this->session->current_batch
 		);
 		$this->db->where($where);
 		$query = $this->db->get('loan_applications');
+		return $query->num_rows();
+	}
+	function getCompleteDetails(){
+		$where = array(
+			'status' => 1
+		);
+		$this->db->where($where);
+		$query = $this->db->get('loan_details');
 		return $query->num_rows();
 	}
 	function getCompleteApplicationsType($loan_type){
@@ -131,6 +163,14 @@ class Student_model extends CI_Model{
 		$where = array(
 			'status' => 0//,
 			//'batch' => $this->session->current_batch
+		);
+		$this->db->where($where);
+		$query = $this->db->get('loan_details');
+		return $query->num_rows();
+	}
+	function getIncompleteDetails(){
+		$where = array(
+			'status' => 0
 		);
 		$this->db->where($where);
 		$query = $this->db->get('loan_details');
@@ -155,6 +195,15 @@ class Student_model extends CI_Model{
 		$query = $this->db->get('loan_details');
 		return $query->num_rows();
 	}
+	function getAcceptedDetails(){
+		$where = array(
+			'loan_applications.status' => 1
+		);
+		$this->db->where($where);
+		$this->db->join('loan_applications', 'loan_applications.user_id=loan_details.user_id');
+		$query = $this->db->get('loan_details');
+		return $query->num_rows();
+	}
 	
 	function getAcceptedApplicationsType($loan_type){
 		$where = array(
@@ -164,6 +213,17 @@ class Student_model extends CI_Model{
 		);
 		$this->db->join('loan_applications', 'loan_details.user_id=loan_applications.user_id');
 		$this->db->where($where);
+		$query = $this->db->get('loan_details');
+		return $query->num_rows();
+	}
+	
+	
+	function getRejectedDetails(){
+		$where = array(
+			'loan_applications.status' => 2
+		);
+		$this->db->where($where);
+		$this->db->join('loan_applications', 'loan_applications.user_id=loan_details.user_id');
 		$query = $this->db->get('loan_details');
 		return $query->num_rows();
 	}

@@ -26,7 +26,7 @@
                                     <div><span class="text-danger">50</span></div> -->
                                 </div>
                                 <div class="text-center">
-                                    <div class="s-48 my-3 font-weight-lighter">95</div>
+                                    <div class="s-48 my-3 font-weight-lighter"><?=$accepted_applicants?></div>
                                     Accepted Applicants
                                 </div>
 
@@ -42,7 +42,7 @@
                                     <div><span class="text-danger">50</span></div> -->
                                 </div>
                                 <div class="text-center">
-                                    <div class="s-48 my-3 font-weight-lighter">95</div>
+                                    <div class="s-48 my-3 font-weight-lighter"><?=$rejected_applicants?></div>
                                     Rejected Applicants
                                 </div>
 

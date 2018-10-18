@@ -6,7 +6,7 @@
                                       <div class="p-4">
 
                                           <div class="counter-title ">Incomplete Applications</div>
-                                          <h5 class="" style="color:white"><?=$incomplete_applications?></h5>
+                                          <h5 class="" style="color:white"><?=$incomplete_details?></h5>
                                       </div>
                                   </div>
                               </div>
@@ -15,7 +15,7 @@
                                        <div class="p-4">
 
                                            <div class="counter-title">Completed Applications</div>
-                                           <h5 class="" style="color:white"><?=$complete_applications?></h5>
+                                           <h5 class="" style="color:white"><?=$complete_details?></h5>
                                        </div>
                                    </div>
                                </div>
@@ -25,7 +25,7 @@
                                        <div class="p-4">
 
                                            <div class="counter-title">Accepted Applications</div>
-                                           <h5 class="" style="color:white"><?=$accepted_applications?></h5>
+                                           <h5 class="" style="color:white"><?=$accepted_details?></h5>
                                        </div>
                                    </div>
                                </div>
@@ -35,7 +35,7 @@
                                        <div class="p-4">
 
                                            <div class="counter-title">Rejected Applications</div>
-                                           <h5 class="" style="color:white"><?=$accepted_applications?></h5>
+                                           <h5 class="" style="color:white"><?=$accepted_details?></h5>
                                        </div>
                                    </div>
                                </div>

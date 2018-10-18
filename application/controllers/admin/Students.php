@@ -12,9 +12,10 @@ class Students extends CI_Controller
     public function index(){
 		$all_students = $this->Student_model->getStudents();
 		$data['students'] = $all_students;
-		$data['complete_applications'] = $this->Student_model->getCompleteApplications();
-		$data['incomplete_applications'] = $this->Student_model->getIncompleteApplications();
-		$data['accepted_applications'] = $this->Student_model->getAcceptedApplications();
+		$data['complete_details'] = $this->Student_model->getCompleteDetails();
+		$data['incomplete_details'] = $this->Student_model->getIncompleteDetails();
+		$data['accepted_details'] = $this->Student_model->getAcceptedDetails();
+		$data['accepted_details'] = $this->Student_model->getRejectedDetails();
 		//print_r($data['students']);//exit;
 		$this->load->view('admin/header_view');
 		$this->load->view('admin/student/all_students_view', $data);
