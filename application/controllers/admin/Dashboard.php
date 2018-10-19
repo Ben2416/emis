@@ -15,7 +15,6 @@ class Dashboard extends CI_Controller
 		$data['accepted_applicants'] = $this->Student_model->getAcceptedApplicants();
 		$data['rejected_applicants'] = $this->Student_model->getRejectedApplicants();
 		
-		
 		$data['loans_released'] = $this->Account_model->getLoansReleased()->sum_total;//'N21,000,000';//$this->Loan_model->getLoansReleased();
 		$data['available_funds'] = $this->Account_model->getTotalFunds()->sum_total - $data['loans_released'];//'N70,000,000';//$this->Loan_model->getAmountPaid();
 		//$data['returning_users'] = $this->Loan_model->getReturningUsers();

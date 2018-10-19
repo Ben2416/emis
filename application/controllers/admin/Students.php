@@ -12,10 +12,10 @@ class Students extends CI_Controller
     public function index(){
 		$all_students = $this->Student_model->getStudents();
 		$data['students'] = $all_students;
-		$data['complete_details'] = $this->Student_model->getCompleteDetails();
 		$data['incomplete_details'] = $this->Student_model->getIncompleteDetails();
+		$data['complete_details'] = $this->Student_model->getCompleteDetails();
 		$data['accepted_details'] = $this->Student_model->getAcceptedDetails();
-		$data['accepted_details'] = $this->Student_model->getRejectedDetails();
+		$data['rejected_details'] = $this->Student_model->getRejectedDetails();
 		//print_r($data['students']);//exit;
 		$this->load->view('admin/header_view');
 		$this->load->view('admin/student/all_students_view', $data);
@@ -53,11 +53,17 @@ class Students extends CI_Controller
 	public function getAllProfilesType($loan_type){
 		$all_students = $this->Student_model->getAllProfilesType($loan_type);
 		$data['students'] = $all_students;
-		$data['complete_applications'] = $this->Student_model->getCompleteApplicationsType($loan_type);
-		$data['incomplete_applications'] = $this->Student_model->getIncompleteApplicationsType($loan_type);
-		$data['accepted_applications'] = $this->Student_model->getAcceptedApplicationsType($loan_type);
+		$data['complete_applications'] = $this->Student_model->getStatusApplicationsType($loan_type, 0);
+		$data['incomplete_applications'] = $this->Student_model->getStatusApplicationsType($loan_type, 0);
+		$data['accepted_applications'] = $this->Student_model->getStatusApplicationsType($loan_type, 1);
+		$data['rejected_applications'] = $this->Student_model->getStatusApplicationsType($loan_type, 2);
+		$data['approved_applications'] = $this->Student_model->getStatusApplicationsType($loan_type, 3);
+		$data['declined_applications'] = $this->Student_model->getStatusApplicationsType($loan_type, 4);
+		$data['partial_applications'] = $this->Student_model->getStatusApplicationsType($loan_type, 5);
+		$data['disbursed_applications'] = $this->Student_model->getStatusApplicationsType($loan_type, 6);
+		$data['withdrawn_applications'] = $this->Student_model->getStatusApplicationsType($loan_type, 7);
 		$this->load->view('admin/header_view');
-		$this->load->view('admin/student/all_students_view', $data);
+		$this->load->view('admin/student/all_students_type_view', $data);
 		$this->load->view('admin/footer_view');
 	}
 	

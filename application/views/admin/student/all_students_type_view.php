@@ -2,20 +2,11 @@
     <div class="container-fluid animatedParent animateOnce">
       <div class="row" style="padding-top:10px">
                               <div class="col-lg-3" >
-                                  <div class="card r-3" style=" background: cadetblue; color: white; ">
-                                      <div class="p-4">
-
-                                          <div class="counter-title ">Incomplete Applications</div>
-                                          <h5 class="" style="color:white"><?=$incomplete_details?></h5>
-                                      </div>
-                                  </div>
-                              </div>
-                               <div class="col-lg-3" >
                                    <div class="card r-3" style=" background: #444080; color: white; ">
                                        <div class="p-4">
 
                                            <div class="counter-title">Completed Applications</div>
-                                           <h5 class="" style="color:white"><?=$complete_details?></h5>
+                                           <h5 class="" style="color:white"><?=$complete_applications?></h5>
                                        </div>
                                    </div>
                                </div>
@@ -25,7 +16,7 @@
                                        <div class="p-4">
 
                                            <div class="counter-title">Accepted Applications</div>
-                                           <h5 class="" style="color:white"><?=$accepted_details?></h5>
+                                           <h5 class="" style="color:white"><?=$accepted_applications?></h5>
                                        </div>
                                    </div>
                                </div>
@@ -35,7 +26,54 @@
                                        <div class="p-4">
 
                                            <div class="counter-title">Rejected Applications</div>
-                                           <h5 class="" style="color:white"><?=$rejected_details?></h5>
+                                           <h5 class="" style="color:white"><?=$rejected_applications?></h5>
+                                       </div>
+                                   </div>
+                               </div>
+                              <div class="col-lg-3" >
+                                  <div class="card r-3" style=" background: cadetblue; color: white; ">
+                                      <div class="p-4">
+
+                                          <div class="counter-title ">Approved Applications</div>
+                                          <h5 class="" style="color:white"><?=$approved_applications?></h5>
+                                      </div>
+                                  </div>
+                              </div>
+                               <div class="col-lg-3" >
+                                   <div class="card r-3" style=" background: #444080; color: white; ">
+                                       <div class="p-4">
+
+                                           <div class="counter-title">Declined Applications</div>
+                                           <h5 class="" style="color:white"><?=$declined_applications?></h5>
+                                       </div>
+                                   </div>
+                               </div>
+
+                               <div class="col-lg-3" >
+                                   <div class="card r-3" style=" background: #60a05f; color: white; ">
+                                       <div class="p-4">
+
+                                           <div class="counter-title">Partially Disbursed Applications</div>
+                                           <h5 class="" style="color:white"><?=$partial_applications?></h5>
+                                       </div>
+                                   </div>
+                               </div>
+
+                               <div class="col-lg-3" >
+                                   <div class="card r-3" style=" background: #bf3851; color:white; ">
+                                       <div class="p-4">
+
+                                           <div class="counter-title">Disbursed Applications</div>
+                                           <h5 class="" style="color:white"><?=$disbursed_applications?></h5>
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="col-lg-3" >
+                                   <div class="card r-3" style=" background: cadetblue; color:white; ">
+                                       <div class="p-4">
+
+                                           <div class="counter-title">Withdrawn Applications</div>
+                                           <h5 class="" style="color:white"><?=$withdrawn_applications?></h5>
                                        </div>
                                    </div>
                                </div>

@@ -152,11 +152,11 @@ class Student_model extends CI_Model{
 	function getCompleteApplicationsType($loan_type){
 		$where = array(
 			'status' => 1,
-			'loan_type' => $loan_type//,
-			//'batch' => $this->session->current_batch
+			'loan_type' => $loan_type,
+			'batch' => $this->session->current_batch
 		);
 		$this->db->where($where);
-		$query = $this->db->get('loan_details');
+		$query = $this->db->get('loan_applications');
 		return $query->num_rows();
 	}
 	function getIncompleteApplications(){
@@ -179,11 +179,11 @@ class Student_model extends CI_Model{
 	function getIncompleteApplicationsType($loan_type){
 		$where = array(
 			'status' => 0,
-			'loan_type' => $loan_type//,
-			//'batch' => $this->session->current_batch
+			'loan_type' => $loan_type,
+			'batch' => $this->session->current_batch
 		);
 		$this->db->where($where);
-		$query = $this->db->get('loan_details');
+		$query = $this->db->get('loan_applications');
 		return $query->num_rows();
 	}
 	function getAcceptedApplications(){
@@ -204,20 +204,6 @@ class Student_model extends CI_Model{
 		$query = $this->db->get('loan_details');
 		return $query->num_rows();
 	}
-	
-	function getAcceptedApplicationsType($loan_type){
-		$where = array(
-			'loan_applications.status' => 1,
-			'loan_details.loan_type' => $loan_type//,
-			//'batch' => $this->session->current_batch
-		);
-		$this->db->join('loan_applications', 'loan_details.user_id=loan_applications.user_id');
-		$this->db->where($where);
-		$query = $this->db->get('loan_details');
-		return $query->num_rows();
-	}
-	
-	
 	function getRejectedDetails(){
 		$where = array(
 			'loan_applications.status' => 2
@@ -227,4 +213,17 @@ class Student_model extends CI_Model{
 		$query = $this->db->get('loan_details');
 		return $query->num_rows();
 	}
+	
+	function getStatusApplicationsType($loan_type, $loan_status){
+		$where = array(
+			'loan_applications.status' => $loan_status,
+			'loan_details.loan_type' => $loan_type,
+			'batch' => $this->session->current_batch
+		);
+		$this->db->join('loan_details', 'loan_details.user_id=loan_applications.user_id');
+		$this->db->where($where);
+		$query = $this->db->get('loan_applications');
+		return $query->num_rows();
+	}
+	
 }
