@@ -1,18 +1,32 @@
 <header class="white pt-3 relative shadow">
             <div class="container-fluid">
-                <div class="row p-t-b-10 ">
-                    <div class="col">
-                        <div class="pb-3">
-                            <div class="image mr-3  float-left">
-                                <img class="user_avatar no-b no-p" src="<?=base_url()?>assets/passports/<?=$profile['passport']?>" alt="User Image">
+              <div class="row" style="padding-top:10px">
+                <div class="col-md-4 col-xs-6" >
+                    <div class="card r-3" >
+
+                          <div class="" style=" color: midnightblue; font-weight: 700; ">
+                                <div class="image mr-3  float-left">
+                                    <img  src="<?=base_url()?>assets/passports/<?=$profile['passport']?>" alt="User Image" width="125px" height="125px">
+                                </div>
+                                <div>
+                                    <h6 class="p-t-10"><?=$profile['firstname']?> <?=$profile['lastname']?></h6>
+                                    Applicant ID: BYSHESLB/APP/<?=$profile['user_id']?>
+                                </div>
                             </div>
-                            <div>
-                                <h6 class="p-t-10"><?=$profile['firstname']?> <?=$profile['lastname']?></h6>
-                                Applicant ID: BYSHESLB/APP/<?=$profile['user_id']?>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
+                 <div >
+                     <div class="card r-3" style="/* background: #444080; *//* color: white; */float: right;border: 4px dotted #c1b6b6; midnightblue; font-weight: 700;">
+                         <div class="p-4">
+
+                             <div class="counter-title">Loan Status<br/>{Applicant_status}</div>
+
+                         </div>
+                     </div>
+                 </div>
+              </div>
+
 
               <div class="row">
                   <ul class="nav nav-material responsive-tab" id="v-pills-tab" role="tablist">
@@ -330,9 +344,53 @@
                                    </div>
                                                        </div>
                                                        <div class="tab-pane fade text-center p-5" id="w3-tab3" role="tabpanel" aria-labelledby="w3-tab3">
-                                                           <h4 class="card-title">Guarantor</h4>
-                                                           <p class="card-text">Integration in progress</p>
-                                                           <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                         <div class="row">
+                                                             <div class="col-md-4 col-xs-6 b-r"> <strong>Guarantor Name</strong>
+                                                                 <br>
+                                                                 <p class="text-muted">{title|First Name|last name}</p>
+                                                             </div>
+                                                             <div class="col-md-4 col-xs-6 b-r"> <strong>Phone Number</strong>
+                                                                 <br>
+                                                                 <p class="text-muted">{Phone Number}</p>
+                                                             </div>
+                                                             <div class="col-md-4 col-xs-6"> <strong>Alternative Phone</strong>
+                                                                 <br>
+                                                                 <p class="text-muted">{Alternative Phone}</p>
+                                                             </p></div>
+
+                                                         </div>
+
+                                                         <div class="row">
+                                                             <div class="col-md-4 col-xs-6 b-r"> <strong>Contact Address</strong>
+                                                                 <br>
+                                                                 <p class="text-muted">{Contact Address}</p>
+                                                             </div>
+                                                             <div class="col-md-4 col-xs-6 b-r"> <strong>State</strong>
+                                                                 <br>
+                                                                 <p class="text-muted">{state}</p>
+                                                             </div>
+                                                             <div class="col-md-4 col-xs-6"> <strong>Occupation</strong>
+                                                                 <br>
+                                                                 <p class="text-muted">{Occupation}</p>
+                                                             </p></div>
+
+                                                         </div>
+
+                                                         <div class="row">
+                                                             <div class="col-md-4 col-xs-6 b-r"> <strong>Employer</strong>
+                                                                 <br>
+                                                                 <p class="text-muted">{Employer}</p>
+                                                             </div>
+                                                             <div class="col-md-4 col-xs-6 b-r"> <strong>Position Held</strong>
+                                                                 <br>
+                                                                 <p class="text-muted">{Position Held}</p>
+                                                             </div>
+                                                             <div class="col-md-4 col-xs-6"> <strong>Relationship with Applicant</strong>
+                                                                 <br>
+                                                                 <p class="text-muted">{Relationship}</p>
+                                                             </p></div>
+
+                                                         </div>
                                                        </div>
                                                    </div>
 
@@ -391,7 +449,7 @@
                                                    <td>Ebimobowei Okpongu</td>
                                                    <td><span class="badge badge-warning">Awaiting Approval</span>
                                                    </td>
-                                                   <td>N300,000.00</td> 
+                                                   <td>N300,000.00</td>
                                                </tr>-->
                                                </tbody>
                                            </table>
