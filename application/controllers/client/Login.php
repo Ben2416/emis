@@ -61,6 +61,7 @@ class Login extends CI_Controller {
 			if($this->input->post('loan_category_btn')){
 				$result = $this->Login_model->set_loan_category();
 				if($result == true){
+					$this->session->set_userdata('loan_type', $this->input->post('loancat'));
 					$this->session->set_flashdata('rsuccess_msg', 'Loan category has been set.');
                     redirect(base_url().'client/PersonalDetails');
 				}else{
