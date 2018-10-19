@@ -1,8 +1,34 @@
 <header class="white pt-3 relative shadow">
             <div class="container-fluid">
+              <div class="row" style="padding-top:10px">
+                <div class="col-md-4 col-xs-6" >
+                    <div class="card r-3" >
+
+                          <div class="" style=" color: midnightblue; font-weight: 700; ">
+                                <div class="image mr-3  float-left">
+                                    <img  src="<?=base_url()?>assets/passports/<?=$profile['passport']?>" alt="User Image" width="125px" height="125px">
+                                </div>
+                                <div>
+                                    <h6 class="p-t-10"><?=$profile['firstname']?> <?=$profile['lastname']?></h6>
+                                    Applicant ID: BYSHESLB/APP/<?=$profile['user_id']?>
+                                </div>
+                            </div>
+
+                    </div>
+                </div>
+                 <div >
+                     <div class="card r-3" style="/* background: #444080; *//* color: white; */float: right;border: 4px dotted #c1b6b6; midnightblue; font-weight: 700;">
+                         <div class="p-4">
+
+                             <div class="counter-title">Applicant Status<br/>{Applicant_status}</div>
+
+                         </div>
+                     </div>
+                 </div>
+              </div>
                 <div class="row p-t-b-10 ">
                     <div class="col">
-                        <div class="pb-3">
+                      <!--  <div class="pb-3">
                             <div class="image mr-3  float-left">
                                 <img class="user_avatar no-b no-p" src="<?=base_url()?>assets/passports/<?=$profile['passport']?>" alt="User Image">
                             </div>
@@ -10,7 +36,7 @@
                                 <h6 class="p-t-10"><?=$profile['firstname']?> <?=$profile['lastname']?></h6>
                                 Applicant ID: BYSHESLB/APP/<?=$profile['user_id']?>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
