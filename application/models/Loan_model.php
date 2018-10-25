@@ -50,9 +50,9 @@ class Loan_model extends CI_Model{
 			'uni_contact_person_phone' => $this->input->post('uni_contact_person_phone'),
 			'std_housing' => $this->input->post('std_housing'),
 			'std_address' => $this->input->post('std_address'),
-			
+
 			'previous_degree_acquired' => implode(',', $this->input->post('previous_degree_acquired')),
-			
+
 			'dob_file' => $dob_name,
 			'lga_file' => $lga_name,
 			'mid_file' => $mid_name,
@@ -64,7 +64,7 @@ class Loan_model extends CI_Model{
 		);
 		$udata = array();
 		foreach($data as $k=>$v){
-			$udata[] = $k.'='."'".$v."'"; 
+			$udata[] = $k.'='."'".$v."'";
 		}
 		$sql = $this->db->insert_string('loan_details',$data)." ON DUPLICATE KEY UPDATE ".implode(', ',$udata) ;
 		$insert = $this->db->query($sql);
@@ -101,10 +101,10 @@ class Loan_model extends CI_Model{
 			'guarantor_position' => $this->input->post('guarantor_position'),
 			'guarantor_relatn' => $this->input->post('guarantor_relatn')
 		);
-		
+
 		$udata = array();
 		foreach($data as $k=>$v){
-			$udata[] = $k.'='."'".$v."'"; 
+			$udata[] = $k.'='."'".$v."'";
 		}
 		$sql = $this->db->insert_string('loan_applications',$data)." ON DUPLICATE KEY UPDATE ".implode(', ',$udata) ;
 		$insert = $this->db->query($sql);
@@ -115,7 +115,7 @@ class Loan_model extends CI_Model{
 		}else{
 			return 0;
 		}
-		
+
 		//return $this->db->insert('loan_applications', $data);
 		$this->db->insert('loan_applications', $data);
 		if($this->db->affected_rows()>0){
@@ -124,7 +124,7 @@ class Loan_model extends CI_Model{
 			return $this->db->update('users',$data);
 		}else return 0;
 	}
-	
+
 	function getCurrentBatch(){
 		$this->db->limit(1);
 		$this->db->order_by('bid', 'DESC');
@@ -135,6 +135,14 @@ class Loan_model extends CI_Model{
 	function getProfile($uid){
 		$this->db->where('user_id',$uid);
 		$query = $this->db->get('loan_details');
+		return $query->result_array();
+	}
+
+  function getLoanProfile($id){
+		$this->db->join('loan_details', 'loan_details.user_id=users.user_id');
+    $this->db->join('loan_applications', 'loan_applications.user_id=users.user_id');
+		$this->db->where('users.user_id', $id);
+		$query = $this->db->get('users');
 		return $query->result_array();
 	}
 
@@ -158,7 +166,7 @@ class Loan_model extends CI_Model{
 		$query = $this->db->get('loan_applications');
 		return $query->num_rows();
 	}
-	
+
 	function getAllLoans(){
 		$this->db->join('users', 'loan_applications.user_id=users.user_id');
 		$this->db->where('batch', $this->session->current_batch);
@@ -173,7 +181,7 @@ class Loan_model extends CI_Model{
 		$query = $this->db->get('loan_applications');
 		return $query->result_array();
 	}
-	
+
 	function getPendingLoans(){
 		$this->db->join('users', 'loan_applications.user_id=users.user_id');
 		$this->db->where('loan_applications.status', 1);

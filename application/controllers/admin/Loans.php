@@ -6,6 +6,7 @@ class Loans extends CI_Controller
     {
         parent::__construct();
 		$this->load->model('Loan_model');
+    $this->load->model('Student_model');
     }
 
     public function index(){
@@ -68,4 +69,16 @@ class Loans extends CI_Controller
 		$this->load->view('admin/loan/withdrawn_loan_view', $data);
 		$this->load->view('admin/footer_view');
     }
+
+    public function loanProfile($id){
+      $data['profile'] = $this->Loan_model->getLoanProfile($id)[0];
+      $data['loans'] = $this->Student_model->getStudentLoans($id);
+  		//print_r($data['loans']);//exit;
+  		$data['loans_applied'] = count($data['loans']);
+  		$data['loans_total'] = $this->Student_model->getStudentLoansTotal($id);
+  		$this->load->view('admin/header_view');
+  		$this->load->view('admin/loan/loan_student_view', $data);
+  		$this->load->view('admin/footer_view');
+    }
+
 }

@@ -87,7 +87,7 @@
                                             <td> <div class="d-none d-lg-block">0.00</div></td>
                                             <td> <div class="d-none d-lg-block"><span class="r-3 badge badge-success "><?=$loan['status']?></span></div></td>
                                             <td>
-                                                <a href="<?=base_url()?>admin/Students/studentProfile/<?=$loan['user_id']?>"><i class="icon-eye mr-3"></i></a>
+                                                <a href="<?=base_url()?>admin/Loans/loanProfile/<?=$loan['user_id']?>"><i class="icon-eye mr-3"></i></a>
                                                 <a href="panel-page-profile.html"><i class="icon-pencil"></i></a>
                                             </td>
                                         </tr>

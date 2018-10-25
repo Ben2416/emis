@@ -1,4 +1,4 @@
-<header class="white pt-3 relative shadow">
++<header class="white pt-3 relative shadow">
             <div class="container-fluid">
               <div class="row" style="padding-top:10px">
                 <div class="col-md-4 col-xs-6" >
@@ -61,7 +61,7 @@
                    <div class="row">
                        <div class="col-md-3">
                            <div class="card ">
-
+                             <!-- please fetch the url of the uploaded documents -->
                                <ul class="list-group list-group-flush">
                                    <li class="list-group-item"><i class="icon icon-mobile text-primary"></i><strong class="s-12"><?=$profile['phone']?></strong> <span class="float-right s-12"></span></li>
                                    <li class="list-group-item"><i class="icon icon-mail text-success"></i><strong class="s-12"><?=$profile['email']?></strong> <span class="float-right s-12"></span></li>

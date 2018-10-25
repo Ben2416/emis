@@ -63,12 +63,12 @@
                                    <li class="list-group-item"><i class="icon icon-mail text-success"></i><strong class="s-12"><?=$profile['email']?></strong> <span class="float-right s-12"></span></li>
                                    <li class="list-group-item"><i class="icon icon-address-card-o text-warning"></i><strong class="s-12"><?=$profile['address']?></strong> <span class="float-right s-12"></span></li>
                                    <li class="list-group-item"><strong class="s-12">Attachments</strong></li>
-                                   <li class="list-group-item"><strong class="s-12"><a href="#">Birth Certificate</a></strong></li>
-                                   <li class="list-group-item"><strong class="s-12"><a href="#">Local Government Identification</a></strong></li>
-                                   <li class="list-group-item"><strong class="s-12"><a href="#"> Reference Form</a></strong></li>
-                                   <li class="list-group-item"><strong class="s-12"><a href="#"> National Identity</a></strong></li>
-                                   <li class="list-group-item"><strong class="s-12"><a href="#"> Addmission Letter</a></strong></li>
-                                   <li class="list-group-item"><strong class="s-12"><a href="#"> Current Result</a></strong></li>
+                                   <li class="list-group-item"><strong class="s-12"><a href="<?=base_url('assets/uploads/birth_certificate/').$profile['dob_file']?>">Birth Certificate</a></strong></li>
+                                   <li class="list-group-item"><strong class="s-12"><a href="<?=base_url('assets/uploads/lga/').$profile['lga_file']?>">Local Government Identification</a></strong></li>
+                                   <li class="list-group-item"><strong class="s-12"><a href="<?=base_url('assets/uploads/reference_letter/').$profile['ref_file']?>"> Reference Form</a></strong></li>
+                                   <li class="list-group-item"><strong class="s-12"><a href="<?=base_url('assets/uploads/mode_of_identification/').$profile['mid_file']?>"> National Identity</a></strong></li>
+                                   <li class="list-group-item"><strong class="s-12"><a href="<?=base_url('assets/uploads/admission_letter/').$profile['adl_file']?>"> Addmission Letter</a></strong></li>
+                                   <li class="list-group-item"><strong class="s-12"><a href="<?=base_url('assets/uploads/current_session_result/').$profile['csr_file']?>"> Current Result</a></strong></li>
 
                                </ul>
                            </div>
@@ -347,15 +347,15 @@
                                                          <div class="row">
                                                              <div class="col-md-4 col-xs-6 b-r"> <strong>Guarantor Name</strong>
                                                                  <br>
-                                                                 <p class="text-muted">{title|First Name|last name}</p>
+                                                                 <p class="text-muted"><?=$profile['guarantor_title']?> <?=$profile['guarantor_fname']?> <?=$profile['guarantor_lname']?></p>
                                                              </div>
                                                              <div class="col-md-4 col-xs-6 b-r"> <strong>Phone Number</strong>
                                                                  <br>
-                                                                 <p class="text-muted">{Phone Number}</p>
+                                                                 <p class="text-muted"><?=$profile['guarantor_phone']?></p>
                                                              </div>
                                                              <div class="col-md-4 col-xs-6"> <strong>Alternative Phone</strong>
                                                                  <br>
-                                                                 <p class="text-muted">{Alternative Phone}</p>
+                                                                 <p class="text-muted"><?=$profile['guarantor_altphone']?></p>
                                                              </p></div>
 
                                                          </div>
@@ -363,15 +363,15 @@
                                                          <div class="row">
                                                              <div class="col-md-4 col-xs-6 b-r"> <strong>Contact Address</strong>
                                                                  <br>
-                                                                 <p class="text-muted">{Contact Address}</p>
+                                                                 <p class="text-muted"><?=$profile['guarantor_address']?></p>
                                                              </div>
                                                              <div class="col-md-4 col-xs-6 b-r"> <strong>State</strong>
                                                                  <br>
-                                                                 <p class="text-muted">{state}</p>
+                                                                 <p class="text-muted"><?=$profile['guarantor_state']?></p>
                                                              </div>
                                                              <div class="col-md-4 col-xs-6"> <strong>Occupation</strong>
                                                                  <br>
-                                                                 <p class="text-muted">{Occupation}</p>
+                                                                 <p class="text-muted"><?=$profile['guarantor_occupation']?></p>
                                                              </p></div>
 
                                                          </div>
@@ -379,15 +379,15 @@
                                                          <div class="row">
                                                              <div class="col-md-4 col-xs-6 b-r"> <strong>Employer</strong>
                                                                  <br>
-                                                                 <p class="text-muted">{Employer}</p>
+                                                                 <p class="text-muted"><?=$profile['guarantor_emp']?></p>
                                                              </div>
                                                              <div class="col-md-4 col-xs-6 b-r"> <strong>Position Held</strong>
                                                                  <br>
-                                                                 <p class="text-muted">{Position Held}</p>
+                                                                 <p class="text-muted"><?=$profile['guarantor_position']?></p>
                                                              </div>
                                                              <div class="col-md-4 col-xs-6"> <strong>Relationship with Applicant</strong>
                                                                  <br>
-                                                                 <p class="text-muted">{Relationship}</p>
+                                                                 <p class="text-muted"><?=$profile['guarantor_relatn']?></p>
                                                              </p></div>
 
                                                          </div>
