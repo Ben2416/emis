@@ -12,10 +12,10 @@ class PersonalDetails extends CI_Controller
 
 		$data['page_title'] = 'Personal Details';
 		$data['details'] = $this->Loan_model->getPersonalDetails();
-		
+
 		$data['details']['loan_type'] = 'Law';
 		//print_r($data);exit;
-		
+
 		$this->form_validation->set_error_delimiters('<div class="error">','</div>');
         $this->form_validation->set_rules('first_name','First Name','trim|required');
         $this->form_validation->set_rules('last_name','Last Name','trim|required');
@@ -65,10 +65,10 @@ class PersonalDetails extends CI_Controller
         ///$this->form_validation->set_rules('loan_amount','Amount','trim|required');
 
 		if($this->form_validation->run() == FALSE){
-			$this->load->view('client/header_view', $data);
-			$this->load->view('client/personal_details_view');
+		//	$this->load->view('client/header_view', $data);
+			$this->load->view('client/personal_details_view', $data);
 		}else{
-			$this->load->view('client/header_view', $data);
+			$this->load->view('client/personal_details_view', $data);
 			$dob_data = array();
 			$lga_data = array();
 			$mid_data = array();
@@ -186,7 +186,7 @@ class PersonalDetails extends CI_Controller
 								}else{
 									$csr_data = $this->upload->data();//hold csr upload data
 									$csr_name = $name.$csr_data['file_ext'];
-									
+
 									//FOR PREVIOUS DEGREE ACQUIRED
 									$pda_name = '';
 									if($data['details']['loan_type'] == 'Law' || $data['details']['loan_type'] == 'Health'){
@@ -202,7 +202,7 @@ class PersonalDetails extends CI_Controller
 											$_FILES['pda_file[]']['tmp_name']= $_FILES['pda_file']['tmp_name'][$key];
 											$_FILES['pda_file[]']['error']= $_FILES['pda_file']['error'][$key];
 											$_FILES['pda_file[]']['size']= $_FILES['pda_file']['size'][$key];
-											
+
 											$pda_config['file_name'] = $name;
 											$this->upload->initialize($pda_config);
 											if(!$this->upload->do_upload('pda_file[]')){
@@ -220,7 +220,7 @@ class PersonalDetails extends CI_Controller
 											}
 											$pc++;
 										}
-										
+
 										$pda_name = implode(',', $pda_names);
 									}
 
