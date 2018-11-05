@@ -13,7 +13,7 @@ class PersonalDetails extends CI_Controller
 		$data['page_title'] = 'Personal Details';
 		$data['details'] = $this->Loan_model->getPersonalDetails();
 		
-		$data['details']['loan_type'] = 'Law';
+		//$data['details']['loan_type'] = 'Law';
 		//print_r($data);exit;
 		
 		$this->form_validation->set_error_delimiters('<div class="error">','</div>');

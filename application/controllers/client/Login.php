@@ -129,7 +129,8 @@ class Login extends CI_Controller {
     }
 
     function createPass( $length = 6 ) {
-        $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        //$chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        $chars = "abcdefghijklmnopqrstuvwxyz0123456789";
         $password = substr( str_shuffle( $chars ), 0, $length );
         return $password;
     }
