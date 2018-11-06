@@ -218,6 +218,10 @@ class Loan_model extends CI_Model{
 		$query = $this->db->get('loan_applications');
 		return $query->result_array();
 	}
+	
+	function getCurrentLoan(){
+		
+	}
 
 
 }
