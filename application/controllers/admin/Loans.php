@@ -6,7 +6,7 @@ class Loans extends CI_Controller
     {
         parent::__construct();
 		$this->load->model('Loan_model');
-    $this->load->model('Student_model');
+		$this->load->model('Student_model');
     }
 
     public function index(){
@@ -73,12 +73,26 @@ class Loans extends CI_Controller
     public function loanProfile($id){
       $data['profile'] = $this->Loan_model->getLoanProfile($id)[0];
       $data['loans'] = $this->Student_model->getStudentLoans($id);
-  		//print_r($data['loans']);//exit;
+	  $data['current_loan'] = $this->Loan_model->getCurrentLoan($id)[0];
+	  
+  		//print_r($data['current_loan']);//exit;
   		$data['loans_applied'] = count($data['loans']);
   		$data['loans_total'] = $this->Student_model->getStudentLoansTotal($id);
   		$this->load->view('admin/header_view');
   		$this->load->view('admin/loan/loan_student_view', $data);
   		$this->load->view('admin/footer_view');
     }
+	
+	public function setLoanStatus($userid, $loanid, $status){
+		$sli = $this->Loan_model->setLoanStatus($loanid, $status);
+		//echo $sli.'df'; exit;
+		if($sli == true){
+			$this->session->set_flashdata('success_msg','Loan status has been set successfully.');
+			redirect(base_url().'admin/loans/loanProfile/'.$userid, 'refresh');
+		}else{
+			$this->session->set_flashdata('error_msg','Loan status not set.');
+			redirect(base_url().'admin/loans/loanProfile/'.$userid, 'refresh');
+		}
+	}
 
 }

@@ -219,8 +219,23 @@ class Loan_model extends CI_Model{
 		return $query->result_array();
 	}
 	
-	function getCurrentLoan(){
+	function getCurrentLoan($id){
+		$this->db->limit(1);
+		$this->db->where(array('user_id'=>$id, 'batch'=>$this->session->current_batch));
+		$query = $this->db->get('loan_applications');
+		return $query->result_array();
+	}
+	
+	function setLoanStatus($loanid, $status){
+		$data = array('status'=>$status);
+		$this->db->where('loan_id', $loanid);
+		$this->db->update('loan_applications',$data);
 		
+		if($this->db->affected_rows()>0){
+			return true;
+		}else{ 
+			return false;
+		}
 	}
 
 

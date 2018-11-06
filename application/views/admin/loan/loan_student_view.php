@@ -20,7 +20,7 @@
                      <div class="card r-3" style="/* background: #444080; *//* color: white; */float: right;border: 4px dotted #c1b6b6; midnightblue; font-weight: 700;">
                          <div class="p-4">
 
-                             <div class="counter-title">Loan Status<br/>{Applicant_status}</div>
+                             <div class="counter-title">Loan Status<br/><?=$current_loan['status']?></div>
 
                          </div>
                      </div>
@@ -136,8 +136,8 @@
                                                            </ul>
                                                        </div>
                                                        <div class="align-self-center">
-                                                           <h5><a href="<?=base_url()?>admin/#" class="btn btn-xs btn-success">Approve Loan</a>
-                                                           <a href="<?=base_url()?>admin/#" class="btn btn-xs btn-danger">Reject Loan</a></h5>
+                                                           <h5><a href="<?=base_url()?>admin/Loans/setLoanStatus/<?=$profile['user_id']?>/<?=$current_loan['loan_id']?>/1" class="btn btn-xs btn-success">Approve Loan</a>
+                                                           <a href="<?=base_url()?>admin/Loans/setLoanStatus/<?=$profile['user_id']?>/<?=$current_loan['loan_id']?>/2" class="btn btn-xs btn-danger">Reject Loan</a></h5>
                                                        </div>
 
                                                    </div>
@@ -439,7 +439,11 @@
                                                    <td><?=$profile['firstname']?> <?=$profile['lastname']?></td>
                                                    <td><span class="badge badge-success"><?=$ln['status']?></span></td>
                                                    <td>N <?=$ln['loan_amount']?></td>
-                                                   <td><a href="<?=base_url()?>admin/#" class="btn btn-xs btn-success">Approve Loan</a> <a href="<?=base_url()?>admin/#" class="btn btn-xs btn-danger">Reject Loan</a> <a href="<?=base_url()?>admin/#" class="btn btn-xs btn-warning">Withdraw Loan</a></td>
+                                                   <td>
+														<a href="<?=base_url()?>admin/Loans/setLoanStatus/<?=$profile['user_id']?>/<?=$ln['loan_id']?>/1" class="btn btn-xs btn-success">Approve Loan</a> 
+														<a href="<?=base_url()?>admin/Loans/setLoanStatus/<?=$profile['user_id']?>/<?=$ln['loan_id']?>/2" class="btn btn-xs btn-danger">Reject Loan</a> 
+														<a href="<?=base_url()?>admin/Loans/setLoanStatus/<?=$profile['user_id']?>/<?=$ln['loan_id']?>/3" class="btn btn-xs btn-warning">Withdraw Loan</a>
+													</td>
                                                </tr>
 											   <?php
 											   endforeach;
