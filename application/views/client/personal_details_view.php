@@ -701,7 +701,19 @@
 	        </div>
 	    </div>
 	</div>
-	<script src="<?=base_url()?>assets/toastr.js"></script>
+
+		<!--   Core JS Files   -->
+		<script src="<?=base_url()?>assets/clients/js/jquery-2.2.4.min.js" type="text/javascript"></script>
+		<script src="<?=base_url()?>assets/clients/js/bootstrap.min.js" type="text/javascript"></script>
+		<script src="<?=base_url()?>assets/clients/js/jquery.bootstrap.js" type="text/javascript"></script>
+
+		<!--  Plugin for the Wizard -->
+		<script src="<?=base_url()?>assets/clients/js/material-bootstrap-wizard.js"></script>
+
+		<!--  More information about jquery.validate here: http://jqueryvalidation.org/	 -->
+		<script src="<?=base_url()?>assets/clients/js/jquery.validate.min.js"></script>
+		
+		<script src="<?=base_url()?>assets/toastr.js"></script>
 	<?php if ($this->session->flashdata('success_msg')
 			&& $this->session->flashdata('success_msg') != ""): ?>
 			<script>
@@ -848,17 +860,8 @@
 		}
 
 	</script>
-
-		<!--   Core JS Files   -->
-		<script src="<?=base_url()?>assets/clients/js/jquery-2.2.4.min.js" type="text/javascript"></script>
-		<script src="<?=base_url()?>assets/clients/js/bootstrap.min.js" type="text/javascript"></script>
-		<script src="<?=base_url()?>assets/clients/js/jquery.bootstrap.js" type="text/javascript"></script>
-
-		<!--  Plugin for the Wizard -->
-		<script src="<?=base_url()?>assets/clients/js/material-bootstrap-wizard.js"></script>
-
-		<!--  More information about jquery.validate here: http://jqueryvalidation.org/	 -->
-		<script src="<?=base_url()?>assets/clients/js/jquery.validate.min.js"></script>
+		
+		
 
 </body>
 
