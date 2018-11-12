@@ -9,10 +9,10 @@ class LoanApplication extends CI_Controller
     }
 
     public function index(){
-	
+
 		$data['page_title'] = 'Loan Application';
 		$data['current_batch'] = $this->Loan_model->getCurrentBatch()->bid;
-		
+
 		$this->form_validation->set_error_delimiters('<div class="error">','</div>');
 		$this->form_validation->set_rules('programme_start_date','Start Date','trim|required');
         $this->form_validation->set_rules('programme_end_date','End Date','trim|required');
@@ -20,7 +20,7 @@ class LoanApplication extends CI_Controller
         $this->form_validation->set_rules('semester_level','Level','trim|required');
         $this->form_validation->set_rules('loan_type','Loan Type','trim|required');
         $this->form_validation->set_rules('loan_amount','Amount','trim|required');
-        
+
 		$this->form_validation->set_rules('guarantor_title','Title','trim|required');
 		$this->form_validation->set_rules('guarantor_fname','First Name','trim|required');
 		$this->form_validation->set_rules('guarantor_lname','Last Name','trim|required');
@@ -32,10 +32,10 @@ class LoanApplication extends CI_Controller
 		$this->form_validation->set_rules('guarantor_emp','Employer','trim|required');
 		$this->form_validation->set_rules('guarantor_position','Position','trim|required');
 		$this->form_validation->set_rules('guarantor_relatn','Relation','trim|required');
-        
+
 		if($this->form_validation->run() == FALSE){
-			$this->load->view('client/header_view', $data);
-			$this->load->view('client/loan_application_view');
+			//$this->load->view('client/header_view', $data);
+			$this->load->view('client/loan_application_view',$data);
 		}else{
 			if($this->Loan_model->addLoan() > 0){
 				$this->session->set_userdata('status', 4);
