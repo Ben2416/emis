@@ -29,10 +29,9 @@ class Login extends CI_Controller {
                 if($usr_result > 0){
 					$this->session->set_userdata($usr_details);
 					$this->session->set_userdata('current_batch', $this->Loan_model->getCurrentBatch()->bid);
-					if($this->session->status == -1)
+					if($this->session->status == 0)
 					   redirect(base_url()."client/login/changePassword");
-					elseif($this->session->status == 0)
-						redirect(base_url()."client/login/loanCategory");
+						//redirect(base_url()."client/login/loanCategory");
 					elseif($this->session->status == 1)
 						redirect(base_url()."client/PersonalDetails");
 					elseif($this->session->status == 2)

@@ -58,14 +58,14 @@
 		                    	<div class="wizard-header">
 
 									<h5>Welcome <?=$this->session->firstname.' '.$this->session->lastname?>, complete the form below. | <a href="login/logout">Logout</a></h5>
-                  <p style="color:red;"><?= validation_errors(); ?></p>
-                          </div>
+									<p style="color:red;"><?= validation_errors(); ?></p>
+								</div>
 								<div class="wizard-navigation">
 									<ul>
 			                            <li><a href="#loantype" data-toggle="tab">Loan Type</a></li>
 			                            <li><a href="#personal" data-toggle="tab">Personal</a></li>
 			                            <li><a href="#university" data-toggle="tab">University</a></li>
-																	<li><a href="#declaration" data-toggle="tab">Declaration</a></li>
+										<li><a href="#declaration" data-toggle="tab">Declaration</a></li>
 
 			                        </ul>
 								</div>
@@ -77,47 +77,47 @@
 		                                <div class="row">
 		                                    <div class="col-sm-10 col-sm-offset-1">
 		                                        <div class="col-sm-3">
-		                                            <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="This loan category is for students currently undergoing their Undergraduate programme.">
-		                                                <input type="radio" name="loancat" value="Undergraduate">
+		                                            <!--<div class="choice" data-toggle="wizard-radio" rel="tooltip" title="This loan category is for students currently undergoing their Undergraduate programme.">-->
+		                                                <input type="radio" name="loancat" value="Undergraduate" <?php echo  set_radio('loancat', 'Undergraduate');?> >
 		                                                <div class="icon">
-		                                                    <i class="material-icons">school</i>
+		                                                    <i class="material-icons">Undergraduate</i>
 		                                                </div>
 		                                                <h6>Undergraduate</h6>
-		                                            </div>
+		                                            <!--</div>-->
 		                                        </div>
 		                                        <div class="col-sm-3">
-		                                            <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Bayelsans who are seeking for funds to further their education to acquire a Masters Degree">
-		                                                <input type="radio" name="loancat" value="Postgraduate" >
+		                                            <!--<div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Bayelsans who are seeking for funds to further their education to acquire a Masters Degree">-->
+		                                                <input type="radio" name="loancat" value="Postgraduate" <?php echo  set_radio('loancat', 'Postgraduate');?> >
 		                                                <div class="icon">
-		                                                    <i class="material-icons">school</i>
+		                                                    <i class="material-icons">Postgraduate</i>
 		                                                </div>
 		                                                <h6>Postgraduate</h6>
-		                                            </div>
+		                                            <!--</div>-->
 		                                        </div>
-																						<div class="col-sm-3">
-		                                            <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Bayelsans currently undergoing their mandantory one(1) year law school">
-		                                                <input type="radio" name="loancat" value="Law" required>
+													<div class="col-sm-3">
+		                                            <!--<div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Bayelsans currently undergoing their mandantory one(1) year law school">-->
+		                                                <input type="radio" name="loancat" value="Law" <?php echo  set_radio('loancat', 'Law');?> >
 		                                                <div class="icon">
-		                                                    <i class="material-icons">account_balance</i>
+		                                                    <i class="material-icons">Law</i>
 		                                                </div>
 		                                                <h6>Law</h6>
-		                                            </div>
+		                                            <!--</div>-->
 		                                        </div>
-																						<div class="col-sm-3">
-		                                            <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Medical students">
-		                                                <input type="radio" name="loancat" value="Health" required>
+													<div class="col-sm-3">
+		                                            <!--<div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Medical students">-->
+		                                                <input type="radio" name="loancat" value="Health" <?php echo  set_radio('loancat', 'Health');?> >
 		                                                <div class="icon">
-		                                                    <i class="material-icons">local_hospital</i>
+		                                                    <i class="material-icons">Health</i>
 		                                                </div>
 		                                                <h6>Health</h6>
-		                                            </div>
+		                                            <!--</div>-->
 		                                        </div>
 		                                    </div>
 		                                </div>
 		                            </div>
 
 
-																<div class="tab-pane" id="personal">
+									<div class="tab-pane" id="personal">
 		                            	<div class="row">
 			                            	<div class="col-sm-12">
 			                                	<h4 class="info-text"> Let's start with the basic details.</h4>

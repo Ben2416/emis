@@ -41,7 +41,7 @@ class Login_model extends CI_Model{
 		$data = array(
 			'clearpass'=>$this->input->post('newpass'),
 			'password'=>sha1($this->input->post('newpass')),
-			'status'=>0
+			'status'=>1
 		);
 		$this->db->where('user_id',$this->session->user_id);
 		return $this->db->update('users', $data);

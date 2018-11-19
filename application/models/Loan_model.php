@@ -8,6 +8,7 @@ class Loan_model extends CI_Model{
 	function addPersonalDetails($dob_name,$lga_name,$mid_name,$ref_name,$adl_name,$csr_name,$pda_name){
 		$data = array(
 			'user_id' => $this->session->user_id,
+			'loan_type'=>$this->input->post('loancat'),
 			'first_name' => $this->input->post('first_name'),
 			'last_name' => $this->input->post('last_name'),
 			'email_add' => $this->input->post('email_add'),
@@ -51,7 +52,7 @@ class Loan_model extends CI_Model{
 			'std_housing' => $this->input->post('std_housing'),
 			'std_address' => $this->input->post('std_address'),
 
-			'previous_degree_acquired' => implode(',', $this->input->post('previous_degree_acquired')),
+			'previous_degree_acquired' => 'null',//implode(',', $this->input->post('previous_degree_acquired')),
 
 			'dob_file' => $dob_name,
 			'lga_file' => $lga_name,

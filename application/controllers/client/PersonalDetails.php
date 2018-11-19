@@ -12,12 +12,9 @@ class PersonalDetails extends CI_Controller
 
 		$data['page_title'] = 'Personal Details';
 		$data['details'] = $this->Loan_model->getPersonalDetails();
-
-		
-		//$data['details']['loan_type'] = 'Law';
-		//print_r($data);exit;
-
+//print_r($this->input->post());exit;
 		$this->form_validation->set_error_delimiters('<div class="error">','</div>');
+        $this->form_validation->set_rules('loancat','Loan Category','required');
         $this->form_validation->set_rules('first_name','First Name','trim|required');
         $this->form_validation->set_rules('last_name','Last Name','trim|required');
         $this->form_validation->set_rules('email_add','Email','trim|required|valid_email');//|is_unique[users.email]');
@@ -61,10 +58,7 @@ class PersonalDetails extends CI_Controller
         $this->form_validation->set_rules('uni_contact_person_phone','Contact Phone','trim|required');
         $this->form_validation->set_rules('std_housing','Housing','trim|required');
         $this->form_validation->set_rules('std_address','Address Phone','trim|required');
-        //$this->form_validation->set_rules('loan_id','Loan ID','trim|required');
-        ///$this->form_validation->set_rules('loan_type','Loan Type','trim|required');
-        ///$this->form_validation->set_rules('loan_amount','Amount','trim|required');
-
+        
 		if($this->form_validation->run() == FALSE){
 		//	$this->load->view('client/header_view', $data);
 			$this->load->view('client/personal_details_view', $data);
