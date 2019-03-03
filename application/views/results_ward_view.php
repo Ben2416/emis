@@ -1,37 +1,38 @@
 <div class="main-panel">
 <div class="content-wrapper">
 	<div class="row">
-		<div class="col-lg-4 grid-margin stretch-card">
+		<div class="col-lg-12 grid-margin">
 			<div class="card">
 				<div class="card-body">
-					<h3 class="text-dark">Select Ward</h3>
-					<p>
-						<div class="row">
-						<?php
-							if(isset($wards) && !empty($wards)):
-								foreach($wards as $wd):
-								?>
-								<div class="col-sm-12">
-									<a href="<?=base_url('results/pu/'.$lurl.'/'.$wd['ward_id'])?>"><?=$wd['ward_name']?></a>
-								</div>
-								<?php
-								endforeach;
-							else: 
-								echo "No Wards have been added.";
-							endif;
-						?>
-						</div>
-					</p>
+					<h3 class="card-title">Select Ward</h3>
+					<div class="row" style="font-size:12px;">
+					<?php
+						if(isset($wards) && !empty($wards)):
+							foreach($wards as $wd):
+							?>
+							<div class="col-sm-3	">
+								<a href="<?=base_url('results/pu/'.$lurl.'/'.$wd['ward_id'])?>"><?=$wd['ward_name']?></a>
+							</div>
+							<?php
+							endforeach;
+						else: 
+							echo "No Wards have been added.";
+						endif;
+					?>
+					</div>
 				</div>
 			</div>
 		</div>
-		
-		<div class="col-lg-8 grid-margin stretch-card">
+	</div>
+	<div class="row">
+		<div class="col-lg-6 grid-margin">
+		<div class="row" style="font-size:12px;">
+		<div class="col-lg-12 grid-margin">
 			<div class="card">
 				<div class="card-body">
-					<h3 align="center" class="text-dark"><?=$page_title?></h3>
-					<h4 align="center" class="text-dark"><?=$state->state_name?></h4>
-					<h5 align="center" class="text-dark"><?=$lga->lga_name?></h5>
+					<h4 align="center" class="text-dark"><?=$page_title?></h4>
+					<h5 align="center" class="text-dark"><?=ucwords($state->state_name)?> State</h5>
+					<h6 align="center" class="text-dark"><?=$lga->lga_name?> LGA</h6>
 					<p>
 						<hr/>
 						<div class="row">
@@ -129,15 +130,45 @@
 						</div>
 					</p>
 
-					<p>
-						<form action="" method="post">
+						<form action="" method="post" align="center">
 							<input type="hidden" name="pdf" id="pdf" value="pdf" />
 							<input type="submit" value="Generate PDF" class="btn btn-success mr-2" name="gen_pdf" />
 						</form>
-					</p>
+				</div>
+				</div>
 				</div>
 			</div>
-		</div>                 
+		</div>  
+
+		  
+
+		<div class="col-lg-6 grid-margin ">  
+			<div class="row">
+				<div class="col-lg-12 grid-margin">
+					<div class="card">
+						<div class="card-body">
+							<h4 class="card-title">Election Score chart</h4>
+							<div id="ch">
+								<canvas id="barChartSen" style="height:230px"></canvas>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12 grid-margin">
+					<div class="card">
+						<div class="card-body">
+							<h4 class="card-title">Major Party chart</h4>
+							<canvas id="doughnutChartSen" style="height:250px"></canvas>
+							<div id="diff">Difference : : <?=abs( intval($result['apc'])-intval($result['pdp']) )?></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+				
+		
 	</div>
 </div>
 		

@@ -133,7 +133,8 @@
 			var attr = $(this).attr("id")
 			if (typeof attr !== typeof undefined && attr !== false) {
 				var href = "<?=base_url('Election/refactor/')?>"+attr;
-				window.location = href;
+				//window.location = href;
+				window.open(href, '_blank');
 			}
 		});
 		
@@ -349,6 +350,104 @@
 	
 	</script>
 	<?php endif;?>
+	
+	<?php if( substr($page_title, 0, 8) == 'Result::' ):?>
+	<script>
+	$(document).ready( function(){
+		var data = {
+			labels: ["APC", "PDP", "SDP", "LP", "NGP", "YDP"],
+			datasets: [{
+			  label: '# of Votes',
+			  data: [<?=$result['apc']?>, <?=$result['pdp']?>, <?=$result['sdp']?>, <?=$result['lp']?>, <?=$result['ngp']?>, <?=$result['ydp']?>],
+			  backgroundColor: [
+				'rgba(255, 99, 132, 0.2)',
+				'rgba(54, 162, 235, 0.2)',
+				'rgba(255, 206, 86, 0.2)',
+				'rgba(75, 192, 192, 0.2)',
+				'rgba(153, 102, 255, 0.2)',
+				'rgba(255, 159, 64, 0.2)'
+			  ],
+			  borderColor: [
+				'rgba(255,99,132,1)',
+				'rgba(54, 162, 235, 1)',
+				'rgba(255, 206, 86, 1)',
+				'rgba(75, 192, 192, 1)',
+				'rgba(153, 102, 255, 1)',
+				'rgba(255, 159, 64, 1)'
+			  ],
+			  borderWidth: 1
+			}]
+		  };
+		var options = {
+			scales: {
+			  yAxes: [{
+				ticks: {
+				  beginAtZero: true
+				}
+			  }]
+			},
+			legend: {
+			  display: false
+			},
+			elements: {
+			  point: {
+				radius: 0
+			  }
+			}
+		  };
+		
+		var barChartCanvasSen = $("#barChartSen").get(0).getContext("2d");
+		var barChartSen = new Chart(barChartCanvasSen, {
+		  type: 'bar',
+		  data: data,
+		  options: options
+		});
+		
+		var doughnutPieData = {
+			datasets: [{
+			  data: [<?=$result['apc']?>, <?=$result['pdp']?>],
+			  backgroundColor: [
+				'rgba(255, 99, 132, 0.5)',
+				'rgba(54, 162, 235, 0.5)',
+				'rgba(255, 206, 86, 0.5)',
+				'rgba(75, 192, 192, 0.5)',
+				'rgba(153, 102, 255, 0.5)',
+				'rgba(255, 159, 64, 0.5)'
+			  ],
+			  borderColor: [
+				'rgba(255,99,132,1)',
+				'rgba(54, 162, 235, 1)',
+				'rgba(255, 206, 86, 1)',
+				'rgba(75, 192, 192, 1)',
+				'rgba(153, 102, 255, 1)',
+				'rgba(255, 159, 64, 1)'
+			  ],
+			}],
+			labels: [
+			  'APC',
+			  'PDP'
+			]
+		  };
+		var doughnutPieOptions = {
+			responsive: true,
+			animation: {
+			  animateScale: true,
+			  animateRotate: true
+			}
+		  };
+		  
+		if ($("#doughnutChartSen").length) {
+			var doughnutChartCanvasSen = $("#doughnutChartSen").get(0).getContext("2d");
+			var doughnutChartSen = new Chart(doughnutChartCanvasSen, {
+			  type: 'doughnut',
+			  data: doughnutPieData,
+			  options: doughnutPieOptions
+			});
+		  }
+	} );
+	</script>
+	<?php endif;?>
+	
 	<?php if($page_title == 'Results'): ?>
 	<script>
 		$(document).ready(function(){
@@ -395,6 +494,7 @@
 		
 	</script>
 	<?php endif;?>
+	
 	<?php if($page_title=='Add Agents' || $page_title=='View Agents' || $page_title="Populate Ward" || $page_title="Populate Polling Unit" ): ?>
 	<script>
 	function createOption(select_id, id, value) {
@@ -419,6 +519,10 @@
 		
 	</script>
 	<?php endif; ?>
+	
+	
+	
+	
 	<script>
 	function getlgas(){
 		if($('#state').val() != ""){

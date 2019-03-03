@@ -226,8 +226,12 @@ class Election extends CI_Controller {
 				$edata = explode('/', explode('=',trim($msg[1]))[1]);
 				$etitle = array('election_state', 'election_lga', 'election_ward', 'election_pu');
 				$edt = array_combine($etitle, $edata);
-				foreach($edt as $k=>$v)
-					$data[$k] = trim($v);
+				foreach($edt as $k=>$v){
+					if( !is_int($v) && !empty($v) )
+						$data[$k] = trim($v);
+					else
+						throw new Exception("Incomplete Polling Unit ID.");
+				}	
 					
 				$rav = explode(',', trim($msg[2]));
 				if(strcasecmp(trim(explode('=', trim($rav[0]))[0]), "RV")==0)

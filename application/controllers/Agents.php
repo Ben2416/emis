@@ -33,7 +33,30 @@ class Agents extends CI_Controller {
 		}
 	}
 	
-	public function add(){
+	public function viewWardAgents(){
+	    
+	    $data['page_title'] = 'View Ward Agents';
+		$data['states'] = $this->Election_model->getStates();
+		
+		$this->form_validation->set_rules('state','State','trim|required');
+		
+		if($this->form_validation->run() == FALSE){
+			$this->load->view('header_view', $data);
+			$this->load->view('ward_agents_view');
+			$this->load->view('footer_view');
+		}else{
+			if($this->input->post('get_ward_agents')){
+				$getwardagents = $this->Election_model->getWardAgents( date('Y') );
+				if($getwardagents)
+					$data['agents'] = $getwardagents;
+				$this->load->view('header_view', $data);
+				$this->load->view('ward_agents_view');
+				$this->load->view('footer_view');
+			}
+		}
+	}
+	
+	public function addAgents(){
 		$data['page_title'] = 'Add Agents';
 		$data['states'] = $this->Election_model->getStates();
 		
@@ -85,10 +108,10 @@ class Agents extends CI_Controller {
 			if($this->input->post('add_ward_agents')){
 				$agent = $this->Election_model->addWardAgents( date('Y') );
 				if($agent > 0){
-					$this->session->set_flashdata('success_msg', "Agents have been added successfully.");
+					$this->session->set_flashdata('success_msg', "Ward Agent has been added successfully.");
 					redirect(base_url('Agents/addWardAgent'));
 				}else{
-					$this->session->set_flashdata('error_msg', "Error adding agents.");
+					$this->session->set_flashdata('error_msg', "Error adding ward agent.");
 					redirect(base_url('Agents/addWardAgent'));
 				}
 			}

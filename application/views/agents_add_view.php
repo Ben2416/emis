@@ -5,7 +5,7 @@
 			<div class="card">
 				<div class="card-body">
 					<h5 class="card-title">Add Agents</h5>
-					<form method="post" action="<?=base_url('Agents/add');?>">
+					<form method="post" action="<?=base_url('Agents/addAgents');?>">
 					<p>
 						<p><?=validation_errors();?></p>
 					</p>

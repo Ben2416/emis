@@ -125,11 +125,16 @@ class Election_model extends CI_Model{
 	/*******************************
 				GET
 	*******************************/
+	function getElections(){
+	    $query = $this->db->get('election_type');
+	    return $query->result_array();
+	}
 	function getElectionName($type){
 	    $this->db->where('etype_id', $type);
 	    $query = $this->db->get('election_type');
 	    return $query->row();
 	}
+	
 	function getStates(){
 		$query = $this->db->get('election_states');
 		return $query->result_array();
@@ -252,6 +257,33 @@ class Election_model extends CI_Model{
 		
 	}
 	
+	function getWardAgents($date){
+		$state = $this->input->post('state');
+		$lga = $this->input->post('lga');
+		$ward = $this->input->post('ward');
+		$pu = $this->input->post('pu');
+		
+		$this->db->where('wardagents.year', $date);
+		$this->db->where('wardagents.state_id', $state);
+		$this->db->join('election_states','election_states.state_id=wardagents.state_id');
+		$this->db->join('election_lgas','election_lgas.lga_id=wardagents.lga_id AND election_lgas.state_id=wardagents.state_id');
+		$this->db->join('election_wards','election_wards.ward_id=wardagents.ward_id AND election_wards.lga_id=wardagents.lga_id AND election_wards.state_id=wardagents.state_id');
+		$this->db->join('election_districts','election_districts.state_id=election_states.state_id AND election_districts.district_id=election_lgas.district_id');
+		if(isset($lga)&&!empty($lga)){
+			$this->db->where('wardagents.lga_id', $lga);
+			if(isset($ward)&&!empty($ward)){
+				$this->db->where('wardagents.ward_id', $ward);
+				//if(isset($pu)&&!empty($pu)){
+				//	$this->db->where('wardagents.pu_id', $pu);
+			//	}
+			}
+		}
+		
+		$query = $this->db->get('wardagents');
+		return $query->result_array();
+		
+	}
+	
 	function addAgents($date){
 		$data = array(
 			'year'=>$date,
@@ -301,6 +333,17 @@ class Election_model extends CI_Model{
 		}else{
 			return 0;
 		}
+	}
+	
+	function getAgentsList($year, $state, $group){
+		$this->db->where("year", $year);
+		$this->db->where("state_id", $state);
+		if($group == "ward"){
+			$query = $this->db->get("wardagents");
+		}else{
+			$query = $this->db->get("election_agents");
+		}
+		return $query->result_array();
 	}
 	
 	/*******************************

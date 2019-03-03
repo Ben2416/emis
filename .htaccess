@@ -1,6 +1,6 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteBase /ema
+RewriteBase /emis
 RewriteCond $1 !^(index\.php|assets|images|js|css|uploads|favicon.png)
 RewriteCond %(REQUEST_FILENAME) !-f
 RewriteCond %(REQUEST_FILENAME) !-d

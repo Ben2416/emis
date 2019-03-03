@@ -1,28 +1,28 @@
-		<!DOCTYPE html>
-		<html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
-		<head>
-		  <!-- Required meta tags -->
-		  <meta charset="utf-8">
-		  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		  <title><?=ucfirst($page_title)?></title>
-		  <!-- plugins:css -->
-			<link href="<?=base_url('assets/css/toastr.css')?>" rel="stylesheet" type="text/css" />
-		  <link rel="stylesheet" href="<?=base_url('assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css')?>">
-		  <link rel="stylesheet" href="<?=base_url('assets/vendors/css/vendor.bundle.base.css') ?>" />
-		  <link rel="stylesheet" href="<?=base_url('assets/vendors/css/vendor.bundle.addons.css') ?>" />
-		  <!-- endinject -->
-		  <!-- plugin css for this page -->
-		  <link rel="stylesheet" href="<?=base_url('assets/vendors/iconfonts/font-awesome/css/font-awesome.css')?>">
-  
-		  <!-- End plugin css for this page -->
-		  <!-- inject:css -->
-		  <link rel="stylesheet" href="<?=base_url('assets/css/style.css') ?>">
-		  <!-- endinject -->
-		  <link rel="shortcut icon" href="<?=base_url('assets/images/favicon.png') ?>" />
-		</head>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title><?=ucfirst($page_title)?></title>
+  <!-- plugins:css -->
+	<link href="<?=base_url('assets/css/toastr.css')?>" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="<?=base_url('assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css')?>">
+  <link rel="stylesheet" href="<?=base_url('assets/vendors/css/vendor.bundle.base.css') ?>" />
+  <link rel="stylesheet" href="<?=base_url('assets/vendors/css/vendor.bundle.addons.css') ?>" />
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <link rel="stylesheet" href="<?=base_url('assets/vendors/iconfonts/font-awesome/css/font-awesome.css')?>">
 
-		<body>
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="<?=base_url('assets/css/style.css') ?>">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="<?=base_url('assets/images/favicon.png') ?>" />
+</head>
+
+<body>
 		  <div class="container-scroller">
 		    <!-- partial:partials/_navbar.html -->
 		    
@@ -107,10 +107,30 @@
 		            <div class="collapse" id="ui-agents">
 		              <ul class="nav flex-column sub-menu">
 		                <li class="nav-item">
-		                  <a class="nav-link" href="<?=base_url('Agents')?>">Show Agents</a>
+		                  <a class="nav-link" href="<?=base_url('Agents/index')?>">Show PU Agents</a>
 		                </li>
 		                <li class="nav-item">
-		                  <a class="nav-link" href="<?=base_url('Agents/add')?>">Add Agents</a>
+		                  <a class="nav-link" href="<?=base_url('Agents/addAgents')?>">Add PU Agents</a>
+		                </li>
+						<li class="nav-item">
+		                  <a class="nav-link" href="<?=base_url('Agents/viewWardAgents')?>">Show Ward Agents</a>
+		                </li>
+		                <li class="nav-item">
+		                  <a class="nav-link" href="<?=base_url('Agents/addWardAgent')?>">Add Ward Agents</a>
+		                </li>
+		              </ul>
+		            </div>
+		          </li>
+		          <li class="nav-item">
+		            <a class="nav-link" data-toggle="collapse" href="#ui-msg" aria-expanded="false" aria-controls="ui-basic">
+		              <i class="menu-icon fa fa-at"></i>
+		              <span class="menu-title">Messages</span>
+		              <i class="menu-arrow"></i>
+		            </a>
+		            <div class="collapse" id="ui-msg">
+		              <ul class="nav flex-column sub-menu">
+		                <li class="nav-item">
+		                  <a class="nav-link" href="<?=base_url('Messages')?>">Send SMS Format</a>
 		                </li>
 		              </ul>
 		            </div>

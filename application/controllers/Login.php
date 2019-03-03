@@ -21,7 +21,7 @@ class Login extends CI_Controller {
 			if($details > 0){
 				$this->session->set_userdata($details);
 				$this->session->set_flashdata("success_msg", "Welcome!");
-				redirect(base_url("Results/election"));
+				redirect(base_url("LiveResults"));
 			}else{
 				$this->session->set_flashdata("error_msg", "Login was unsuccessful!");
 				redirect(base_url('Login'));

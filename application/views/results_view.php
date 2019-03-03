@@ -4,7 +4,7 @@
 		<div class="col-lg-12 grid-margin stretch-card">
 			<div class="card">
 				<div class="card-body">
-					<h3 class="card-title">Result Updates</h3>
+					<h3 class="card-title">Result Submissions</h3>
 					<form method="post" action="<?=base_url('Results')?>">
 					<p>
 						<?=validation_errors()?>					
